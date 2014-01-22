@@ -1,0 +1,385 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>华农酸奶 - 梦想的味道</title>
+	<meta name="keywords" content="华农酸奶 梦想的味道 校巴 绿色 农业" />
+	<meta name="discription" content="华农酸奶主页，为了更好地宣传，让更多的人知道华农酸奶，让更多的人了解华农特色产品" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<link href="public/stylesheets/bootstrap.css" rel="stylesheet" type="text/css" />
+	<link href="public/stylesheets/opa-icons.css"  rel="stylesheet" type="text/css" />
+	<link href="public/stylesheets/index.css" rel="stylesheet" type="text/css" />
+	<script src="public/javascripts/jquery1.83.js" type="text/javascript"></script>
+	<script src="public/javascripts/words-count.js" type="text/javascript"></script>
+	<script src="public/javascripts/bootstrap-tab.js" type="text/javascript"></script>
+	<script src="public/javascripts/scroll-top-control.js" type="text/javascript"></script>
+	<script src="public/javascripts/picture-show.js" type="text/javascript"></script>
+	<script>
+            	$(function () {
+                    var log = function(s){
+                    window.console && console.log(s)
+                    }
+                    $('.nav-tabs a:first').tab('show')               // first 默认显示第一个tab
+                    $('a[data-toggle="tab"]').on('show', function (e) {
+                        log(e)
+                    })
+                    $('a[data-toggle="tab"]').on('shown', function (e) {
+                        log(e.target) // activated tab
+                        log(e.relatedTarget) // previous tab
+                    })
+            })
+            </script>          
+</head>
+<body>
+	<!-- 最顶部快捷条包括登录和注册 -->
+	<div class="header">
+		<div class="banner">
+			<a href="index.html" class="banner-title">华农酸奶</a>
+			<span class="milk-theme">梦想的味道</span>
+			<div class="login-regist">
+			当前登录：
+            <a href="@{Logined.email()}" class="login"> ${user.username}</a>
+            || 
+            <a href="@{Logined.logout()}" class="regist">注销</a>
+			||  
+			<a href="@{Logined.order_customer()}" class="regist">查看我的订单</a>
+		</div>
+		</div>
+	</div>
+	<div class="container">
+	<!-- 右边固定在屏幕边上的联系方式 --> 
+	<div class="contact-us">
+		<div class="contact-area">
+			<a href="email.html">联系我们</a>
+		</div>
+	</div>
+
+	<div class="ad-news" id="ad-news">
+		<!-- 酸奶广告轮番图或者视频 -->
+		<div class="ad">
+			<div class="picture-show-box">
+				<div class="picture-show">
+					<ul>
+						<li><img src="public/images/kind1.jpg" width="400" height="260" /></li>
+						<li><img src="public/images/kind2.jpg" width="400" height="260" /></li>
+						<li><img src="public/images/kind3.jpg" width="400" height="260" /></li>
+						<li><img src="public/images/kind1.jpg" width="400" height="260" /></li>
+						<li><img src="public/images/kind2.jpg" width="400" height="260" /></li>
+					</ul>
+				</div>
+				<div class="index">
+					<span class="current">1</span>
+					<span>2</span>
+					<span>3</span>
+					<span>4</span>
+					<span>5</span>
+				</div>
+			</div>
+		</div>
+		<!-- 酸奶和企业动态 -->
+		<div class="news">
+			<div class="news-title">
+				<h1>酸奶企业动态</h1>
+			</div>
+			<a href="milk-news.html" class="more">more</a>
+			<div class="news-top">
+				<p>
+					<img src="public/images/hot.gif" alt="热点新闻" title="热点新闻" class="hot-logo"/>
+					<a href="milk-news-content-1.html">头条：霸王集团总裁万玉华校友在华农大红满堂做《企业与市场策划》专题报告
+					</a>
+				</p>
+			</div>
+			<div class="news-lists">
+				<ul id="newsScroll">
+				            <li>
+				            		<i class="icon icon-color icon-tag"></i>
+				            		<a href="###">资产公司直属党支部开展纪念建党90周年专题活动</a>
+				            </li>				
+				            <li>
+				            		<i class="icon icon-color icon-tag"></i>
+				            		<a href="###">广东华农大资产经营有限公司举办会计信息化建设专项培训会议</a>
+				            </li>
+				            <li>
+				            		<i class="icon icon-color icon-tag"></i>
+				            		<a href="###">关于召开企业市场拓展工作交流会暨资产公司直属党支部民主生活会的通知</a>
+				            </li>
+				            <li>
+				            		<i class="icon icon-color icon-tag"></i>
+				            		<a href="###">关于做好清明节期间安全防范工作的意见</a>
+				            </li>
+				</ul>
+			</div>
+			<!-- 下面是新闻滚动的脚本，不要移开 -->
+			<script src="public/javascript/news-lists-scroll.js" type="text/javascript"></script>
+		</div>
+	</div>
+	<!-- 酸奶系列产品展示 -->
+	<div class="products">
+		<div class="products-title">
+			<h1>酸奶系列</h1>
+		</div>
+		<div class="products-lists">
+			<div class="milk-1">
+				<div class="milk-image">
+					<img src="public/images/kind1.jpg" alt="纯白酸奶" title="纯白酸奶"/>
+				</div>
+				<div class="milk-intro">
+					<h2>酸奶名片</h2>
+					<p><strong>酸奶小名：</strong>纯白华农酸奶</p>
+					<p><strong>原料组成：</strong>新鲜牛奶+糖</p>
+					<p>
+						<strong>美味口感：</strong>
+						均质后，经乳酸菌发酵，每毫升酸奶含有上亿个有益肠道活性乳酸菌，是肠道健康的忠实卫士。产品酸甜适口，一喝忘不了，正是梦想追寻的味道！
+					</p>
+					<a href="order_milk_1.html" class="btn btn-primary">我要订购</a>
+				</div>
+			</div>
+			<div class="milk-2">
+				<div class="milk-image">
+					<img src="public/images/kind2.jpg" alt="华农原味酸牛奶" title="华农原味酸牛奶"/>
+				</div>
+				<div class="milk-intro">
+					<h2>酸奶名片</h2>
+					<p><strong>酸奶小名：</strong>华农原味酸牛奶</p>
+					<p><strong>原料组成：</strong>新鲜牛奶</p>
+					<p>
+						<strong>美味口感：</strong>
+						除新鲜优质牛奶的营养外，含有嗜酸乳杆菌、双歧杆菌等丰富益生菌，具有激活并强化肠道免疫系统、增加钙吸收等多重功效。入口香甜细滑，触及您的味蕾，意犹未尽！
+					</p>
+					<a href="order_milk_2.html" class="btn btn-primary">我要订购</a>
+				</div>
+			</div>
+			<div class="milk-3">
+				<div class="milk-image">
+					<img src="public/images/kind3.jpg" alt="屋顶盒装学士酸牛奶" title="屋顶盒装学士酸牛奶"/>
+				</div>
+				<div class="milk-intro">
+					<h2>酸奶名片</h2>
+					<p><strong>酸奶小名：</strong>屋顶盒装学士酸牛奶</p>
+					<p><strong>原料组成：</strong>新鲜牛奶+糖</p>
+					<p>
+						<strong>美味口感：</strong>经均质发酵特别制作。产品口感出众，风味独特，为酸奶极品享受！包装精美，尊贵享有！
+					</p>
+					<a href="order_milk_3.html" class="btn btn-primary">我要订购</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 企业介绍 -->
+	<div class="com-intro">
+		<div class="com-title">
+			<h1>企业介绍</h1>
+		</div>
+		<div class="tabbable tabs-left">
+			<ul  class="nav nav-tabs">
+                        			<li><a href="#basic" data-toggle="tab">公司概况</a></li>
+                        			<li class="active"><a href="#leaders" data-toggle="tab">公司领导</a></li>
+                        			<li><a href="#items" data-toggle="tab">产业分类</a></li>
+                        			<li><a href="#strength" data-toggle="tab">主要优势</a></li>
+                        			<li><a href="#idea" data-toggle="tab">发展思路</a></li>
+			</ul>
+			<div class="tab-content">
+                        			<div class="tab-pane" id="basic">
+                        				<h1>广东华农大资产经营有限公司概况</h1>
+					<h2>一、公司创立与经营职能</h2>
+					<p>
+					         广东华农大资产经营有限公司（以下简称“资产公司”）是根据
+					         国家教育部和广东省教育厅等部门有关高校校办企业改革精神与要求，由华南农业大学（以下简称“华农大”）出资设立的有限责任公司（国有法人独资）。资产公司于2007年12月正式成立，现注册资本3075万元，取代原华南农业大学科技实业发展总公司管理华农大校办企业，主要经营范围是：经营管理华农大的经营性资产，对外投资与咨询，科技成果转让等。资产公司作为华农大对外投资的唯一法定出资人，代表华农大对所投资企业依法行使股东权利，履行股东的义务，确保国有资产保值增值，促进华农大科技成果的孵化、转化与产业化，推动华农大科技产业健康发展，提高华农大科技创收的效益。
+					</p>
+					<h2>二、公司资产与人员情况  </h2>
+					<div class="com-images"><img src="public/images/com/com.jpg" /></div>
+					<p class="article-pic">
+					        资产公司现有下属企业19家，其中全资企业12家，控投、参股企业7家，总资产约44173万元，净资产约29807万元（其中国有部分净资产20642万元）。资产公司及下属企业共有500多人，其中在编职工42人，聘用员工约460人；高级职称12人，中级职称32人，初级职称5人；博士1人，硕士32人，本科190人，专科 277人。
+					</p>					
+                        			</div>
+                        			<div class="tab-pane active" id="leaders">
+                        				<h1>公司核心领导</h1>
+                        				<div class="leader-info1">
+                        					<div class="leader-image">
+                        						<img src="public/images/com/czq.gif" alt="陈志强" title="主管副校长" />
+                        					</div>
+            						<div class="leader-name">
+            							<h2>陈志强 </h2>
+            							<h3>[ 主管副校长 ]</h3>
+            						</div>
+                        				</div>
+                        				<div class="leader-info2">
+                        					<div class="leader-image">
+                        						<img src="public/images/com/lzs.gif" alt="梁梓森" title="总经理" />
+                        					</div>
+            						<div class="leader-name">
+            							<h2>梁梓森</h2>
+            							<h3>[ 总经理 ]</h3>
+            						</div>
+                        				</div>
+                        				<div class="leader-info3">
+                        					<div class="leader-image">
+                        						<img src="public/images/com/cxg.gif" alt="陈晓钢" title="副总经理" />
+                        					</div>
+            						<div class="leader-name">
+            							<h2>陈晓钢</h2>
+            							<h3>[ 副总经理 ]</h3>
+            						</div>
+                        				</div>
+                        				<div class="leader-info4">
+                        					<div class="leader-image">
+                        						<img src="public/images/com/sjh.gif" alt="苏金煌" title="副总经理" />
+                        					</div>
+            						<div class="leader-name">
+            							<h2>苏金煌 </h2>
+            							<h3>[ 副总经理 ]</h3>
+            						</div>
+                        				</div>
+                        			</div>
+                        			<div class="tab-pane" id="items">
+                        				<h1>产业分类</h1>
+                        				<p>
+                        				         	资产公司下属企业分为 “动保养殖”、“生物技术”、“种子种苗”、“食品饮品”、“园林设计”、“ 农药肥料”、“农机汽配”等七大类产业 。
+                        				</p>
+                        				<p>
+                        				        	至2011年，资产公司及下属校办企业的营业收入比2006年增长88%；创造净利润比2006年增长1728%。从2007年至2011年，开发新产品130个；申获科技及产业项目40多项，共获资助经费约4800  万元；获12项科技与推广奖；获10多项专利技术；获“广东省科技服务业100强”、“广东省现代产业500强”、“广东省科技服务业百强企业”、“广州市中小企业公共（技术）服务示范平台”等光荣称号；有3个公司成为“广州市高新企业”。
+                        				</p>
+                        			</div>
+                        			<div class="tab-pane" id="strength">
+                        				<h1>主要优势</h1>
+                        				<h2>一、平台与枢纽优势</h2>
+                        				<p>
+						资产公司既是华农大的职能管理部门，又是华农大的全资企业，还是华农大—企业—社会的联系枢纽，三位一体，功能重要，作用明显。首先，资产公司是华农大的中层管理单位，代表华农大管理学校经营性资产，一方面可以整合多种资源为校办企业服务，另一方面能够指导、监管校办企业的规范经营和健康发展。其次，资产公司是华农大独资法人企业，具有公司固有职能，可完全按照《公司法》、《公司章程》和遵循市场规律进行独立经营与运作，可创建科学合理的激励机制促进科技成果的转化和新技术新产品的推广。再次，资产公司是产学研密切结合的良好平台和校企社密切联系的最佳枢纽，通过信息化传递、市场化引导、专业化服务和程序化操作等多种方式，可迅速将华农大科技成果转化到校办企业或社会上推广应用与产业化；可迅速利用华农大的强大技术力量为企业和生产解决实际问题，为社会更好服务，为三农发展作出更大贡献；可迅速将企业信息、市场信息、社会信息有效收集与整合，并及时反馈到华农大，把握市场需求和商业目的，提出与市场接轨的新研究课题，推动华农大的学科发展，使华农大新的科技成果不断涌现。总之，资产公司是加快华农大科技成果转化、推进华农大校办企业发展、提高华农大服务社会服务三农的优秀平台和强力纽带。
+					<h2>二、人才与技术优势</h2>
+					<p>
+						资产公司除了自身技术力量外，主要依托华农大雄厚的人才与技术支持。华农大农学、资环、生命、园艺、生物、林学、动科、兽医、食品、工程、艺术、信息、水利与土木、人文与法学等学院的专家教授达2000多人，其中院士2名，长江学者3人，珠江学者10人，国家杰出青年基金获得者3人，国家级“千百十工程”人才5人，教育部优秀人才7人，博士生导师209人，硕士生导师715人。这些高级专业人才给校办企业予以全方位的大力支持与帮助，特别在科技创新方面发挥重要作用。
+					</p>
+					<p>
+						华农大优良的科研条件为资产公司新产品研发和产品质量检测等提供强有力保障。华农大现有160多个科研平台，其中，有1个国家级重点实验室，2个国家工程技术研究中心，3个教育部重点实验室，3个教育部工程研究中心，8个农业部重点实验室，3个农业部科学观测实验站，9个广东省重点实验室，2个广东省人文社会科学重点研究基地。这些重要科研机构及其卓越的团队与设施为校办企业进行新品种繁育、新产品研发、新工艺技术研究、产品质量检测、科技产业项目和奖项申报等发挥重要作用。
+					</p>
+					<p>
+						华农大科技成果丰硕，为资产公司的创新发展提供源泉。“十一五”以来，华农大承担各类科研项目3589项，总科研经费77877万元，共获科技成果195项，其中国际领先水平的成果有7项，国际先进水平的成果有21项，获中国专利技术627项，授权专利技术228项，国际专利技术1项。这些优秀科技成果中，一些已被校办企业开发利用，另一些正由资产公司孵化、转化和产业化。今后，华农大将继续为资产公司提供源源不断的科技成果进行转化与产业化。
+					</p>
+                        			</div>
+                        			<div class="tab-pane" id="idea">
+                        				<h1>发展思路</h1>
+                        				<h2>一、强化管理，规范经营与运作</h2>
+                        				<p>
+						校办企业原来大多是院办企业，规模较小，基础较差，发展尚不平衡，管理水平还不高，运作仍不够规范。因此，今后必须按现代企业的要求，进一步制定和完善各种管理制度，特别要明确资产公司及其与下属企业的责、权、利的管理关系，并加强法律法规、行业准则、职业道德等教育与培训，提高企业与员工依法经营、规范运作的意识和能力，确保资产公司高效管理，校办企业完全按《公司法》和市场规律安全、健康、高效运作。
+					</p>
+					<h2>二、加快改革，理顺体制与机制</h2>
+					<p>
+    						尽管目前校办企业改革改制工作取得重要进展，但由于种种原因，其进程仍然十分缓慢。有部分企业因历史问题还是全民所有制；有部分企业虽然已改为国有法人独资有限公司，但仍未完成多元化股份制改制；还有部分经营性资产尚在华农大后勤处和学院中，未划入资产公司的管理范畴；甚至华农大对资产公司的定位与管理办法也尚未明确。这些因素严重制约着校办企业现代管理和快速发展。因此，我们必须加大力度改革，加快推进校办企业改制工作进程，及早建立华农大—资产公司—校办企业之间科学合理的管理体制，争取华农大尽快制定《关于资产公司的管理办法》；及早把校办企业改制成多元化股份制企业，按《公司法》建立完善的管理架构和法人治理结构，从而理顺校办企业的管理体制和运行机制，确保校办企业快速发展。
+    					</p>
+					<h2>三、发挥优势，促进科技创新</h2>
+					<p>
+						今后，资产公司要充分发挥华农大雄厚的人才与技术等优势，加大产学研密切结合力度，推动校办企业创新发展。要创建良好模式，制定激励政策，采取灵活措施，加强与华农大相关学院学科合作，开展新产品研发，解决生产工艺技术难题，共同申报科技与产业项目和奖项，使资产公司及下属企业有源源不断的新成果新技术开发利用，确保校办企业可持续发展。
+					</p>
+					<h2>四、引入资本，做大做强优势产业</h2>
+    					<p>
+    						经过多年的发展，校办企业已有一定的基础，初步形成七大产业，这七大产业也紧紧依托华农大相关学院学科雄厚的科技力量支持。其中，“动保养殖”、“生物技术”、“种子种苗”、“食品饮品”等产业发展较好，已初具规模，且发展潜力大、前景广阔。为了加快上述产业的发展，资产公司将引入资本运作，通过增资扩股和银行贷款等方法，引进强势的合作伙伴和大量的资金，使优势产业迅速发展，做大做强；在适当时候还引入投资公司，做好企业上市培育、辅导工作，力争在几年内华农大有校办企业上市。另外，资产公司还要寻找高科技项目进行适当投资，增加投资收益；加大力度进行科技成果转化工作，使资产公司不断发展壮大，为提高华农大科技创收作出更大贡献！
+    					</p>
+                        			</div>
+                        		</div>
+            		</div>	
+	</div>
+	<!-- 健康常识 -->
+	<div class="health-intro">
+		<div class="health-title">
+			<h1>健康小常识</h1>
+			<div class="goods1">
+				<p>酸奶可增强人体免疫功能</p>
+			</div>
+			<div class="goods2">
+				<p>降低血清胆固醇的水平。有实验证明，甚至在不用任何药物的情况下。每餐饮用约24O克酸奶，一周后可见胆固醇降低</p>
+			</div>
+			<div class="goods3">
+				<p>常饮用酸奶能促进肠道运动，缩短食物口一肛转运时间，软化酵解结肠内容物，增加粪便排泄量，预防便秘发生，有益干预防结肠癌</p>
+			</div>
+
+		</div>
+	</div>
+	<!-- 客户留言区 -->
+	<div class="words-board" id="words-board">
+		<div class="words-title">
+			<h1>留言区</h1>
+		</div>
+		<a href="words_board.html" class="more">more</a>
+		#{form @savePost2() }
+			<div class="make-words">
+			#{field 'post.content'}
+				<div class="words-area">
+					<!-- 注意这里的 textarea 中间的空格会算进字数统计中 -->
+					<textarea name="${field.name}" onKeyDown="maxWords(this.form)" onKeyUp="maxWords(this.form)" onblur="if(this.value==''){ this.value='来，说说你对酸奶的寄语 ..'; }" onfocus="if(this.value=='来，说说你对酸奶的寄语 ..'){ this.value=''; }">来，说说你对酸奶的寄语 ..</textarea>
+				</div>
+		    #{/field }
+				<div class="count-submit-bar">
+					<input type="text" name="maxNum" value="190" readonly="readonly" class="words-count">
+					<button onclick="#" class="btn btn-primary words-submit" type="submit">发表</button>			
+				</div>
+			</div>
+		#{/form}
+		<div class="words-list">
+	<ul id="list">
+#{list items:postList,as:'postlist'}
+                              
+		
+		           
+		             	<!-- 每个 li 是 1 页留言，包括 10 条留言（即 10 个 div）-->
+		             	<li>
+                      <div class="words-list" id="words-list">
+		             		<!-- 下面是一条留言的 div 开始 -->
+			                <div class="a-list"> 
+														<div class="list-details">
+															<i class="icon32 icon-color icon-bullet-off"></i>
+																	<span class="name">${postlist.author}</span>
+																	<span class="time">${postlist.postedAt}</span>
+																	<span class="floor">${postlist.id}</span>
+																			<span class="comment">
+																			<i class="icon icon-color icon-messages" title="回复数目"></i>${postlist.comments.size()}
+																			</span>						
+														 </div>
+					         	<p class="list-content">${postlist.content}</p>
+							 </div>
+						#{list items:postlist.comments,as:'commentlist'}
+						
+														 <div class="list-back">
+															<div>
+																<i class="icon icon-color icon-messages"></i>
+																<span class="back-name">${commentlist.author}</span>
+																<span class="back-time">${commentlist.postedAt}</span>
+																<p>${commentlist.content}</p>
+																
+															</div>
+															 
+														 </div>
+														
+                      #{/list}
+					   #{form @postComment2(postlist.id, content)}
+				  #{field 'content'}
+				   <p>
+					
+					<input type="textarea" name="${field.name}" id="loginusername" }" required="required" placeholder="我来说一句" >	
+					<input type="submit" name="submit" value="评论">
+
+				  </p>
+				  #{/field}
+				#{/form}
+					 </div>
+
+</li>
+
+	<!-- container -->
+
+
+
+
+
+
+           
+#{/list}
+	</ul>	
+	<!-- 页脚 -->
+	<div class="footer">
+		<p>COPYRIGHT © 2012 - 2013 DESIGNED BY HCier<p>
+	</div>
+	<!-- 右下角回顶部固定按钮 -->
+	<div id="topcontrol" class="scrollTop" title="回顶部看看">
+		<img src="public/images/scrollTop.gif"/>
+	</div>
+</body>
+</html>

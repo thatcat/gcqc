@@ -1,0 +1,161 @@
+21 三月 2013 21:24:20,808 INFO  ~ Starting D:\项目\milk\milk_v1.0
+21 三月 2013 21:24:21,525 WARN  ~ You're running Play! in DEV mode
+21 三月 2013 21:24:21,646 INFO  ~ Listening for HTTP on port 9000 (Waiting a first request to start) ...
+21 三月 2013 21:24:30,455 INFO  ~ Connected to jdbc:h2:mem:play;MODE=MYSQL;LOCK_MODE=0
+21 三月 2013 21:24:31,593 INFO  ~ Application 'cms' is now started !
+21 三月 2013 21:24:34,522 ERROR ~ 
+
+@6dl0jp273
+images.scrollTop.gif action not found
+
+Action not found
+Action images.scrollTop.gif could not be found. Error raised is Controller controllers.images.scrollTop not found
+
+play.exceptions.ActionNotFoundException: Action images.scrollTop.gif not found
+	at play.mvc.ActionInvoker.getActionMethod(ActionInvoker.java:599)
+	at play.mvc.ActionInvoker.resolve(ActionInvoker.java:85)
+	at Invocation.HTTP Request(Play!)
+Caused by: java.lang.Exception: Controller controllers.images.scrollTop not found
+	... 3 more
+21 三月 2013 21:25:10,831 ERROR ~ 
+
+@6dl0jp274
+images.scrollTop.gif action not found
+
+Action not found
+Action images.scrollTop.gif could not be found. Error raised is Controller controllers.images.scrollTop not found
+
+play.exceptions.ActionNotFoundException: Action images.scrollTop.gif not found
+	at play.mvc.ActionInvoker.getActionMethod(ActionInvoker.java:599)
+	at play.mvc.ActionInvoker.resolve(ActionInvoker.java:85)
+	at Invocation.HTTP Request(Play!)
+Caused by: java.lang.Exception: Controller controllers.images.scrollTop not found
+	... 3 more
+21 三月 2013 21:27:52,415 ERROR ~ 
+
+@6dl0jp275
+Internal Server Error (500) for request GET /@tests
+
+Compilation error (In /test/BasicTest.java around line 18)
+The file /test/BasicTest.java could not be compiled. Error raised is : fullname cannot be resolved or is not a field
+
+play.exceptions.CompilationException: fullname cannot be resolved or is not a field
+	at play.classloading.ApplicationCompiler$2.acceptResult(ApplicationCompiler.java:246)
+	at org.eclipse.jdt.internal.compiler.Compiler.handleInternalException(Compiler.java:676)
+	at org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:520)
+	at play.classloading.ApplicationCompiler.compile(ApplicationCompiler.java:282)
+	at play.classloading.ApplicationClasses$ApplicationClass.compile(ApplicationClasses.java:281)
+	at play.classloading.ApplicationClassloader.detectChanges(ApplicationClassloader.java:324)
+	at play.Play.detectChanges(Play.java:625)
+	at play.Invoker$Invocation.init(Invoker.java:198)
+	at Invocation.HTTP Request(Play!)
+21 三月 2013 21:28:04,381 ERROR ~ 
+
+@6dl0jp276
+Error during job execution (Bootstrap)
+
+Execution exception (In /app/Bootstrap.java around line 11)
+RuntimeException occured : Cannot load fixture data.yml: Cannot load fixture data.yml, duplicate id 'admin1' for type models.User
+
+play.exceptions.JavaExecutionException: Cannot load fixture data.yml: Cannot load fixture data.yml, duplicate id 'admin1' for type models.User
+	at play.jobs.Job.call(Job.java:155)
+	at Invocation.Job(Play!)
+Caused by: java.lang.RuntimeException: Cannot load fixture data.yml: Cannot load fixture data.yml, duplicate id 'admin1' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:243)
+	at play.test.Fixtures.load(Fixtures.java:153)
+	at Bootstrap.doJob(Bootstrap.java:11)
+	at play.jobs.Job.doJobWithResult(Job.java:50)
+	at play.jobs.Job.call(Job.java:146)
+	... 1 more
+Caused by: java.lang.RuntimeException: Cannot load fixture data.yml, duplicate id 'admin1' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:193)
+	... 5 more
+21 三月 2013 21:28:04,619 ERROR ~ 
+
+@6dl0jp276
+Internal Server Error (500) for request GET /@tests
+
+Execution exception (In /app/Bootstrap.java around line 11)
+RuntimeException occured : Cannot load fixture data.yml: Cannot load fixture data.yml, duplicate id 'admin1' for type models.User
+
+play.exceptions.JavaExecutionException: Cannot load fixture data.yml: Cannot load fixture data.yml, duplicate id 'admin1' for type models.User
+	at play.jobs.Job.call(Job.java:155)
+	at Invocation.Job(Play!)
+Caused by: java.lang.RuntimeException: Cannot load fixture data.yml: Cannot load fixture data.yml, duplicate id 'admin1' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:243)
+	at play.test.Fixtures.load(Fixtures.java:153)
+	at Bootstrap.doJob(Bootstrap.java:11)
+	at play.jobs.Job.doJobWithResult(Job.java:50)
+	at play.jobs.Job.call(Job.java:146)
+	... 1 more
+Caused by: java.lang.RuntimeException: Cannot load fixture data.yml, duplicate id 'admin1' for type models.User
+	at play.test.Fixtures.loadModels(Fixtures.java:193)
+	... 5 more
+21 三月 2013 21:31:40,897 ERROR ~ 
+
+@6dl0jp277
+images.scrollTop.gif action not found
+
+Action not found
+Action images.scrollTop.gif could not be found. Error raised is Controller controllers.images.scrollTop not found
+
+play.exceptions.ActionNotFoundException: Action images.scrollTop.gif not found
+	at play.mvc.ActionInvoker.getActionMethod(ActionInvoker.java:599)
+	at play.mvc.ActionInvoker.resolve(ActionInvoker.java:85)
+	at Invocation.HTTP Request(Play!)
+Caused by: java.lang.Exception: Controller controllers.images.scrollTop not found
+	... 3 more
+21 三月 2013 21:38:30,137 ERROR ~ 
+
+@6dl0jp278
+Internal Server Error (500) for request GET /@tests
+
+Compilation error (In /test/BasicTest.java around line 27)
+The file /test/BasicTest.java could not be compiled. Error raised is : Application cannot be resolved
+
+play.exceptions.CompilationException: Application cannot be resolved
+	at play.classloading.ApplicationCompiler$2.acceptResult(ApplicationCompiler.java:246)
+	at org.eclipse.jdt.internal.compiler.Compiler.handleInternalException(Compiler.java:676)
+	at org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:520)
+	at play.classloading.ApplicationCompiler.compile(ApplicationCompiler.java:282)
+	at play.classloading.ApplicationClasses$ApplicationClass.compile(ApplicationClasses.java:281)
+	at play.classloading.ApplicationClassloader.detectChanges(ApplicationClassloader.java:324)
+	at play.Play.detectChanges(Play.java:625)
+	at play.Invoker$Invocation.init(Invoker.java:198)
+	at Invocation.HTTP Request(Play!)
+21 三月 2013 21:44:50,269 ERROR ~ 
+
+@6dl0jp279
+Internal Server Error (500) for request GET /@tests
+
+Compilation error (In /test/BasicTest.java around line 28)
+The file /test/BasicTest.java could not be compiled. Error raised is : The method assertNotNull(Object) in the type Assert is not applicable for the arguments (void)
+
+play.exceptions.CompilationException: The method assertNotNull(Object) in the type Assert is not applicable for the arguments (void)
+	at play.classloading.ApplicationCompiler$2.acceptResult(ApplicationCompiler.java:246)
+	at org.eclipse.jdt.internal.compiler.Compiler.handleInternalException(Compiler.java:676)
+	at org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:520)
+	at play.classloading.ApplicationCompiler.compile(ApplicationCompiler.java:282)
+	at play.classloading.ApplicationClasses$ApplicationClass.compile(ApplicationClasses.java:281)
+	at play.classloading.ApplicationClassloader.detectChanges(ApplicationClassloader.java:324)
+	at play.Play.detectChanges(Play.java:625)
+	at play.Invoker$Invocation.init(Invoker.java:198)
+	at Invocation.HTTP Request(Play!)
+21 三月 2013 21:45:28,558 ERROR ~ 
+
+@6dl0jp27a
+Internal Server Error (500) for request GET /@tests
+
+Compilation error (In /test/BasicTest.java around line 28)
+The file /test/BasicTest.java could not be compiled. Error raised is : The method assertNull(Object) in the type Assert is not applicable for the arguments (void)
+
+play.exceptions.CompilationException: The method assertNull(Object) in the type Assert is not applicable for the arguments (void)
+	at play.classloading.ApplicationCompiler$2.acceptResult(ApplicationCompiler.java:246)
+	at org.eclipse.jdt.internal.compiler.Compiler.handleInternalException(Compiler.java:676)
+	at org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:520)
+	at play.classloading.ApplicationCompiler.compile(ApplicationCompiler.java:282)
+	at play.classloading.ApplicationClasses$ApplicationClass.compile(ApplicationClasses.java:281)
+	at play.classloading.ApplicationClassloader.detectChanges(ApplicationClassloader.java:324)
+	at play.Play.detectChanges(Play.java:625)
+	at play.Invoker$Invocation.init(Invoker.java:198)
+	at Invocation.HTTP Request(Play!)

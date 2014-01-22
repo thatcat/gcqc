@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>注册</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="/public/stylesheets/register-login.css">
+	<script type="text/javascript" src="/public/javascripts/register-login.js"></script>
+</head>
+
+<body>
+	<div id="register">
+		
+		<h1>注册</h1>
+		<!用户已经存在！>
+		<p>${message}</p>
+		#{form @saveUser()}
+			#{field 'user.username'}
+			<p>
+				<label for="username" class="username">用户名</label>
+				<input id="username"  type="text" name="${field.name}"required="required" placeholder="例如：丹燕"><br />
+				<span class="error">${field.error}</span>
+			</p>
+			#{/field}
+			#{field 'user.email'}
+			<p>
+				<label for="email" class="email">常用邮箱</label>
+				<input id="email"  type="email" name="${field.name}" required="required" placeholder="例如：email@email.com"><br />
+				<span class="error">${field.error}</span>
+			</p>
+			#{/field}
+
+			#{field 'user.password'}
+			<p>
+				<label for="passwd" class="passwd">登录密码</label>
+				<input id="passwd"  type="password" name="${field.name}" required="required" placeholder="例如：123abc"><br />
+				<span class="error">${field.error}</span>
+			</p>	
+			#{/field}
+			#{field 'verifyPassword'}
+			<p>
+				<label for="passwdconfirm" class="passwdconfirm">重复密码</label>
+				<input id="passwdconfirm"  required="required" name="${field.name}" type="password" placeholder="例如：123abc"><br />
+				<span class="error">${field.error}</span>
+			</p>
+			#{/field}
+			<p class="register-button">
+			<input class="signup  button" name="register" type="submit" value="注册">
+			</p>
+			<p class="tologin">
+				已注册？
+				<a id="tologin" href="login.html">去登录</a>
+			</p>
+		#{/form}
+	</div>
+</body>
+</html>

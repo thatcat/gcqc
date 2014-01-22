@@ -1,0 +1,576 @@
+﻿/* css for index.html */
+body{
+	font-family: "微软雅黑", "宋体", "黑体", Arial, Sans-serif;
+	font-size: 15px; 
+	background-color: rgb(240,240,241);
+}
+@font-face {
+ 	font-family: "汉仪丫丫";
+ 	src: url('../images/font/汉仪丫丫.eot') format('eot');
+  	src: local('汉仪丫丫'),
+  	url('public/images/font/汉仪丫丫.woff') format('woff'), 
+  	url('public/images/font/汉仪丫丫.ttf') format('truetype'),
+ 	url('public/images/font/汉仪丫丫.svg') format('svg');
+} 
+/* 最顶端固定快捷栏 */
+.header{
+	width:100%;
+	height:200px;
+	position: absolute;
+	top:0px;
+	left:0px;
+	background-color: #85EB6A;
+}
+.banner{
+	width:900px;
+	height:200px;   
+	margin:0 auto;
+	background-color: #5FEB3B;
+}
+.banner-title{
+	font-family:"汉仪丫丫","微软雅黑", "宋体", "黑体", Arial, Sans-serif; 
+	font-size:50px; 
+	font-weight: bold;
+	color:#fff;
+	text-decoration: none;
+	position: absolute;
+	margin-left: 100px;
+	margin-top: 50px;
+}
+.milk-theme{
+	font-family:"汉仪丫丫","微软雅黑", "宋体", "黑体", Arial, Sans-serif; 
+	font-size:25px; 
+	color:#fff;
+	position: absolute;
+	margin-left: 250px;
+	margin-top: 110px;
+}
+/* 登录和注册 */
+.login, .regist{
+	color:#FFF;
+	text-decoration: none;
+	font-weight: bold;
+}
+.login-regist{
+	float:right;
+	margin-right: 30px;
+	margin-top: 16px;
+	color:#FFF;
+}
+/* 主块容器 */ 
+.container{
+	width:1300px;
+	height:100%;
+	margin:0 auto;
+	position:relative;
+	margin-top:205px;
+}
+/* 公共样式 */
+.more{
+	float:right;
+	margin-right: 22px;
+	margin-top: -40px;
+	text-decoration: none;
+	font-family: "汉仪丫丫", "微软雅黑", "宋体", "黑体", Arial, Sans-serif;
+	font-size: 18px;
+	color: #2DD700;
+	font-weight: bold;
+}
+/* 右边联系我们 */
+.contact-us{
+	width:45px;
+	height:150px;
+	position: fixed;
+	left: 0px;
+	top:250px;
+	background-color: #5FEB3B;
+}
+.contact-area{
+	width:25px;
+	height:100px;
+	margin:25px auto;
+}
+.contact-us a{
+	text-decoration: none;
+	font-family: "汉仪丫丫", "微软雅黑", "宋体", "黑体", Arial, Sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+	color:#fff;
+}
+/* 酸奶广告和新闻 */
+.ad-news{
+	width:900px;
+	height:291px;
+	border:0px;
+	margin:0 auto;
+}
+/* 酸奶广告视频或轮番图 */
+.ad{
+	width:400px; 
+	height:280px;
+	border:1px solid #ddd;
+	float:left;
+	margin-left: -1px;
+	margin-top:10px;
+	background-color: #fff;
+	-webkit-box-shadow:1px 2px 5px #ddd;
+	-moz-box-shadow:1px 2px 5px #ddd;
+	box-shadow:1px 2px 5px #ddd; 
+}
+.picture-show-box{
+	position: relative;
+}
+.picture-show{
+	width: 400px;
+	height: 260px;
+	overflow: hidden;
+	position: relative;
+}
+.picture-show ul{
+	width: 2000px;
+	height: 260px;
+	position: absolute;
+	list-style-type:none;
+	margin: 0;
+	padding: 0;
+}
+.picture-show li{
+	width: 400px;
+	height: 260px;
+	float: left;
+}
+.index{
+	position: absolute;
+	right: 10px;
+	bottom: -15px;
+}
+.index span{
+	width: 20px;
+	display: inline-block;
+	cursor: pointer;
+	text-align: center;
+	background-color: #5FEB3B;
+	color: #fff;
+}
+.index .current{
+	background-color: #2DD700;
+}
+/* 酸奶新闻 */
+.news{
+	width:489px; 
+	height:280px;
+	border:1px solid #ddd;
+	float:left;
+	margin-top:-282px;
+	margin-left: 410px;
+	background-color: #fff;
+	-webkit-box-shadow:1px 2px 5px #ddd;
+	-moz-box-shadow:1px 2px 5px #ddd;
+	box-shadow:1px 2px 5px #ddd; 
+}
+.news .icon-attachment, .products .icon-attachment, .com-intro .icon-attachment, .health-intro .icon-attachment, .words-board .icon-attachment{
+	margin-top: 0px;
+}
+.news-title h1, .products-title h1, .com-title h1, .health-title h1, .words-title h1{
+	height: 35px;
+	line-height: 35px;
+	font-family: "汉仪丫丫";
+	font-size: 20px;
+	margin-left: 20px;
+	margin-top: 5px;
+	color: #2DD700;
+}
+.news-top{
+	width:449px;
+	height:60px;
+	line-height: 30px;
+	padding-left:8px;
+	padding-right:0px;
+	padding-bottom: 5px;
+	margin:0 auto;
+	margin-top: -12px;
+	border-bottom:1px dashed #ddd;
+}
+.news-top p{
+	margin-top: 0px;
+}
+.news-top p a, .news ul li a{
+	text-decoration: none;
+	color:#000;
+}
+.news-top p a:hover, .news ul li a:hover{
+	color:rgb(0,152,255);
+}
+.hot-logo{
+	border:0px;
+	margin-left: -6px;
+}
+/* 新闻滚动效果实现 */
+.news-lists{
+	width:460px;
+	height:165px;
+	border:0px;
+	padding:0px;
+	margin:0 auto;
+	margin-top: 3px;
+	overflow: hidden;
+}
+.news-lists .icon-tag{
+	margin-right: 2px;
+	margin-top: 2px;
+	border:0px;
+}
+#newsScroll{
+	list-style-type: none;
+	margin-top: 0px;
+	margin-left: 0px;
+}
+#newsScroll li{ 
+	font-size: 14px;
+	line-height: 28px;
+	margin-left: -32px;
+	padding:3px;
+}
+.scrollBegin{
+	-webkit-animation: idcontent_height .7s linear,idcontent_opacity .5s linear .7s;
+}
+@-webkit-keyframes idcontent_height{
+        	0%{ height:0px; opacity:0; }
+        	100%{ height:200px; height:52px; opacity:0; }
+}
+@-webkit-keyframes idcontent_opacity{
+        	0%{ opacity:0; }
+        	100%{ opacity:1; }
+}
+/* 产品介绍 */
+.products{
+	width:900px;
+	height:auto;
+	border:1px solid #ddd;
+	margin:0 auto;
+	margin-top: 12px;
+	background-color: #fff;
+	-webkit-box-shadow:1px 2px 5px #ddd;
+	-moz-box-shadow:1px 2px 5px #ddd;
+	box-shadow:1px 2px 5px #ddd; 
+}
+.product-lists{
+	width:900px;
+	height:auto;
+}
+.milk-1, .milk-2, .milk-3{
+	width:868px;
+	height:300px;	
+	margin-left: 15px;
+	margin-bottom: 15px;
+}
+.milk-1{
+	margin-top: -5px;
+}
+.milk-3{
+	margin-bottom: 15px;
+}
+.milk-image{
+	width:350px;
+	height:290px;
+	float: left;
+	padding:5px;
+	border:1px solid #eee;
+}
+.milk-image img{
+	width: 350px;
+	height:290px;
+	border:0px;
+}
+.milk-intro{
+	width:490px;
+	height:300px;
+	border:1px solid #eee;
+	float: right;
+}
+.milk-intro h2{
+	font-family:"汉仪丫丫";
+	font-size: 20px;
+	font-weight: bold; 
+	margin-left: 8px;
+	margin-top: 12px;
+}
+.milk-intro p{
+	line-height: 30px;
+	margin-left: 10px;
+	padding-right: 10px;
+}
+.milk-intro p strong{
+	font-size: 16px;
+}
+.btn-primary{
+	margin-left: 10px;
+	font-family: "微软雅黑", "宋体", "黑体", Arial, Sans-serif;
+	text-decoration: none;
+}
+/* 企业介绍 */
+.com-intro{
+	width:900px;
+	height:auto;
+	border:1px solid #ddd;
+	margin:0 auto;
+	margin-top: 10px;
+	background-color: #fff;
+	-webkit-box-shadow:1px 2px 5px #ddd;
+	-moz-box-shadow:1px 2px 5px #ddd;
+	box-shadow:1px 2px 5px #ddd; 
+}
+.tabbable{
+	height: auto;
+	margin-top: -12px;
+}
+.tabs-left ul li a{
+	text-decoration: none;
+	color:#000;
+}
+.nav-tabs{
+	margin-left: -23px;
+}
+.tab-content h1{
+	font-size: 20px;
+	letter-spacing: 2px;
+	margin-top: 0px;
+	text-align: center;
+}
+.tab-content h2{
+	font-size: 17px;
+	letter-spacing: 1px;
+}
+#basic p, #items p, #strength p, #idea p{
+	font-size: 15px;
+	text-indent: 30px;
+	letter-spacing: 1px;
+	line-height: 30px;
+	padding-right: 10px;
+}
+#basic .article-pic{
+	width:213px;
+	height:auto;
+	line-height: 30px;
+	float: right;
+	margin-top: 0px;
+}
+.com-images{
+	width:520px;
+	height:370px;
+	border:1px solid #eee;
+	float:left;
+	margin-bottom: 20px;
+	padding:4px;
+}
+.com-images img{
+	width:520px;
+	height:370px;
+	border:0px;
+}
+/* 公司领导 */
+.leader-info1, .leader-info2, .leader-info3, .leader-info4{
+	width:333px;
+	border:1px solid #eee;
+	padding: 13px;
+	border-radius: 2px;
+}
+.leader-info2{
+	float: right;
+	margin-top: -217px;
+	margin-right: 20px;
+}
+.leader-info3{
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+.leader-info4{
+	float: right;
+	margin-top: -237px;
+	margin-right: 20px;
+}
+.leader-image{
+	border:1px solid #ddd;
+	width:130px;
+	height:179px;
+	padding:4px;
+	border-radius: 2px;
+}
+.leader-info1 .leader-image{
+	padding-left:2px;
+	padding-right: 2px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+.leader-name{
+	width:160px;
+	float: right;
+	margin-top: -170px;
+	padding-left: 20px;
+}
+.leader-name h2{
+	font-size: 20px;
+	line-height: 35px;
+}
+.leader-name h3{
+	font-size: 18px;
+}
+/* 健康常识 */
+.health-intro{
+	width:900px;
+	height:350px;
+	border:1px solid #ddd;
+	margin:0 auto;
+	margin-top: 10px;
+	background-color: #fff;
+	-webkit-box-shadow:1px 2px 5px #ddd;
+	-moz-box-shadow:1px 2px 5px #ddd;
+	position: relative;
+}
+
+.health-intro .goods1, .goods2, .goods3{
+	position: absolute;
+	width: 250px;
+	height: 250px;
+	top: 60px;
+	background: url(public/images/health.jpg);
+}
+.health-intro .goods1{
+	left:35px;
+}
+.health-intro .goods2{
+	left:320px;
+}
+.health-intro .goods3{
+	left: 605px;
+}
+.health-intro p{
+	margin: 50px;
+}
+.health-intro .goods1 p{
+	margin: 70px;
+}
+
+/* 留言区 */
+.words-board{
+	width:900px;
+	height:auto;
+	margin:0 auto;
+	margin-top:10px;
+	background-color: #fff;
+	border:1px solid #ddd;
+	-webkit-box-shadow:1px 3px 5px #ddd;
+	-moz-box-shadow:1px 3px 5px #ddd;
+	box-shadow:1px 3px 5px #ddd; 
+}
+/* 主页留言快捷输入框 */
+.make-words{
+	width:855px;
+	height:auto;
+	margin-left: 20px;
+	margin-bottom: 35px;
+}
+.words-area{
+	width:855px;
+	height:auto;
+	border:1px solid #85EB6A;
+	border-bottom: 0px;
+}
+.words-area textarea{
+	width:745px;
+	height:50px;
+	line-height: 23px;
+	font-family: "微软雅黑", "宋体", "黑体", Arial, Sans-serif;
+	font-size: 14px; 
+	border:0px;
+	outline: none;
+	resize:none;
+}
+.count-submit-bar{
+	width:855px;
+	height:33px;
+	border:1px solid #85EB6A;
+	border-top: 0px;
+	background-color: #85EB6A;
+}
+.words-count{
+	width:35px;
+	height:20px;
+	font-family: "汉仪丫丫","微软雅黑", "宋体", "黑体", Arial, Sans-serif;
+	font-size: 15px; 
+	font-weight: bold;
+	border:0px;
+	margin-left: 10px;
+	margin-top: 6px;
+	background-color: #85EB6A;
+	color: #fff;
+}
+.words-submit{
+	float: right;
+	height: 28px;
+	line-height: 18px;
+	font-size: 14px;
+	margin-top: 3px;
+	margin-right: 5px;
+}
+.words-list{
+	width:866px;
+	height:auto;                 /* auto 让页面高度自适应 */
+	margin-left: 15px;
+	margin-top:-10px;
+}
+.words-list ul{
+	list-style-type: none;
+	margin-left: -38px;
+	margin-top: 3px;
+}
+.words-list ul li{
+	line-height: 28px;
+	border-bottom:1px dashed #ddd;
+	margin-bottom: 10px;
+}
+.words-list ul li:last-child{
+	border:0px;
+}
+.words-list  .icon-bullet-off{
+	margin-top: -6px;
+	margin-left: -5px;
+}
+.words-list .icon-messages{
+	margin-left: 5px;
+	margin-right:3px; 
+}
+.list-details{
+	height:30px;
+}
+.list-content{
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-bottom: 10px;
+	line-height: 25px;
+}
+/* 页脚 */
+.footer{
+	width:100%;
+	height:50px;
+	margin-top: 10px;
+	position:absolute;
+	left:0px;
+}
+.footer p{
+	text-align: center;
+	color: #bbb;
+}
+/* 回顶部固定按钮 */
+.scrollTop{
+	position:fixed;
+	bottom:80px;
+	right:50px;
+	width:44px;
+	height:44px;
+	cursor:pointer;
+}
+.scrollTop img{
+	width:44px;
+	height:44px;
+}

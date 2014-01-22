@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>登录</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="/public/stylesheets/register-login.css">
+	<script type="text/javascript" src="/public/javascript/register-login.js"></script>
+</head>
+<body>
+	<div id="login">
+		<!form action="index.html">
+			<h1>登录</h1>
+			<p><span class="error">${flash.error}</span></p>
+			#{form @logined(), id:'formLogin'}
+				#{field 'username'}
+				<p>
+					<label for="loginusername">用户名</label>
+					<input type="text" name="username" id="loginusername" value="${flash.username}" required="required" placeholder="danyan 或 danyan@email.com" >	
+					<span class="error">${field.error}</span>
+				</p>
+				#{/field}
+				#{field 'password'}
+				<p>
+					<label for="loginpasswd">用户密码</label>
+					<input type="password" id="loginpasswd" name="password" required="required" placeholder="例如：123abc">
+					<span class="error">${field.error}</span>
+				</p>
+				#{/field}
+				<p>
+					<input type="checkbox" id="loginkeeping" value="loginkeeping">
+					<label for="loginkeeping">记住我</label>
+				</p>
+				<p class="login-button">
+					<input class="login button" type="submit" value="登录">
+				</p>
+			#{/form}
+			<p class="toregister">
+				未注册？
+				<a id="toregister"  href="register.html">去注册</a>
+			</p>
+		<!/form>
+	</div>
+</body>
+</html>

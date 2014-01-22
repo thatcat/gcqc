@@ -1,0 +1,63 @@
+# Users
+
+models.User(admin1):
+    username:   scaumilk
+    password:   scaumilk
+    email:      scauMilk@163.com
+    isAdmin:    true
+
+models.User(admin2):
+    username:   scaumilk1
+    password:   scaumilk
+    email:      scauMilk@163.com
+    isAdmin:    true
+
+models.User(customer):
+    username:   customer
+    password:   customer
+    email:      363241992@163.com
+    isAdmin:    false
+
+
+
+
+models.Ordered(ordered1):
+    username:    customer1
+    address:     广东工业大学
+    phone:       15800000000
+    milk:        华农原味酸牛奶
+    boxCount:    10
+    cupCount:    0
+    messages:    快点啊老大
+    sended:      false
+
+models.Ordered(ordered2):
+    username:    customer2
+    address:     华南理工大学
+    phone:       15800000001
+    milk:        纯白华农酸奶
+    boxCount:    20
+    cupCount:    0
+    messages:    速度速度
+    sended:      false
+
+
+models.Ordered(ordered3):
+    username:    customer3
+    address:     华南农业大学
+    phone:       15800000011
+    milk:        屋顶盒装学士酸牛奶
+    boxCount:    30
+    cupCount:    2
+    messages:    速度速度
+    sended:      false
+
+models.Ordered(ordered4):
+    username:    customer4
+    address:     华南理工大学
+    phone:       15800003201
+    milk:        华农原味酸牛奶
+    boxCount:    20
+    cupCount:    0
+    messages:    速度速度
+    sended:       true

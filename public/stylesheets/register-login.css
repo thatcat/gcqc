@@ -1,0 +1,71 @@
+﻿/* 登录和注册的样式 */
+body{
+	font-family: "微软雅黑", "宋体", "黑体", Arial, Sans-serif;
+	font-size: 15px; 
+	color:#000;
+	background-color: rgb(240,240,241);
+}
+@font-face {
+ 	font-family: "汉仪丫丫";
+ 	src: url('public/images/font/汉仪丫丫.eot') format('eot');
+  	src: local('汉仪丫丫'),
+  	url('public/images/font/汉仪丫丫.woff') format('woff'), 
+  	url('public/images/font/汉仪丫丫.ttf') format('truetype'),
+ 	url('public/images/font/汉仪丫丫.svg') format('svg');
+} 
+#register , #login{
+	height: 550px;
+	width: 400px;
+	padding-left: 30px;
+	position: absolute;
+	top: 40px;
+	left: 450px;
+	background-color: #85EB6A;
+	border: 1px solid #ddd;  
+	letter-spacing: 1px;
+}
+#register h1, #login h1{
+	font-family:"汉仪丫丫"; 
+	font-size:35px; 
+	font-weight: bold;
+	color:#fff;
+}
+#login{
+	height: 430px;
+	z-index: -1;
+}
+input:not([type="checkbox"]){
+	width: 350px;
+	height: 30px;
+	margin-top: 5px;
+	outline: none;
+	text-indent: 10px;
+	font-family: "微软雅黑", "宋体", "黑体", Arial, Sans-serif;
+	font-size: 15px; 
+	color:rgb(64, 92, 96);
+}
+input[type="submit"]
+{
+	width: 100px;
+	height: 40px;
+	text-indent: 0;
+	background: rgb(74, 179, 198);
+	cursor: pointer;
+	border-radius: 5px;
+	color: white;
+	border: 0;
+	border-radius: 3px;
+	letter-spacing: 3px;
+}
+a{
+	background: white;
+	text-decoration: none;
+	color:  rgb(74, 179, 198);
+	padding: 10px;
+	border-radius: 5px;
+	border:1px solid #bbb;
+}
+.tologin,.toregister{
+	margin-top: 50px;
+	margin-left: 120px;
+}

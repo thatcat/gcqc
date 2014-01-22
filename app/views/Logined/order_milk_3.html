@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>酸奶订购</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<link href="/public/stylesheets/bootstrap.css" rel="stylesheet" type="text/css" />
+	<link href="/public/stylesheets/opa-icons.css"  rel="stylesheet" type="text/css" />
+	<link href="/public/stylesheets/order-milk.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<!-- 最顶部快捷条包括登录和注册 -->
+	<div class="header">
+		<a href="index.html" class="banner-title">华农酸奶</a>
+			<span class="milk-theme">梦想的味道</span>
+		<div class="login-regist">
+			当前登录：
+            <a href="@{Logined.email()}" class="login"> ${user.username}</a>
+            || 
+            <a href="@{Logined.logout()}" class="regist">注销</a>
+			||  
+			<a href="@{Logined.order_customer()}" class="regist">查看我的订单</a>
+		</div>
+	</div>
+	<div class="container">
+		<div class="order-milk">
+			<div class="order-milk-image">
+				<img src="/public/images/kind3.jpg" alt="屋顶盒装学士酸牛奶" title="屋顶盒装学士酸牛奶"/>
+			</div>
+			<div class="order-detail">
+				<h1>屋顶盒装学士酸牛奶</h1>
+				<div class="milk-detail">
+					<ul>
+						<li>
+							<i class="icon32 icon-color icon-pin"></i>
+							零售价：<span class="detail-1">30元/箱</span>
+						</li>
+						<li>
+							<i class="icon32 icon-color icon-pin"></i>
+							规格：<span>24瓶/箱</span>
+						</li>
+						<li>
+							<i class="icon32 icon-color icon-pin"></i>
+							配送范围：广州各大高校
+						</li>
+						<li>
+							<i class="icon32 icon-color icon-pin"></i>
+							配送时间：早 6:00 至晚 9:00
+						</li>
+					</ul>
+				</div>
+				<p>美味华农酸奶，还等什么？赶紧下订单吧！！</p>
+			</div>
+		</div>
+		<div class="order-form">
+		 	<div class="order-title">
+		 		<i class="icon32 icon-color icon-cart"></i>
+			</div>
+			#{form @saveOrder3()}
+				#{field 'ordered.boxCount'}
+				<p>${mess}</p>
+				我要买：
+				<input type="text" name="${field.name}" class="order-box-num" />箱
+				#{/field}
+				#{field 'ordered.cupCount'}
+				<input type="text" name="${field.name}" class="order-cup-num" />杯
+				<span class="order-notice">（注：一箱酸奶 24 杯，可以按杯购买，最低限购 5 瓶，谢谢 ...）</span>
+				#{/field}
+				#{field 'ordered.username'}
+				<br/>
+				我的真实姓名：
+				<input type="text" name="${field.name}" class="order-name" />
+				<br/>
+				#{/field}
+				#{field 'ordered.phone'}
+				我的联系电话：
+				<input type="text" name="${field.name}" class="order-tel" />
+				<br/>
+				#{/field}
+				#{field 'ordered.address'}
+				我的配送地址：
+				<input type="text" name="${field.name}" class="order-address" />
+				<br/>
+				#{/field}
+				<!--选择我的快递：
+				<input type="radio" name="delive" value="顺丰快递" checked="checked"/>顺丰快递
+				<input type="radio" name="delive" value="申通快递"/>申通快递
+				<input type="radio" name="delive" value="园通快递"/>园通快递
+				<input type="radio" name="delive" value="平邮"/>平邮
+				<br/>
+				-->
+				#{field 'ordered.messages'}
+				我给商家的话：
+				<br/>
+				<textarea name="${field.name}" class="order-remark">如配送时间、备注等</textarea>
+				<br/>
+				#{/field}
+
+				<input type="submit" name="order-submit" value="提交订单" class="btn btn-primary" />
+			#{/form}
+		</div>
+	</div>
+	<div class="footer">
+		<p>COPYRIGHT © 2012 - 2013 DESIGNED BY HCier<p>
+	</div>
+</body>
+</html>
