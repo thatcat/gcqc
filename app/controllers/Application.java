@@ -128,31 +128,7 @@ public static void savePost2( Post post) {
             //跳转到登录画面
             Application.login();
         }
-        /*
-		if(connected()!=null) {
-		User author=null;
-        String userName = session.get("user");  
-		
-		 if(userName != null) {
-            author=User.find("byUsername", userName).first();
-        } 
-	
-        post.author = author;  
-		post.postedAt= new Date();
-                
-        // Validate
-        //validation.valid(post);
-        //if(validation.hasErrors()) {
-        //   render("@form", post);
-        //}
-
-        // Save
-        post.save();     
-		flash.success("Thanks for posting %s", author);
-		//words_board();
-		//test();
-		}
-		*/
+        
 
 
     }
