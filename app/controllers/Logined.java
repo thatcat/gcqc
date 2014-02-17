@@ -28,14 +28,6 @@ public class Logined extends Controller {
         } 
         return null;
     }
-    
-   
-
- //public static void words_board2(){
-   //     render();
-    //}
-
-    // ~~
 
     public static void index() {
         if(connected() == null) {
@@ -47,7 +39,6 @@ List<Post> postList = Post.find("order by id desc").from(0).fetch(5);
     	
        render(postList);
     }
-
     
     public static void logout() {
         session.clear();
@@ -63,10 +54,6 @@ List<Post> postList = Post.find("order by id desc").from(0).fetch(5);
     	render(message);
     }
 
-	//public static void contact_us() {
-	//render();
-	//}
-
     public static void sendEmail(@Valid @Email String fromEmail,String title, String contentTexts){
         SendEmail sendEmailInfo = new SendEmail(fromEmail, title, contentTexts);
         sendEmailInfo.send();
@@ -75,104 +62,6 @@ List<Post> postList = Post.find("order by id desc").from(0).fetch(5);
     
     public static void order(String message){
     	render(message);
-    }
-    
-    public static void saveOrder1(@Valid Ordered ordered){
-    	User user = connected();
-    	if(user == null) {
-            //跳转到登录画面
-            Application.login();
-        }
-		
-    	if(ordered.boxCount == 0 && ordered.cupCount == 0)
-    		order_milk_1("请输入正确的订购数量！");
-    	if(ordered.username == null)
-    		order_milk_1("您的名字！");
-    	if(ordered.phone == 0)
-    		order_milk_1("您的联系电话！");
-    	if(ordered.address == null)
-    		order_milk_1("配送地址！");
-    	ordered.milk = "纯白华农酸奶";
-        ordered.date = new Date();
-        ordered.sended = false;
-		ordered.user = user;
-        ordered.create();
-		user.orders.add(ordered);
-
-        order_milk_1("成功提交订单");
-    	
-    }
-    
-    public static void saveOrder2(@Valid Ordered ordered){
-    	User user = connected();
-    	if(user == null) {
-            //跳转到登录画面
-            Application.login();
-        }
-		
-    	if(ordered.boxCount == 0 && ordered.cupCount == 0)
-    		order_milk_2("请输入正确的订购数量！");
-    	if(ordered.username == null)
-    		order_milk_2("您的名字！");
-    	if(ordered.phone == 0)
-    		order_milk_2("您的联系电话！");
-    	if(ordered.address == null)
-    		order_milk_2("配送地址！");
-    	ordered.milk = "华农原味酸牛奶";
-        ordered.date = new Date();
-        ordered.sended = false;
-		ordered.user = user;
-        ordered.create();
-		user.orders.add(ordered);
-
-        order_milk_2("成功提交订单");
-    	
-    }
-    
-    public static void saveOrder3(@Valid Ordered ordered){
-    	User user = connected();
-    	if(user == null) {
-            //跳转到登录画面
-            Application.login();
-        }
-		
-    	if(ordered.boxCount == 0 && ordered.cupCount == 0)
-    		order_milk_3("请输入正确的订购数量！");
-    	if(ordered.username == null)
-    		order_milk_3("您的名字！");
-    	if(ordered.phone == 0)
-    		order_milk_3("您的联系电话！");
-    	if(ordered.address == null)
-    		order_milk_3("配送地址！");
-    	ordered.milk = "屋顶盒装学士酸牛奶";
-        ordered.date = new Date();
-        ordered.sended = false;
-		ordered.user = user;
-        ordered.create();
-		user.orders.add(ordered);
-
-        order_milk_3("成功提交订单");
-    	
-    }
-
-
-    public static void order_milk_1(String mess){
-        if(renderArgs.get("user") == null) {
-            Application.login();
-        }
-        render(mess);
-    }
-    public static void order_milk_2(String mess){
-        if(renderArgs.get("user") == null) {
-            Application.login();
-        }
-        render(mess);
-    }
-    public static void order_milk_3(String mess){
-        if(renderArgs.get("user") == null) {
-            Application.login();
-        }
-        render(mess);
     }
     
     public static void order_cms(){
@@ -188,16 +77,11 @@ List<Post> postList = Post.find("order by id desc").from(0).fetch(5);
        render(orderedSendedList,orderedNoSendedList);
     }
 
-	// public static void cms() {
-	//	 render();    
-//}
-
     public static void order_refresh(long itemId){
     	if(connected() == null) {
             //跳转到登录画面
             Application.index();
         }
-
 		
     	//找到对应数据项
     	Ordered ordered = Ordered.findById(itemId);
@@ -211,15 +95,13 @@ List<Post> postList = Post.find("order by id desc").from(0).fetch(5);
     	map.put("status", status);
     	renderJSON(map);
 		
-    }
-    
+    }    
     
     public static void order_dele(long itemId){
     	if(connected() == null) {
             //跳转到登录画面
             Application.index();
         }
-
 		
     	//找到对应数据项
     	int status = 0;
@@ -235,7 +117,6 @@ List<Post> postList = Post.find("order by id desc").from(0).fetch(5);
     }
     
     public static void savePost( Post post) {
-
 		if(connected()==null)
 		{
             //跳转到登录画面
@@ -265,7 +146,6 @@ List<Post> postList = Post.find("order by id desc").from(0).fetch(5);
 		
     }
 
-
 	public static void savePost2( Post post) {
 
 		if(connected()==null)
@@ -274,7 +154,6 @@ List<Post> postList = Post.find("order by id desc").from(0).fetch(5);
             Application.login();
         }		
         
-		
 		User author=null;
         String userName = session.get("user");  
 		

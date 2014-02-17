@@ -16,15 +16,15 @@
 		#{form @saveUser()}
 			#{field 'user.username'}
 			<p>
-				<label for="username" class="username">用户名</label>
-				<input id="username"  type="text" name="${field.name}"required="required" placeholder="例如：丹燕"><br />
+				<label for="username" class="username">我的昵称</label>
+				<input id="username"  type="text" name="${field.name}"required="required" ><br />
 				<span class="error">${field.error}</span>
 			</p>
 			#{/field}
 			#{field 'user.email'}
 			<p>
 				<label for="email" class="email">常用邮箱</label>
-				<input id="email"  type="email" name="${field.name}" required="required" placeholder="例如：email@email.com"><br />
+				<input id="email"  type="email" name="${field.name}" required="required" ><br />
 				<span class="error">${field.error}</span>
 			</p>
 			#{/field}
@@ -32,14 +32,14 @@
 			#{field 'user.password'}
 			<p>
 				<label for="passwd" class="passwd">登录密码</label>
-				<input id="passwd"  type="password" name="${field.name}" required="required" placeholder="例如：123abc"><br />
+				<input id="passwd"  type="password" name="${field.name}" required="required" ><br />
 				<span class="error">${field.error}</span>
 			</p>	
 			#{/field}
 			#{field 'verifyPassword'}
 			<p>
 				<label for="passwdconfirm" class="passwdconfirm">重复密码</label>
-				<input id="passwdconfirm"  required="required" name="${field.name}" type="password" placeholder="例如：123abc"><br />
+				<input id="passwdconfirm"  required="required" name="${field.name}" type="password" ><br />
 				<span class="error">${field.error}</span>
 			</p>
 			#{/field}

@@ -13,12 +13,6 @@ GET     /Logined                                Logined.index
 GET	/words_board.html						Logined.words_board	
 GET	/email.html								Logined.email	
 GET 	/order.html								Logined.order
-GET		/order_milk_1.html						Logined.order_milk_1
-GET		/order_milk_2.html						Logined.order_milk_2
-GET		/order_milk_3.html						Logined.order_milk_3
-POST	/order_milk_1.html						Logined.order_post_1
-POST	/order_milk_2.html						Logined.order_post_2
-POST	/order_milk_3.html						Logined.order_post_3
 GET		/order_cms.html							Logined.order_cms
 GET		/order_customer.html							Logined.order_customer
 GET		/showBorad.html							Logined.showBorad

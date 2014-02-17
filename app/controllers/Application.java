@@ -138,4 +138,8 @@ public static void savePost2( Post post) {
         index();
     }
 
+	public static void search() {
+	
+	}
+
 }

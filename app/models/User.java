@@ -39,5 +39,9 @@ public class User extends Model {
     public String toString()  {
         return username ;
     }
+
+	public boolean isCarOwer;//是否为车主
+
+	public String authType;
     
 }
