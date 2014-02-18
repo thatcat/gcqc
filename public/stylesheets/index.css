@@ -254,6 +254,14 @@ body{
 #content-box .praise_btn{
 	display: inline-block;
 	float: left;
+<<<<<<< HEAD
+=======
+	text-decoration: none;
+}
+#content-box .praise_btn .praise_num{
+	display: inline-block;
+	
+>>>>>>> 260484dff21df623ae3c2915bd86b06ad6c59388
 }
 #content-box .praise_btn_inner{
 	display: inline-block;
