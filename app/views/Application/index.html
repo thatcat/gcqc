@@ -10,6 +10,7 @@
 	<link href="public/stylesheets/bootstrap.css" rel="stylesheet" type="text/css" />
 	<link href="public/stylesheets/opa-icons.css"  rel="stylesheet" type="text/css" />
 	<link href="public/stylesheets/index.css" rel="stylesheet" type="text/css" />
+	<link rel="shortcut icon" href="public/images/favicon.ico" />
 	<script src="public/javascripts/jquery1.83.js" type="text/javascript"></script>
 	<script src="public/javascripts/words-count.js" type="text/javascript"></script>
 	<script src="public/javascripts/bootstrap-tab.js" type="text/javascript"></script>
@@ -69,26 +70,26 @@
 	
 	<!----------------------------------------------------------------------------- 搜索框开始 -------------------------------------------------> 
 	<div id="carSearch">
-		#{form @search(), id:'formSearch'}
+		#{form @search(), id:'formSearch', class:'form-inline'}
 				#{field 'carType'}				
 					<label for="loginusername">选择车型</label>
-					<input type="text" name="username" id="loginusername"  >	
+					<input type="text" class="input-box" name="username" id="loginusername"  >	
 					<span class="error">${field.error}</span>				
 				#{/field}
 				&nbsp;&nbsp;
 				选择价格区间
 				#{field 'lowPrice'}			
 					<label for="lowPrice"></label>
-					<input type="text" id="lowPrice" name="lowPrice"  placeholder="例如：50000">
+					<input type="text" id="lowPrice" class="input-box" name="lowPrice"  placeholder="例如：50000">
 					<span class="error">${field.error}</span>				
 				#{/field}
 				-
 				#{field 'highPrice'}			
 					<label for="highPrice"></label>
-					<input type="text" id="highPrice" name="highPrice"  placeholder="例如：100000">
+					<input type="text" id="highPrice" class="input-box" name="highPrice"  placeholder="例如：100000">
 					<span class="error">${field.error}</span>		
 				#{/field}
-					<input class="login button" type="submit" value="搜索">		
+					<input class="btn btn-info" type="submit" value="搜索">		
 			#{/form}
 
 	</div>
@@ -178,8 +179,8 @@
 				</div>
 		    #{/field }
 				<div class="count-submit-bar">
-					<input type="text" name="maxNum" value="190" readonly="readonly" class="words-count">
-					<button onclick="#" class="btn btn-primary words-submit" type="submit">发表</button>			
+					<input type="text" name="maxNum" value="190" readonly="readonly" class="words-count" id="words-count">
+					<button onclick="#" class="btn btn-info words-submit" type="submit">发表</button>			
 				</div>
 			</div>
 		#{/form}

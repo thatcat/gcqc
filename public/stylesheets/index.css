@@ -8,9 +8,9 @@ body{
  	font-family: "汉仪丫丫";
  	src: url('../images/font/汉仪丫丫.eot') format('eot');
   	src: local('汉仪丫丫'),
-  	url('public/images/font/汉仪丫丫.woff') format('woff'), 
-  	url('public/images/font/汉仪丫丫.ttf') format('truetype'),
- 	url('public/images/font/汉仪丫丫.svg') format('svg');
+  	url('../images/font/汉仪丫丫.woff') format('woff'), 
+  	url('../images/font/汉仪丫丫.ttf') format('truetype'),
+ 	url('../images/font/汉仪丫丫.svg') format('svg');
 } 
 /* 最顶端固定快捷栏 */
 .header{
@@ -78,8 +78,8 @@ body{
 }
 /* 右边联系我们 */
 .contact-us{
-	width:45px;
-	height:150px;
+	width:30px;
+	height:120px;
 	position: fixed;
 	left: 0px;
 	top:250px;
@@ -505,6 +505,7 @@ body{
 	border-top: 0px;
 	background-color: #85EB6A;
 }
+
 .words-count{
 	width:35px;
 	height:20px;
