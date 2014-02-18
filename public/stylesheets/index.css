@@ -243,6 +243,55 @@ body{
 	margin-left: -32px;
 	padding:3px;
 }
+
+#content-box{
+	clear: both;
+	margin-top: 10px;
+}
+#content-box .car-pic{
+	display: inline-block;
+}
+#content-box .praise_btn{
+	display: inline-block;
+	float: left;
+}
+#content-box .praise_btn_inner{
+	display: inline-block;
+	width: 52px;
+	height: 22px;
+	background: url('../images/praise_btn.png') no-repeat 0 0;
+}
+#content-box .praise_btn_inner .WB_ico_logo{
+	float: left;
+	width: 16px;
+	height: 16px;
+	margin: 3px 0 0 3px;
+	background: url('../images/praise_icon.png') no-repeat 0 0;
+}
+#content-box .praise_btn_inner .praise_text{
+	float: left;
+	font-size: 12px;
+	width: 29px;
+	height: 16px;
+	padding: 4px 0 3px 4px;
+	color: #fff;
+	text-align: center;
+	cursor: pointer;
+}
+#content-box .car{
+	display: inline-block;
+	width: 92px;
+	height: 92px;
+	text-decoration: none;
+	text-indent: -2000px; 
+}
+#content-box .car1{
+	background: url('../images/kind1.jpg') no-repeat -4px -12px;
+}
+#content-box .car2{
+	background: url('../images/kind1.jpg') no-repeat -97px -12px;
+}
+
 .scrollBegin{
 	-webkit-animation: idcontent_height .7s linear,idcontent_opacity .5s linear .7s;
 }
