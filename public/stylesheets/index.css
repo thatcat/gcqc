@@ -260,8 +260,13 @@ body{
 }
 #content-box .praise_btn .praise_num{
 	display: inline-block;
+<<<<<<< HEAD
 	
 >>>>>>> 260484dff21df623ae3c2915bd86b06ad6c59388
+=======
+	color: #666;
+	margin-left: 5px;
+>>>>>>> 7d11515bb4003982395ed07e3791dd0331930582
 }
 #content-box .praise_btn_inner{
 	display: inline-block;
