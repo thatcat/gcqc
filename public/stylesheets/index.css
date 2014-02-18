@@ -19,13 +19,13 @@ body{
 	position: absolute;
 	top:0px;
 	left:0px;
-	background-color: #85EB6A;
 }
 .banner{
 	width:900px;
 	height:200px;   
 	margin:0 auto;
-	background-color: #5FEB3B;
+	background-color: #337A5B;
+	background-image: url('../images/grid-pattern.png');
 }
 .banner-title{
 	font-family:"汉仪丫丫","微软雅黑", "宋体", "黑体", Arial, Sans-serif; 
@@ -97,6 +97,18 @@ body{
 	font-weight: bold;
 	color:#fff;
 }
+
+#carSearch {
+	width: 1300px;
+	text-align: center;
+}
+
+#formSearch {
+	width: 900px;
+	margin: 0 auto;
+}
+
+
 /* 酸奶广告和新闻 */
 .ad-news{
 	width:900px;
