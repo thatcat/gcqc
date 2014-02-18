@@ -322,7 +322,6 @@ List<Post> postList = Post.find("order by id desc").from(0).fetch(5);
         }
 
 		List<Ordered> orderList = Ordered.find("byUser", user).fetch();		
-	//	List<Ordered> orderList = Ordered.findAll();	
         render(orderList);
 	}
 	
@@ -333,11 +332,18 @@ List<Post> postList = Post.find("order by id desc").from(0).fetch(5);
             Application.index();
         }
 		
-    	//找到已经送货的订单
-    	List<Ordered> orderedSendedList = Ordered.find("user=? and sended=true",user).fetch();
-    	//找到还没送货的订单
-    	List<Ordered> orderedNoSendedList = Ordered.find("user=? and sended = false",user).fetch();
-       render(orderedSendedList,orderedNoSendedList);
+       render();
     }
+
+		public static void changePassword(String newPassword, String verifyNewPassword) {
+
+		validation.required(verifyNewPassword);
+        validation.equals(verifyNewPassword, newPassword).message("Your password doesn't match");
+        if(validation.hasErrors()) {
+            render("@Logined.order_customer", verifyNewPassword);
+         }
+
+		  flash.success("修改成功" );
+		}
 
 }

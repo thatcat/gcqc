@@ -52,7 +52,6 @@ public class Application extends Controller {
     }
     
     public static void saveUser(@Valid User user, String verifyPassword) {
-
         User userExisted = User.find("byUsername", user.username).first();
         if(userExisted != null){
             validation.required(user.username);
