@@ -1,7 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns:wb=“http://open.weibo.com/wb”><!----------微博点赞XML命名空间 ----------->
 <head>
 	<title>国产汽车网 - 让更多人了解我们自己的民族品牌</title>
+	<meta property="wb:webmaster" content="ac20d03014ec4dfa" /><!----------微博点赞http://open.weibo.com/webmaster/add ----------->
 	<meta name="keywords" content="国产汽车" />
 	<meta name="discription" content="国产汽车，为的是一份情怀" />
 	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
@@ -28,6 +30,21 @@
                     })
             })
             </script>          
+	
+	<!---------------------------------------------微博点赞开始----------------------------------->
+	<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+	<!--必填-->
+<meta property="og:type" content="webpage" />
+<meta property="og:url" content="网页唯一URL地址，请勿携带统计代码，分页网址请统一填写第一页链接" />
+<meta property="og:title" content="网页标题，不建议携带网站名称等SEO信息" />
+<meta property="og:description" content="网页描述，将直接显示在微博里，建议完整填写，不要重复填写标题" />
+<!--选填-->
+<meta property="og:image" content="网页的显示图片" />
+<meta name="weibo:webpage:create_at" content="网页的创建时间" />
+<meta name="weibo:webpage:update_at" content="网页的更新时间" />
+        
+	<!---------------------------------------------微博点赞结束----------------------------------->
+
 </head>
 <body>
 	<!-- 最顶部快捷条包括登录和注册 -->
@@ -139,9 +156,11 @@
 	</div>
 
 	<!----------------------------------------------------------汽车图标区开始-------------------------------------->
-	<div align=center>
+	<div align=center><wb:like></wb:like>
 	<img src="public/images/kind1.jpg" width=69.5% height=50% />
+	
 	</div>
+	
 	<!----------------------------------------------------------汽车图标区结束-------------------------------------->
 
 	<!-- 客户留言区 -->
