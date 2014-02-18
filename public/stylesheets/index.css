@@ -258,7 +258,8 @@ body{
 }
 #content-box .praise_btn .praise_num{
 	display: inline-block;
-	
+	color: #666;
+	margin-left: 5px;
 }
 #content-box .praise_btn_inner{
 	display: inline-block;
