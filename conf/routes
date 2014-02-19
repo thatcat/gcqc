@@ -18,7 +18,8 @@ GET		/order_customer.html							Logined.order_customer
 GET		/showBorad.html							Logined.showBorad
 GET		/test.html						Logined.test
 GET		/contact_us.html					Logined.contact_us
-GET		/post_cms.html						Logined.post_cms
+GET     /post_cms.html                      Logined.post_cms
+POST	/addPraise.html						Application.addPraise
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

@@ -5,10 +5,11 @@ jQuery(document).ready(function() {
 	}
 	jQuery(".praise_btn").click(function() {
 		var praise_num = jQuery(this).parent().find(".praise_num");
-		var num = praise_num.text();
-		num++;
-		praise_num.text(num);
-		var id = jQuery(this).attr("id").substring(10);
+		var number = praise_num.text();
+		number++;
+		praise_num.text(number);
+		var praise_id = jQuery(this).attr("id").substring(10);
+		jQuery.post("/addPraise.html", {id: praise_id, num: number});
 		return false;
 	})
 });
