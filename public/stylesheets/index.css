@@ -21,7 +21,7 @@ body{
 	left:0px;
 }
 .banner{
-	width:900px;
+	width:960px;
 	height:200px;   
 	margin:0 auto;
 	background-color: #337A5B;
@@ -59,7 +59,6 @@ body{
 }
 /* 主块容器 */ 
 .container{
-	width:1300px;
 	height:100%;
 	margin:0 auto;
 	position:relative;
@@ -99,19 +98,18 @@ body{
 }
 
 #carSearch {
-	width: 1300px;
 	text-align: center;
 }
 
 #formSearch {
-	width: 900px;
+	width: 960px;
 	margin: 0 auto;
 }
 
 
 /* 酸奶广告和新闻 */
 .ad-news{
-	width:900px;
+	width:960px;
 	height:291px;
 	border:0px;
 	margin:0 auto;
@@ -169,7 +167,7 @@ body{
 }
 /* 酸奶新闻 */
 .news{
-	width:489px; 
+	width:548px; 
 	height:280px;
 	border:1px solid #ddd;
 	float:left;
@@ -246,20 +244,23 @@ body{
 
 #content-box{
 	clear: both;
-	margin-top: 10px;
+	width: 960px;
+	margin: 10px auto;
 }
 #content-box .car-pic{
 	display: inline-block;
+}
+#content-box .car-pic .praise_num{
+	display: inline-block;
+	color: #666;
+	height: 22px;
+	line-height: 22px;
+	margin-left: 12px;
 }
 #content-box .praise_btn{
 	display: inline-block;
 	float: left;
 	text-decoration: none;
-}
-#content-box .praise_btn .praise_num{
-	display: inline-block;
-	color: #666;
-	margin-left: 5px;
 }
 #content-box .praise_btn_inner{
 	display: inline-block;
@@ -285,7 +286,7 @@ body{
 	cursor: pointer;
 }
 #content-box .car{
-	display: inline-block;
+	display: block;
 	width: 92px;
 	height: 92px;
 	text-decoration: none;
@@ -296,6 +297,30 @@ body{
 }
 #content-box .car2{
 	background: url('../images/kind1.jpg') no-repeat -97px -12px;
+}
+#content-box .car3{
+	background: url('../images/kind1.jpg') no-repeat -190px -12px;
+}
+#content-box .car4{
+	background: url('../images/kind1.jpg') no-repeat -283px -12px;
+}
+#content-box .car5{
+	background: url('../images/kind1.jpg') no-repeat -376px -12px;
+}
+#content-box .car6{
+	background: url('../images/kind1.jpg') no-repeat -469px -12px;
+}
+#content-box .car7{
+	background: url('../images/kind1.jpg') no-repeat -562px -12px;
+}
+#content-box .car8{
+	background: url('../images/kind1.jpg') no-repeat -655px -12px;
+}
+#content-box .car9{
+	background: url('../images/kind1.jpg') no-repeat -748px -12px;
+}
+#content-box .car10{
+	background: url('../images/kind1.jpg') no-repeat -841px -12px;
 }
 
 .scrollBegin{
@@ -311,7 +336,7 @@ body{
 }
 /* 产品介绍 */
 .products{
-	width:900px;
+	width:960px;
 	height:auto;
 	border:1px solid #ddd;
 	margin:0 auto;
@@ -322,7 +347,7 @@ body{
 	box-shadow:1px 2px 5px #ddd; 
 }
 .product-lists{
-	width:900px;
+	width:960px;
 	height:auto;
 }
 .milk-1, .milk-2, .milk-3{
@@ -377,7 +402,7 @@ body{
 }
 /* 企业介绍 */
 .com-intro{
-	width:900px;
+	width:960px;
 	height:auto;
 	border:1px solid #ddd;
 	margin:0 auto;
@@ -484,7 +509,7 @@ body{
 }
 /* 健康常识 */
 .health-intro{
-	width:900px;
+	width:960px;
 	height:350px;
 	border:1px solid #ddd;
 	margin:0 auto;
@@ -520,7 +545,7 @@ body{
 
 /* 留言区 */
 .words-board{
-	width:900px;
+	width:960px;
 	height:auto;
 	margin:0 auto;
 	margin-top:10px;
