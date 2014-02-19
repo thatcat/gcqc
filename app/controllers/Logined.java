@@ -48,6 +48,7 @@ List<Post> postList = Post.find("order by id desc").from(0).fetch(5);
     public static void email(String message) {
     	User user = connected();
     	if(user == null) {
+			 flash.error("请先登录！");
             //跳转到登录画面
             Application.login();
         }

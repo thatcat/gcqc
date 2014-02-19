@@ -40,7 +40,7 @@ public class Application extends Controller {
         	else
         		Logined.order_cms();///////////////////////////////////
         }
-	  flash.error("请先登录！");
+	 // flash.error("请先登录！");
 		List<Post> postList = Post.all().from(0).fetch(10);   	
        render(postList);
 
@@ -94,6 +94,7 @@ public static void savePost( Post post) {
 
 		if(connected()==null)
 		{
+			 flash.error("请先登录！");
             //跳转到登录画面
             Application.login();
         }		
@@ -124,10 +125,11 @@ public static void savePost( Post post) {
 public static void savePost2( Post post) {
         if(connected()==null)
 		{
+			flash.error("请先登录！");
             //跳转到登录画面
             Application.login();
         }
-        
+       
 
 
     }
