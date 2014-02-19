@@ -25,9 +25,6 @@ public class User extends Model {
     public String email;
     
     public boolean isAdmin;
-
-	@OneToMany(mappedBy="user", cascade=CascadeType.ALL)
-    public List<Ordered> orders;
    
     public User(String email, String password, String username) {
         this.email = email;
