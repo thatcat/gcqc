@@ -67,7 +67,7 @@ List<Post> postList = Post.find("order by id desc").from(0).fetch(5);
        render();
     }
 
-public static void savePost(Post post) {
+public static void savePostOrigin(Post post) {
 
 }
 

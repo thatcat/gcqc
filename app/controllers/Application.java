@@ -143,4 +143,9 @@ public static void savePost2( Post post) {
 	
 	}
 
+	public static void addPraise(int id,int num) {
+	System.out.println(id);
+	System.out.println(num);
+	}
+
 }
