@@ -35,12 +35,12 @@ public class Application extends Controller {
         	if(user.isAdmin == false)
         		Logined.index();
         	else
-        		Logined.order_cms();///////////////////////////////////
+        		Logined.order_cms();
         }
-	 // flash.error("请先登录！");
 		List<Post> postList = Post.all().from(0).fetch(10);   	
-       render(postList);
-
+		List<CarBrand> carBrandList = CarBrand.findAll();
+		System.out.println("----------------------------------------"+carBrandList.size());
+       render(postList,carBrandList);
     }
 
 	
@@ -105,13 +105,6 @@ public static void savePost( Post post) {
 	
         post.author = author;  
 		post.postedAt= new Date();
-                
-        // Validate
-        //validation.valid(post);
-        //if(validation.hasErrors()) {
-        //   render("@form", post);
-        //}
-
         // Save
         post.save();     
 		flash.success("Thanks for posting %s", author);
@@ -140,11 +133,11 @@ public static void savePost2( Post post) {
 	
 	}
 
-	public static void addPraise(int id,int num) {
+	public static void addPraise(Long id,int num) {
 	CarBrand carBrand = CarBrand.findById(id);
 	carBrand.parise=num;
 	carBrand.save();
-	System.out.println(id);
+	System.out.println("----------------------------------------"+carBrand.brandName);
 	System.out.println(num);
 	}
 
