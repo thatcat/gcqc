@@ -698,7 +698,7 @@ body{
 	margin-right: 5px;
 }
 .words-list{
-	width:866px;
+	width:820px;
 	height:auto;                 /* auto 让页面高度自适应 */
 	margin-left: 15px;
 	margin-top:-10px;
@@ -724,6 +724,19 @@ body{
 	margin-left: 5px;
 	margin-right:3px; 
 }
+.words-list .list-content {
+	text-indent: 30px;
+	background: #f6f6f6;
+	border-left: 5px solid #929292;
+	margin-left: 8px;
+	line-height: 40px;
+	font-size: 14px;
+}
+.name {
+	font-family:"汉仪丫丫","微软雅黑", "宋体", "黑体", Arial, Sans-serif; 
+	font-weight: bold;
+	color:#85EB6A;
+}
 .list-details{
 	height:30px;
 }
@@ -732,6 +745,17 @@ body{
 	margin-left: 0px;
 	margin-bottom: 10px;
 	line-height: 25px;
+}
+.list-back {
+	padding-left: 40px;
+}
+.list-back .back-text{
+	text-indent: 30px;
+	background: #f6f6f6;
+	border-left: 5px solid #929292;
+	margin-left: 8px;
+	line-height: 40px;
+	font-size: 14px;
 }
 /* 页脚 */
 .footer{

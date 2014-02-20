@@ -176,7 +176,7 @@
 																<i class="icon icon-color icon-messages"></i>
 																<span class="back-name">${commentlist.author}</span>
 																<span class="back-time">${commentlist.postedAt}</span>
-																<p>${commentlist.content}</p>
+																<p class="back-text">${commentlist.content}</p>
 																
 															</div>
 															 
@@ -187,8 +187,8 @@
 				  #{field 'content'}
 				   <p>
 					
-					<input type="textarea" name="${field.name}" id="loginusername" }" required="required" placeholder="我来说一句" >	
-					<input type="submit" name="submit" value="评论">
+					<input class="input-box" type="textarea" name="${field.name}" id="loginusername" }" required="required" placeholder="我来说一句" >	
+					<input class="btn btn-info" type="submit" name="submit" value="评论">
 
 				  </p>
 				  #{/field}
