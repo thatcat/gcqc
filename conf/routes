@@ -20,6 +20,7 @@ GET		/test.html						Logined.test
 GET		/contact_us.html					Logined.contact_us
 GET     /post_cms.html                      Logined.post_cms
 POST	/addPraise.html						Application.addPraise
+GET		/showSeries.html						Application.showSeries
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

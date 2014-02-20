@@ -61,6 +61,79 @@
 			</ul>
 		</div>
 
+<!---------------------------------------------------------已处理的车主认证和还没有处理的车主认证开始----------------------------------------->
+<!--<div class="tabbable tabs-left">-->
+		<div class="tabbable tabs-top">
+			<ul  class="nav nav-tabs">
+                        			<li class="active"><a href="#unsolve" data-toggle="tab">未处理的认证</a></li>
+                        			<li><a href="@{order_cms()}.#solved" data-toggle="tab">已处理认证</a></li>
+                     		</ul>
+                     		<!-- 下面是订单内容 -->
+    			<div class="tab-content">
+    				<!-- 待处理的订单从前台页面发送到这里 -->
+                        			<div class="tab-pane active" id="unsolve">
+                        				<div class="order-info">
+                                            【 当前未处理的认证：<span>${userUndealList.size()}</span>单 】      					
+                        				</div>
+                        				<table id="tableSelect1">
+                        					<tr>
+                        						<th>标号</th>
+                                                <th>姓名</th>
+                                                <th>图片路径</th>
+                                                <th>是否已是车主</th>
+                        					</tr>
+                        					#{list items:userUndealList,as:'undealList'}
+                                                <tr id="${undealList.id}">
+                                                    <td>${undealList.id}</td>
+                                                    <td>${undealList.username}</td>
+                                                    <td><img src="${undealList.authPictiurePath}" />${undealList.authPictiurePath}</td>
+                                                    <td>${undealList.isCarOwer} </td>
+                                                    <td><span class="badge btn-info btn highlight ml10" onclick="cancel_item(${undealList.id});">标记处理</span></td>
+                                                </tr>
+                                            #{/list}
+                        				</table>
+                        			</div>
+                        			<!-- 已经处理的订单放在下面 -->
+                        			<div class="tab-pane" id="solved">
+                        				<div class="order-info">
+                                            【 当前已处理的车主认证：<span>${userDealedList.size()}</span>单 】        					
+                        				</div>
+                        				<table>
+                        					<caption></caption>
+                        					<tr>
+                        						<th>标号</th>
+                                                <th>姓名</th>
+                                                <th>图片路径</th>
+                                                <th>是否已是车主</th>
+                        					</tr>
+                        					#{list items:userDealedList,as:'dealedList'}
+                                                <tr id="${undealList.id}">
+                                                    <td>${dealedList.id}</td>
+                                                    <td>${dealedList.username}</td>
+													<td>${undealList.authPictiurePath}</td>
+                                                    <td>${ordered.isCarOwer}</td>
+                                                    <td><button class="badge btn-info btn highlight ml10" onclick="dele_item(${undealList.id})">删除订单</button></td>
+                                                </tr>
+                                            #{/list}
+                        				</table>
+                        			</div>
+            			</div>
+		</div>
+<!---------------------------------------------------------已处理的车主认证和还没有处理的车主认证结束----------------------------------------->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		
 	</div>
 	

@@ -68,10 +68,9 @@ public class Logined extends Controller {
         }
 
 		 //还没有处理的车主认证
-    	List<User> userUndealList = User.find("byIsDeal",false).fetch();
+    	List<User> userUndealList = User.find("byIsDealAndAuthPictiurePathIsNotNull",false).fetch();
     	//已经处理的车主认证
-    	List<User> userDealedList = User.find("byIsDeal",true).fetch();
-       render(userUndealList,userDealedList);
+    	List<User> userDealedList = User.find("byIsDealAndAuthPictiurePathIsNotNull",true).fetch();
        render(userUndealList,userDealedList);
     }
 
