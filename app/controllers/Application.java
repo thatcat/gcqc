@@ -39,7 +39,6 @@ public class Application extends Controller {
         }
 		List<Post> postList = Post.all().from(0).fetch(10);   	
 		List<CarBrand> carBrandList = CarBrand.findAll();
-		System.out.println("----------------------------------------"+carBrandList.size());
        render(postList,carBrandList);
     }
 
@@ -49,7 +48,10 @@ public class Application extends Controller {
     }
     
     public static void saveUser(@Valid User user, String verifyPassword) {
-        User userExisted = User.find("byUsername", user.username).first(); 
+		verifyPassword=Md5Util.getMD5Str(verifyPassword);		// MD5加密
+		user.password=Md5Util.getMD5Str(user.password);
+		System.out.println(verifyPassword);
+        User userExisted = User.find("byUsername", user.username).first(); 	
         if(userExisted != null){
             validation.required(user.username);
             validation.equals(user.username,"1").message("This user is existed!");
@@ -75,6 +77,7 @@ public class Application extends Controller {
     }
 
     public static void logined(String username, String password) {
+		password=Md5Util.getMD5Str(password);				//MD5加密
         User user = User.find("byUsernameAndPassword", username, password).first();
         if(user != null) {
             session.put("user", user.username);

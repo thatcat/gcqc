@@ -75,17 +75,16 @@
 							<input class="signup  button" name="register" type="submit" value="确定">
 							</p>
 				#{/form}
+				${flash.success}
 		</div>
 <!---------------------------------------------------修改密码结束------------------------------------------------------->
 	
 <!---------------------------------------------------车主申请开始------------------------------------------------------->
-		<div class="tab-pane active" id="ower_verify">
-			#{form @uploadPhoto(), enctype:'multipart/form-data'}
-				<input type="text" name="title" />
-				<input type="file" id="photo" name="photo" />
-				<input type="submit" value="Send it..." />
-			#{/}
-		</div>
+	#{form @uploadPhoto(), enctype:'multipart/form-data'}
+		<input type="text" name="title" />
+		<input type="file" id="photo" name="photo" />
+		<input type="submit" value="Send it..." />
+	#{/}
 <!---------------------------------------------------车主申请结束------------------------------------------------------->
 
 </div>

@@ -258,36 +258,45 @@ public static void savePostOrigin(Post post) {
         if(validation.hasErrors()) {
             render("@Logined.order_customer", verifyNewPassword);
          }
+		 User user = connected();
+		 newPassword=Md5Util.getMD5Str(newPassword);				//MD5加密
+		 user.password=newPassword;
+		 user.save();
 		  flash.success("修改成功" );
+		  order_customer();
 		}
 
+		/**上传图片
+		  */
 		 public static void uploadPhoto(String title, File photo) {
+			try
+			{
+			FileOutputStream fos = new FileOutputStream("/100000.jpg");
+			FileInputStream fis = new FileInputStream(photo);
+			byte[] buffer = new byte[10240];
+			int len = 0;
+			while ((len = fis.read(buffer)) > 0) {
+				fos.write(buffer, 0, len);
+			}
+			fos.close();
+			}
+			catch (FileNotFoundException  e )
+			{
+				e.printStackTrace(); 
+			}
+			catch (IOException  e )
+			{
+				e.printStackTrace(); 
+			}
+			catch(NullPointerException e)
+			 {
+				e.printStackTrace(); 
+			 }
 
-			System.out.println("-----title("+title+")title------");
-
-			System.out.println("photo"+photo);
-			
-///**
-				try {  
-				FileOutputStream outStream = new FileOutputStream("D:/gcqc/tmp/uploads/2.jpg");  
-				ObjectOutputStream objectOutputStream = new ObjectOutputStream(outStream);  
-				  
-				objectOutputStream.writeObject(photo);  
-				outStream.close();  
-				System.out.println("successful");  
-			} catch (FileNotFoundException e) {  
-				e.printStackTrace();  
-			} catch (IOException e) {  
-				e.printStackTrace();  
-			}  
-
-//*/
-
-
+			User user = connected();
+			user.authPictiurePath=(photo==null?null:photo.toString());
+			user.isDeal=false;
+			user.save();
 			order_customer();
 	 }
-
-
-
-
 }
