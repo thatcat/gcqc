@@ -27,9 +27,6 @@ public class Application extends Controller {
 
         return null;
     }
-    
-
-    // ~~
 
     public static void index() {
     	User user = connected();
@@ -38,12 +35,12 @@ public class Application extends Controller {
         	if(user.isAdmin == false)
         		Logined.index();
         	else
-        		Logined.order_cms();///////////////////////////////////
+        		Logined.order_cms();
         }
-	 // flash.error("请先登录！");
 		List<Post> postList = Post.all().from(0).fetch(10);   	
-       render(postList);
-
+		List<CarBrand> carBrandList = CarBrand.findAll();
+		System.out.println("----------------------------------------"+carBrandList.size());
+       render(postList,carBrandList);
     }
 
 	
@@ -62,7 +59,7 @@ public class Application extends Controller {
             }
         }
         validation.required(verifyPassword);
-        validation.equals(verifyPassword, user.password).message("Your password doesn't match");
+        validation.equals(verifyPassword, user.password).message("密码不一致");
         if(validation.hasErrors()) {
             render("@register", user, verifyPassword);
          }
@@ -108,13 +105,6 @@ public static void savePost( Post post) {
 	
         post.author = author;  
 		post.postedAt= new Date();
-                
-        // Validate
-        //validation.valid(post);
-        //if(validation.hasErrors()) {
-        //   render("@form", post);
-        //}
-
         // Save
         post.save();     
 		flash.success("Thanks for posting %s", author);
@@ -143,8 +133,11 @@ public static void savePost2( Post post) {
 	
 	}
 
-	public static void addPraise(int id,int num) {
-	System.out.println(id);
+	public static void addPraise(Long id,int num) {
+	CarBrand carBrand = CarBrand.findById(id);
+	carBrand.parise=num;
+	carBrand.save();
+	System.out.println("----------------------------------------"+carBrand.brandName);
 	System.out.println(num);
 	}
 
