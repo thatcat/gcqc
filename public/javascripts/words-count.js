@@ -6,6 +6,7 @@ function maxWords(form) {
 	else{
 		form.maxNum.value = maxLength - form.words.value.length;
 	}
+	// alert("hello");
 }
 function maxWords2(form) {
 	maxLength = 190; 
