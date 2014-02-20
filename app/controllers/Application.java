@@ -37,7 +37,7 @@ public class Application extends Controller {
         	else
         		Logined.order_cms();
         }
-		List<Post> postList = Post.all().from(0).fetch(10);   	
+		List<Post> postList = Post.all().from(0).fetch(3);   	
 		List<CarBrand> carBrandList = CarBrand.findAll();
        render(postList,carBrandList);
     }

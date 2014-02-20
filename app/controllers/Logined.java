@@ -35,7 +35,7 @@ public class Logined extends Controller {
             //跳转到登录画面
             Application.index();
         }
-		List<Post> postList = Post.find("order by id desc").from(0).fetch(5);	
+		List<Post> postList = Post.find("order by id desc").from(0).fetch(3);	
 		List<CarBrand> carBrandList = CarBrand.findAll();
        render(postList,carBrandList);
     }
@@ -297,6 +297,7 @@ public static void savePostOrigin(Post post) {
 			user.authPictiurePath=(photo==null?null:photo.toString());
 			user.isDeal=false;
 			user.save();
+			 flash.success("上传成功" );
 			order_customer();
 	 }
 }
