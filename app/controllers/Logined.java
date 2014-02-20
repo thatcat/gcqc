@@ -66,7 +66,13 @@ public class Logined extends Controller {
             //跳转到登录画面
             Application.index();
         }
-       render();
+
+		 //还没有处理的车主认证
+    	List<User> userUndealList = User.find("byIsDeal",false).fetch();
+    	//已经处理的车主认证
+    	List<User> userDealedList = User.find("byIsDeal",true).fetch();
+       render(userUndealList,userDealedList);
+       render(userUndealList,userDealedList);
     }
 
 public static void savePostOrigin(Post post) {
