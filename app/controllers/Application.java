@@ -144,4 +144,9 @@ public static void savePost2( Post post) {
 	System.out.println(num);
 	}
 
+	public static void showSeries(Long id ) {
+	System.out.println("----------------------------------------id"+id);
+	render();
+	}
+
 }
