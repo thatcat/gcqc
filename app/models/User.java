@@ -25,6 +25,15 @@ public class User extends Model {
     public String email;
     
     public boolean isAdmin;
+
+	public boolean isCarOwer;//是否为车主
+
+	public String authType;
+
+	public int integration; //积分
+
+	@OneToMany(mappedBy="user", cascade=CascadeType.ALL)
+    public List<CarComment> carComments;
    
     public User(String email, String password, String username) {
         this.email = email;
@@ -37,8 +46,5 @@ public class User extends Model {
         return username ;
     }
 
-	public boolean isCarOwer;//是否为车主
-
-	public String authType;
     
 }

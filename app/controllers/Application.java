@@ -62,7 +62,7 @@ public class Application extends Controller {
             }
         }
         validation.required(verifyPassword);
-        validation.equals(verifyPassword, user.password).message("Your password doesn't match");
+        validation.equals(verifyPassword, user.password).message("密码不一致");
         if(validation.hasErrors()) {
             render("@register", user, verifyPassword);
          }
