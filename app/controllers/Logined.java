@@ -5,6 +5,7 @@ import play.mvc.*;
 import play.data.validation.*;
 import play.db.jpa.*;
 import javax.persistence.*;
+import java.io.*;
 
 import models.*;
 
@@ -258,4 +259,34 @@ public static void savePostOrigin(Post post) {
          }
 		  flash.success("修改成功" );
 		}
+
+		 public static void uploadPhoto(String title, File photo) {
+
+			//System.out.println(title);
+
+			System.out.println("photo"+photo);
+			
+///**
+				try {  
+				FileOutputStream outStream = new FileOutputStream(D:\gcqc\tmp\uploads\1.jpg);  
+				ObjectOutputStream objectOutputStream = new ObjectOutputStream(outStream);  
+				  
+				objectOutputStream.writeObject(photo);  
+				outStream.close();  
+				System.out.println("successful");  
+			} catch (FileNotFoundException e) {  
+				e.printStackTrace();  
+			} catch (IOException e) {  
+				e.printStackTrace();  
+			}  
+
+//*/
+
+
+			order_customer();
+	 }
+
+
+
+
 }

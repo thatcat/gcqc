@@ -78,40 +78,16 @@
 		</div>
 <!---------------------------------------------------修改密码结束------------------------------------------------------->
 	
-<!---------------------------------------------------修改密码开始------------------------------------------------------->
+<!---------------------------------------------------车主申请开始------------------------------------------------------->
 		<div class="tab-pane active" id="ower_verify">
-				#{form @changePassword()}
-							#{field 'newPassword'}
-							<p>
-								<label for="passwd" class="passwd">新新密码</label>
-								<input id="passwd"  type="password" name="${field.name}" required="required" ><br />
-								<span class="error">${field.error}</span>
-							</p>	
-							#{/field}
-							#{field 'verifyNewPassword'}
-							<p>
-								<label for="passwdconfirm" class="passwdconfirm">重复密码</label>
-								<input id="passwdconfirm"  required="required" name="${field.name}" type="password" ><br />
-								<span class="error">${field.error}</span>
-							</p>
-							#{/field}
-							<p class="register-button">
-							<input class="signup  button" name="register" type="submit" value="确定">
-							</p>
-				#{/form}
+			#{form @uploadPhoto(), enctype:'multipart/form-data'}
+				<input type="text" name="title" />
+				<input type="file" id="photo" name="photo" />
+				<input type="submit" value="Send it..." />
+			#{/}
 		</div>
-<!---------------------------------------------------修改密码结束------------------------------------------------------->
+<!---------------------------------------------------车主申请结束------------------------------------------------------->
+
 </div>
-
-
-
-
-
-
-
-
-
-
-
 </body>
 </html>
