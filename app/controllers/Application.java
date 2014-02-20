@@ -27,9 +27,6 @@ public class Application extends Controller {
 
         return null;
     }
-    
-
-    // ~~
 
     public static void index() {
     	User user = connected();
@@ -144,6 +141,9 @@ public static void savePost2( Post post) {
 	}
 
 	public static void addPraise(int id,int num) {
+	CarBrand carBrand = CarBrand.findById(id);
+	carBrand.parise=num;
+	carBrand.save();
 	System.out.println(id);
 	System.out.println(num);
 	}
