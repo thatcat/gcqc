@@ -151,6 +151,11 @@ public static void savePostOrigin(Post post) {
     }
 
 	public static void words_board(){
+		if(connected()==null)
+		{
+            //跳转到登录画面
+            Application.login();
+        }		
     	//从form+1开始返回后面的fetch条记录
     	List<Post> postList = Post.find("order by id desc").fetch();
     	
