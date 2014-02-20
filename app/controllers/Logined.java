@@ -35,8 +35,9 @@ public class Logined extends Controller {
             //跳转到登录画面
             Application.index();
         }
-List<Post> postList = Post.find("order by id desc").from(0).fetch(5);	
-       render(postList);
+		List<Post> postList = Post.find("order by id desc").from(0).fetch(5);	
+		List<CarBrand> carBrandList = CarBrand.findAll();
+       render(postList,carBrandList);
     }
     
     public static void logout() {
@@ -262,13 +263,13 @@ public static void savePostOrigin(Post post) {
 
 		 public static void uploadPhoto(String title, File photo) {
 
-			//System.out.println(title);
+			System.out.println("-----title("+title+")title------");
 
 			System.out.println("photo"+photo);
 			
 ///**
 				try {  
-				FileOutputStream outStream = new FileOutputStream(D:\gcqc\tmp\uploads\1.jpg);  
+				FileOutputStream outStream = new FileOutputStream("D:/gcqc/tmp/uploads/2.jpg");  
 				ObjectOutputStream objectOutputStream = new ObjectOutputStream(outStream);  
 				  
 				objectOutputStream.writeObject(photo);  
