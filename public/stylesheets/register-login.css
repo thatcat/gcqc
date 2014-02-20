@@ -34,7 +34,7 @@ h1 a {
 	color:#fff;
 }
 #register , #login{
-    padding: 0 30px;
+    padding: 0 20px;
     background-color: #fff;
     border: 1px solid #ddd;  
     letter-spacing: 1px;
@@ -50,10 +50,31 @@ h1 a {
 	margin: 0 auto;
 }
 #register{
-    width: 320px;
+    width: 330px;
     height: 336px;
     z-index: -1;
     margin: 0 auto;
+}
+.input-control{
+    position: relative;
+    margin-top: 20px;
+}
+.input-control .error-msg{
+    display: inline-block;
+    position: absolute;
+    top: 16px;
+    margin-left: 50px;
+    width: 100%;
+    color: #f00;
+}
+.flag {
+    display: inline-block;
+    
+}
+.flag img{
+    width: 20px;
+    height: 30px;
+    vertical-align: middle;
 }
 label {
     vertical-align: middle;
@@ -110,7 +131,7 @@ input[type="submit"]
     text-align: center;
 }
 .loginError{
-    /*margin-left: 22px;*/
+    margin-left: 22px;
     color: #f00;
 }
 .input-box {
