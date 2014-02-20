@@ -210,5 +210,10 @@
 		<img src="/public/images/scrollTop.gif"/>
 	</div>
 
+    
+        #{list items:carBrandList,as:'carbrandlist'}
+        <input class="brandParise" type="hidden" value=${carbrandlist.parise} /> 
+        #{/list}
+    
 </body>
 </html>

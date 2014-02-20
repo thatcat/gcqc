@@ -4,6 +4,8 @@
 	<title>注册</title>
 	<meta charset="utf-8" />
 	<link rel="stylesheet" type="text/css" href="/public/stylesheets/register-login.css">
+	<script type="text/javascript" src="public/javascripts/jquery1.83.js"></script>
+	<script type="text/javascript" src="public/javascripts/register.js"></script>
 </head>
 
 <body>
@@ -13,36 +15,43 @@
 		<p>${message}</p>
 		#{form @saveUser()}
 			#{field 'user.username'}
-			<p>
+			<div class="input-control">
 				<label for="username" class="username">我的昵称</label>
-				<input id="username" class="input-box" type="text" name="${field.name}"required="required" ><br />
-				<div class="registerError">${field.error}</div>
-			</p>
+				<input id="username" class="input-box" type="text" name="${field.name}"required="required" />
+				<div class="flag"></div>
+				<div id="name-msg" class="error-msg"></div>
+			</div>
 			#{/field}
 			#{field 'user.email'}
-			<p>
+			<div class="input-control">
 				<label for="email" class="email">常用邮箱</label>
-				<input id="email" class="input-box" type="email" name="${field.name}" required="required" ><br />
-				<div class="registerError">${field.error}</div>
-			</p>
+				<input id="email" class="input-box" type="email" name="${field.name}" required="required" >
+				<div class="flag"></div>
+				<div id="email-msg" class="error-msg"></div>
+				<!-- <div class="registerError">${field.error}</div> -->
+			</div>
 			#{/field}
 
 			#{field 'user.password'}
-			<p>
+			<div class="input-control">
 				<label for="passwd" class="passwd">登录密码</label>
-				<input id="passwd" class="input-box" type="password" name="${field.name}" required="required" ><br />
-				<div class="registerError">${field.error}</div>
-			</p>	
+				<input id="passwd" class="input-box" type="password" name="${field.name}" required="required" >
+				<div class="flag"></div>
+				<div id="passwd-msg" class="error-msg"></div>
+				<!-- <div class="registerError">${field.error}</div> -->
+			</div>	
 			#{/field}
-			#{field 'verifyPassword'}
-			<p>
+			<!-- #{field 'verifyPassword'} -->
+			<div class="input-control">
 				<label for="passwdconfirm" class="passwdconfirm">重复密码</label>
-				<input id="passwdconfirm" class="input-box" required="required" name="${field.name}" type="password" ><br />
-				<div class="registerError">${field.error}</div>
-			</p>
-			#{/field}
+				<input id="passwdconfirm" class="input-box" required="required" name="${field.name}" type="password" >
+				<div class="flag"></div>
+				<div id="confirm-msg" class="error-msg"></div>
+				<!-- <div class="registerError">${field.error}</div> -->
+			</div>
+			<!-- #{/field} -->
 			<p class="register-button">
-			<input class="signup  button" name="register" type="submit" value="注册">
+			<input id="registerBtn" class="signup  button" name="register" type="submit" value="注册">
 			</p>
 		#{/form}
 	</div>

@@ -758,3 +758,7 @@ body{
 	width:44px;
 	height:44px;
 }
+
+input[type="hidden"] {
+	display: none;
+}
