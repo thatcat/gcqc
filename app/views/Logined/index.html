@@ -163,7 +163,7 @@
 			                <div class="a-list"> 
 														<div class="list-details">
 															<i class="icon32 icon-color icon-bullet-off"></i>
-																	<span class="name">${postlist.author}</span>
+																	<span class="name">${postlist.author}   </span>
 																	<span class="time">${postlist.postedAt}</span>
 																	<span class="floor">${postlist.id}</span>
 																			<span class="comment">
@@ -177,9 +177,9 @@
 														 <div class="list-back">
 															<div>
 																<i class="icon icon-color icon-messages"></i>
-																<span class="back-name">${commentlist.author}</span>
+																<span class="name back-name">${commentlist.author}   </span>
 																<span class="back-time">${commentlist.postedAt}</span>
-																<p>${commentlist.content}</p>
+																<p class="back-text">${commentlist.content}</p>
 																
 															</div>
 															 
@@ -190,8 +190,8 @@
 				  #{field 'content'}
 				   <p>
 					
-					<input type="textarea" name="${field.name}" id="loginusername" }" required="required" placeholder="我来说一句" >	
-					<input type="submit" name="submit" value="评论">
+					<input class="input-box" type="textarea" name="${field.name}" id="loginusername" }" required="required" placeholder="我来说一句" style="width: 220px" />	
+					<input class="btn btn-info" type="submit" name="submit" value="评论">
 
 				  </p>
 				  #{/field}
@@ -203,7 +203,8 @@
 	<!-- container -->
        
 #{/list}
-	</ul>	
+	</ul>
+	</div>
 	<!-- 页脚 -->
 	<div class="footer">
 		<p>COPYRIGHT © 2012 - 2013 DESIGNED BY HCier<p>
