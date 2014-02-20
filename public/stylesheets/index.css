@@ -6,11 +6,11 @@ body{
 }
 @font-face {
  	font-family: "汉仪丫丫";
- 	src: url('../images/font/汉仪丫丫.eot') format('eot');
+ 	src: url('../images/font/hanyi.eot') format('eot');
   	src: local('汉仪丫丫'),
-  	url('../images/font/汉仪丫丫.woff') format('woff'), 
-  	url('../images/font/汉仪丫丫.ttf') format('truetype'),
- 	url('../images/font/汉仪丫丫.svg') format('svg');
+  	url('../images/font/hanyi.woff') format('woff'), 
+  	url('../images/font/hanyi.ttf') format('truetype'),
+ 	url('../images/font/hanyi.svg') format('svg');
 } 
 /* 最顶端固定快捷栏 */
 .header{
