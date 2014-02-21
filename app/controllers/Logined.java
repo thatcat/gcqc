@@ -310,4 +310,21 @@ public static void savePostOrigin(Post post) {
 			 flash.success("上传成功" );
 			order_customer();
 	 }
+
+	public static void deal_refresh(long itemId, String authType){
+    	if(connected() == null) {
+            //跳转到登录画面
+            Application.index();
+        }
+    	//找到对应数据项
+    	User user = User.findById(itemId);
+		System.out.println("-----------------------------------itemld:"+itemId);
+		System.out.println("-----------------------------------authType:"+authType);
+    	//user.save();
+    	//order_cms();
+    	Map map = new HashMap();
+    	int status = 200;
+    	map.put("status", status);
+    	renderJSON(map);
+    }
 }
