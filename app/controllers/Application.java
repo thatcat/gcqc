@@ -140,13 +140,11 @@ public static void savePost2( Post post) {
 	CarBrand carBrand = CarBrand.findById(id);
 	carBrand.parise=num;
 	carBrand.save();
-	System.out.println("----------------------------------------"+carBrand.brandName);
-	System.out.println(num);
 	}
 
 	public static void showSeries(Long id ) {
-	System.out.println("----------------------------------------id"+id);
-	render();
+	List<CarSeries> carSeriesList = CarSeries.findAll();
+	render(carSeriesList);
 	}
 
 }
