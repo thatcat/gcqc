@@ -314,9 +314,9 @@ public static void savePostOrigin(Post post) {
 			order_customer();
 	 }
 
-	/**处理认证通不通过，isCarOwer为true表示通过，为false表示不通过
+	/**处理认证通不通过，isCarOwner为true表示通过，为false表示不通过
 	  */
-	public static void deal_refresh(long itemId, String authType,boolean isCarOwer){
+	public static void deal_refresh(long itemId, String authType,boolean isCarOwner){
     	if(connected() == null) {
             //跳转到登录画面
             Application.index();
@@ -326,9 +326,9 @@ public static void savePostOrigin(Post post) {
 		// 是否已经被处理设为true
 		user.isDeal=true; 
 		//这次认证通过
-		if(isCarOwer == true) {
+		if(isCarOwner == true) {
 			user.authType=authType;
-			user.isCarOwer=true;
+			user.isCarOwner=true;
 			user.integration=user.integration+20;
 		user.authDate=new Date();
 		}
@@ -340,7 +340,7 @@ public static void savePostOrigin(Post post) {
     	renderJSON(map);
     }
 
-	/**处理认证通不通过，isCarOwer为true表示通过，为false表示不通过
+	/**处理认证通不通过，isCarOwner为true表示通过，为false表示不通过
 	  */
 	public static void auth_delete(long itemId){
 		if(connected() == null) {
@@ -352,7 +352,7 @@ public static void savePostOrigin(Post post) {
     	User user = User.findById(itemId);
 		if(user != null) {
 		user.isDeal=true;
-		user.isCarOwer=false;
+		user.isCarOwner=false;
 		user.authType=null;
 		user.save();
 		status=200;

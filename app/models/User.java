@@ -27,7 +27,7 @@ public class User extends Model {
     
     public boolean isAdmin;
 
-	public boolean isCarOwer;//是否为车主
+	public boolean isCarOwner;//是否为车主
 
 	public String authType;
 

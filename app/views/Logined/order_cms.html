@@ -91,7 +91,7 @@
                                                     <td>${undealList.username}</td>
 													<td>${undealList.integration}</td>
                                                     <td><img src="${undealList.authPictiurePath}" />${undealList.authPictiurePath}</td>
-                                                    <td>${undealList.isCarOwer} </td>
+                                                    <td>${undealList.isCarOwner} </td>
 													<td>${undealList.applyDate} </td>
 													<th><input type="text" id="authType" name="authType"></input></th>
 													
@@ -121,7 +121,7 @@
                                                     <td>${dealedList.id}</td>
                                                     <td>${dealedList.username}</td>
 													<td>${dealedList.authPictiurePath}</td>
-                                                    <td>${dealedList.isCarOwer}</td>
+                                                    <td>${dealedList.isCarOwner}</td>
 													<td>${dealedList.authType}</td>
 													<td>${dealedList.authDate}</td>
                                                     <td><button class="badge btn-info btn highlight ml10" onclick="dele_item(${dealedList.id})">撤销认证</button></td>
@@ -136,13 +136,13 @@
             <script src="/public/javascripts/jquery1.83.js" type="text/javascript"></script>
              <script src="/public/javascripts/bootstrap-tab.js" type="text/javascript"></script>
              <script>
-               function cancel_item(id, carOwer){
+               function cancel_item(id, carOwner){
 				   var authType = document.getElementById("authType").value;
                     if(confirm("你确定要标记为处理吗?")==1){
                         $.ajax({
                            type:'post',
                            url:'/Logined/deal_refresh',
-                           data:{itemId:id, authType: authType, isCarOwer:carOwer} ,
+                           data:{itemId:id, authType: authType, isCarOwner:carOwner} ,
                            dataType:'json',
                            success:function(data){
                                if(data.status==200){
