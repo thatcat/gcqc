@@ -6,6 +6,8 @@ import play.data.validation.*;
 import play.db.jpa.*;
 import javax.persistence.*;
 import java.io.*;
+import java.io.*;
+import java.text.SimpleDateFormat;
 
 import models.*;
 
@@ -306,25 +308,59 @@ public static void savePostOrigin(Post post) {
 			User user = connected();
 			user.authPictiurePath=(photo==null?null:photo.toString());
 			user.isDeal=false;
+			user.applyDate=new Date();
 			user.save();
 			 flash.success("上传成功" );
 			order_customer();
 	 }
 
-	public static void deal_refresh(long itemId, String authType){
+	/**处理认证通不通过，isCarOwer为true表示通过，为false表示不通过
+	  */
+	public static void deal_refresh(long itemId, String authType,boolean isCarOwer){
     	if(connected() == null) {
             //跳转到登录画面
             Application.index();
         }
     	//找到对应数据项
     	User user = User.findById(itemId);
-		System.out.println("-----------------------------------itemld:"+itemId);
-		System.out.println("-----------------------------------authType:"+authType);
-    	//user.save();
+		// 是否已经被处理设为true
+		user.isDeal=true; 
+		//这次认证通过
+		if(isCarOwer == true) {
+			user.authType=authType;
+			user.isCarOwer=true;
+			user.integration=user.integration+20;
+		user.authDate=new Date();
+		}
+    	user.save();
     	//order_cms();
     	Map map = new HashMap();
     	int status = 200;
     	map.put("status", status);
     	renderJSON(map);
     }
+
+	/**处理认证通不通过，isCarOwer为true表示通过，为false表示不通过
+	  */
+	public static void auth_delete(long itemId){
+		if(connected() == null) {
+            //跳转到登录画面
+            Application.index();
+        }
+    	//找到对应数据项
+		int status=0;
+    	User user = User.findById(itemId);
+		if(user != null) {
+		user.isDeal=true;
+		user.isCarOwer=false;
+		user.authType=null;
+		user.save();
+		status=200;
+		}
+		Map map = new HashMap();    	
+   		map.put("status", status);
+    	renderJSON(map); 	
+	}
+
+
 }

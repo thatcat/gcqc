@@ -3,6 +3,7 @@ import java.util.*;
 import play.db.jpa.*;
 import play.data.validation.*;
 import javax.persistence.*;
+import play.data.binding.*;
 
 @Entity
 @Table(name="User")
@@ -35,6 +36,12 @@ public class User extends Model {
 	public boolean isDeal;//是否已经被处理了认证
 
 	public int integration; //积分
+
+	@As("yyyy-MM-dd HH:mm:ss")
+	public Date authDate; //认证日期
+
+	@As("yyyy-MM-dd HH:mm:ss")
+	public Date applyDate; //申请认证日期
 
 	@OneToMany(mappedBy="user", cascade=CascadeType.ALL)
     public List<CarComment> carComments;
