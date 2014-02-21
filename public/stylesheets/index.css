@@ -786,3 +786,11 @@ body{
 input[type="hidden"] {
 	display: none;
 }
+
+.addV {
+	background: url("../images/icons/bg_line.png") no-repeat -75px -6px;
+	display: inline-block;
+	width: 16px;
+	height: 14px;
+	vertical-align: middle;
+}
