@@ -144,7 +144,6 @@ public static void savePost2( Post post) {
 
 	public static void showSeries(Long id ) {
 	List<CarSeries> carSeriesList = CarSeries.findAll();
-	
 	render(carSeriesList);
 	}
 

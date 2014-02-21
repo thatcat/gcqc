@@ -39,16 +39,20 @@
 						#{list items:carSeriesList,as:'carserieslist'}
 						
 														 <div class="list-back">
-															<div>
 																<li><img src="${carserieslist.path}" width="400" height="260" /></li>
 																<li>最低价${carserieslist.bottomPrice}</li>
 																<li>油耗${carserieslist.fuelConsumption}</li>
-																<li>星级${carserieslist.startLevel}</li>
-																
-															</div>
-															 
+																<li>星级${carserieslist.startLevel}</li>																
+					<p>
+					<input class="input-box" type="textarea" name="" id="loginusername" }" required="required" placeholder="我来点评" >	
+					<input class="btn btn-info" type="submit" name="submit" value="点评">
+				  </p>														 
 														 </div>
-														
+														#{list items:carserieslist.carComments,as:'carcomments'}
+															<li>${carcomments.user}-${carcomments.carCommentTime}</li>
+															${carcomments.commentType}
+
+														 #{/list}
                       #{/list}
 
 	</body>

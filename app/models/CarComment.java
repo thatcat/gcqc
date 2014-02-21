@@ -15,7 +15,7 @@ public class CarComment extends Model {
     public String commentType;
     
 	@Required @As("yyyy-MM-dd")
-	public Date carCommentATime;
+	public Date carCommentTime;
 
 	@Required
     @ManyToOne
@@ -28,7 +28,7 @@ public class CarComment extends Model {
 
     public CarComment(String commentType,Date carCommentATime ) {
 	this.commentType=commentType;
-	this.carCommentATime=carCommentATime;
+	this.carCommentTime=carCommentTime;
     }
 
     public String toString()  {
