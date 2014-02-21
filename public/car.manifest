@@ -1,5 +1,5 @@
 CACHE MANIFEST
-/index.html
+# version 1.0
 stylesheets/bootstrap.css
 stylesheets/opa-icons.css
 stylesheets/index.css
@@ -20,6 +20,7 @@ images/hot.gif
 images/scrollTop.gif
 images/icons/opa-icons-color16.png
 images/icons/opa-icons-color32.png
+images/icons/bg_line.png
 images/praise_btn.png
 images/praise_icon.png
 images/font/hanyi.woff

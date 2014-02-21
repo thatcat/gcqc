@@ -32,7 +32,8 @@
 	outline: none;
 	font-family: "微软雅黑", "宋体", "黑体", Arial, Sans-serif;
 	font-size: 15px;
-	margin-left: 0px;
+	margin-left: 4px;
+	text-indent: 10px;
 }
 .email-content{
 	width:500px;
@@ -47,6 +48,7 @@
 	resize:none;
 	margin-left: 79px;
 	margin-top: -18px;
+	text-indent: 10px;
 }
 .contact-us-area .btn-primary{
 	margin-left: 79px;
