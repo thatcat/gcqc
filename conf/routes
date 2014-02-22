@@ -25,6 +25,9 @@ GET         /search						Application.search
 GET		/application/addcarcomment	Application.addCarComment
 POST		/application/addcarcomment	Application.addCarComment
 
+GET			/*						Application.notFound	
+POST		/*						Application.notFound
+
 # Ignore favicon requests
 GET     /favicon.ico                            404
 
@@ -33,3 +36,5 @@ GET     /public/                                staticDir:public
 
 # Catch all
 *       /{controller}/{action}                  {controller}.{action}
+
+
