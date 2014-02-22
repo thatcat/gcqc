@@ -25,21 +25,11 @@ public class Post extends Model {
     @OneToMany(mappedBy="post", cascade=CascadeType.ALL)
     public List<Comment> comments;
     
-	public int commentCount=0;
-    
     public Post(User author, String content) { 
         this.comments = new ArrayList<Comment>(); 
         this.author = author;
         this.content = content;
         this.postedAt = new Date();
-        this.commentCount=1;
-    }
-    
-    public Post addComment(String author, String content) {
-        Comment newComment = new Comment(this, author, content);
-        this.comments.add(newComment);
-        this.save();
-        return this;
     }
     
     public Post previous() {
