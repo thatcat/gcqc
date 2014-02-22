@@ -169,8 +169,8 @@ public static void savePost2( Post post) {
 		CarComment carComment = new CarComment(carCommentType,new Date() );
 		carComment.seriesName=carSeries;
 		carComment.user=author;
-		System.out.println("--------------------------------------carCommentType":carCommentType);
-		System.out.println("--------------------------------------id":id);
+		System.out.println("--------------------------------------carCommentType:"+carCommentType);
+		System.out.println("--------------------------------------id:"+id);
 		showSeries(id);
 	}
 
