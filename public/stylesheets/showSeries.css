@@ -1,73 +1,83 @@
-﻿#carSeries {
+﻿#carContent .carSeries {
 	width: 960px;
 	margin: 0 auto;
 }
 .clear {
 	clear: both;
 }
-#carSeries img {
-	float: left;
+#carContent .carSerieseContent {
+	width: 800px;
+	margin: 0 auto;
+	/*background: #fff;*/
+}
+#carContent .carSeries img {
+	display: inline-block;
 	width: 400px;
 	height: 260px;
 }
-#carSeries .carSeriesTable {
-	margin-left: 500px;
-	width: 400px;
+#carContent .carSerieseContent .carSeries-wrap {
+	display: inline-block;
+	width: 380px;
+	height: 260px;
+	vertical-align: top;
+}
+#carContent .carSeries .carSeriesTable {
+	width: 380px;
+	margin-top: 50px;
 	border: 1px solid #ddd;
 	border-collapse: collapse;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
 }
-#carSeries .carSeriesTable td {
+#carContent .carSeries .carSeriesTable td {
 	padding: 8px;
 	line-height: 20px;
 	text-align: center;
 	vertical-align: top;
 	border-top: 1px solid #ddd;
 }
-#level {
+.level {
 	text-indent: -999px;
 	display: none;
 }
-#levelShow {
+.levelShow {
 	position: relative;
 }
-#noStar {
-	position: absolute;
-	background: url();
-}
-#levelShow ul{
+.levelShow ul{
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
 	position: absolute;
 	left: 30px;
 }
-#levelShow ul li {
+.levelShow ul li {
 	width: 20px;
 	height: 20px;
-	text-indent: -999px;
+	text-indent: -9999px;
 	float: left;
 	background: url('../images/lanrentuku.png') no-repeat 0 0;
 }
-#levelShow .hasStar li {
+.levelShow .hasStar li {
 	background: url('../images/lanrentuku.png') no-repeat 0 -25px;
 }
-#commentForm {
-	width: 400px;
-	margin: 20px 0 20px 500px;
+.commentForm {
+	margin-top: 60px;
+	text-align: center;
 }
-#carSeries .carComments {
-	padding-left: 0;
+.carSeries .carComments {
+	background: #fff;
+	padding: 10px 50px;
 	list-style-type: none;
 	width: 400px;
-	margin-left: 500px;
+	margin: 20px auto;
+	border: 1px solid #ccc;
+	display: none;
 }
-#carSeries .carComments .icon32 {
+.carSeries .carComments .icon32 {
 	vertical-align: middle;
 }
-#carSeries .carComments .comment {
+.carSeries .carComments .comment {
 	text-indent: 30px;
 	background: #f6f6f6;
 	border-left: 5px solid #929292;
