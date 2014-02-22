@@ -17,7 +17,7 @@ public class CarSeries extends Model {
     @Required
     public String path;//图片路径
 
-    public String bottomPrice;//最低价
+    public float bottomPrice;//最低价
 
 	public String fuelConsumption;//油耗
 
@@ -36,7 +36,7 @@ public class CarSeries extends Model {
 	@OneToMany(mappedBy="seriesName", cascade=CascadeType.ALL)
     public List<CarComment> carComments;
 
-    public CarSeries(String seriesName,String path, String bottomPrice,String fuelConsumption,float startLevel, String carType) {
+    public CarSeries(String seriesName,String path, float bottomPrice,String fuelConsumption,float startLevel, String carType) {
 	this.seriesName=seriesName;
 	this.path=path;
 	this.bottomPrice=bottomPrice;

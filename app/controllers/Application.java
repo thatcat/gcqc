@@ -127,8 +127,18 @@ public static void savePost2( Post post) {
         index();
     }
 
-	public static void search() {
-	
+	public static void search(String carType,String lowPrice,String highPrice) {
+		System.out.println("------------------------------------------------------------------------carType:"+carType);
+		System.out.println("------------------------------------------------------------------------lowPrice:"+lowPrice);
+		System.out.println("------------------------------------------------------------------------highPrice:"+highPrice);
+		float tempLowPrice=0;
+		float tempHighPrice=10000000;
+		if(lowPrice != null)
+			tempLowPrice=Float.parseFloat(lowPrice)/100000;
+		if(highPrice != null)
+			tempHighPrice=Float.parseFloat(highPrice)/100000;
+		//List<CarSeries> carSeriesList = CarSeries.find("byCarTypeAndBottomPriceBetweenTempLowPriceandTempHighPrice,carType").fetch(3);	
+		List<CarSeries> carSeriesList = CarSeries.find("Select c from CarSeries c where carType=? and bottomPrice > ? and bottomPrice <?",carType,tempLowPrice,tempHighPrice).fetch(3);	
 	}
 
 	public static void addPraise(Long id,int num) {
