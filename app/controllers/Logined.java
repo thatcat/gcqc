@@ -6,8 +6,9 @@ import play.data.validation.*;
 import play.db.jpa.*;
 import javax.persistence.*;
 import java.io.*;
-import java.io.*;
+import java.nio.file.Files;
 import java.text.SimpleDateFormat;
+import play.*;
 
 import models.*;
 
@@ -308,16 +309,21 @@ public static void savePostOrigin(Post post) {
 		/**上传图片
 		  */
 		 public static void uploadPhoto(String title, File photo) {
+			 String outputPah = Play.applicationPath.toString()+"/public/attachment/";
 			try
-			{
-			FileOutputStream fos = new FileOutputStream("/100000.jpg");
+			{		
+			File outputFile = new File(outputPah+photo.getName());
+			FileOutputStream fos = new FileOutputStream(outputFile);
 			FileInputStream fis = new FileInputStream(photo);
+
 			byte[] buffer = new byte[10240];
 			int len = 0;
 			while ((len = fis.read(buffer)) > 0) {
 				fos.write(buffer, 0, len);
 			}
 			fos.close();
+			fis.close();
+			 flash.success("上传成功" );
 			}
 			catch (FileNotFoundException  e )
 			{
@@ -333,12 +339,23 @@ public static void savePostOrigin(Post post) {
 			 }
 
 			User user = connected();
-			user.authPictiurePath=(photo==null?null:photo.toString());
+			//user.authPictiurePath=(photo==null?null:photo.toString());
+			user.authPictiurePath=outputPah;
 			user.isDeal=false;
 			user.applyDate=new Date();
 			user.save();
-			 flash.success("上传成功" );
+			
 			order_customer();
+
+			
+/*	
+		if(request.method.equalsIgnoreCase("GET")){  
+				render();  
+		}else{  
+				Files.copy(photo, Play.getFile("public/attachment/"+photo.getName()));  
+				render();  
+		}
+*/
 	 }
 
 	/**处理认证通不通过，isCarOwner为true表示通过，为false表示不通过

@@ -101,7 +101,6 @@ public static void savePost( Post post) {
         
 		User author=null;
         String userName = session.get("user");  
-		
 		 if(userName != null) {
             author=User.find("byUsername", userName).first();
         } 
@@ -128,11 +127,8 @@ public static void savePost2( Post post) {
     }
 
 	public static void search(String carType,String lowPrice,String highPrice) {
-		System.out.println("------------------------------------------------------------------------carType:"+carType);
-		System.out.println("------------------------------------------------------------------------lowPrice:"+lowPrice);
-		System.out.println("------------------------------------------------------------------------highPrice:"+highPrice);
 		float tempLowPrice=0;
-		float tempHighPrice=10000000;
+		float tempHighPrice=100000000;
 		if( lowPrice.equals("") || lowPrice == "" )
 			tempLowPrice=0;
 		else
@@ -155,6 +151,27 @@ public static void savePost2( Post post) {
 		CarBrand carBrand = CarBrand.find("byId",id).first();
 		List<CarSeries> carSeriesList = CarSeries.find("byBrandName",carBrand).fetch();
 		render(carSeriesList);
+	}
+
+	public static void carComment(Long id, String carCommentType ) {
+		if(connected()==null)
+		{
+			 flash.error("请先登录！");
+            //跳转到登录画面
+            Application.login();
+        }		   
+		User author=null;
+        String userName = session.get("user");  
+		 if(userName != null) {
+            author=User.find("byUsername", userName).first();
+        } 
+		CarSeries carSeries = CarSeries.find("byId",id).first();
+		CarComment carComment = new CarComment(carCommentType,new Date() );
+		carComment.seriesName=carSeries;
+		carComment.user=author;
+		System.out.println("--------------------------------------carCommentType":carCommentType);
+		System.out.println("--------------------------------------id":id);
+		showSeries(id);
 	}
 
 }
