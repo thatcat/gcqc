@@ -25,6 +25,22 @@ jQuery(document).ready(function() {
 		}
 	}
 
+	var now;
+	jQuery("#selectCar").hover(function() {
+		jQuery("#selectCar .carList").slideDown();
+	}, function() {
+		jQuery("#selectCar .carList").hide();
+		jQuery(now).show();
+	});
+
+	jQuery(".carList").click(function() {
+		var car = jQuery(this);
+		jQuery("#selectInput").val(car.text());
+		jQuery("#selectCar").prepend(car);
+		jQuery("#selectCar .carList").hide();
+		now = jQuery(this);
+	});
+
 	jQuery(".praise_btn").click(function() {
 		var praise_num = jQuery(this).parent().find(".praise_num");
 		var number = praise_num.text();
