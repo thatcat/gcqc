@@ -133,12 +133,16 @@ public static void savePost2( Post post) {
 		System.out.println("------------------------------------------------------------------------highPrice:"+highPrice);
 		float tempLowPrice=0;
 		float tempHighPrice=10000000;
-		if(lowPrice != null)
+		if( lowPrice.equals("") || lowPrice == "" )
+			tempLowPrice=0;
+		else
 			tempLowPrice=Float.parseFloat(lowPrice)/100000;
-		if(highPrice != null)
+		if( highPrice.equals("")||highPrice == "" )
+			tempHighPrice=10000000;
+		else
 			tempHighPrice=Float.parseFloat(highPrice)/100000;
-		//List<CarSeries> carSeriesList = CarSeries.find("byCarTypeAndBottomPriceBetweenTempLowPriceandTempHighPrice,carType").fetch(3);	
-		List<CarSeries> carSeriesList = CarSeries.find("Select c from CarSeries c where carType=? and bottomPrice > ? and bottomPrice <?",carType,tempLowPrice,tempHighPrice).fetch(3);	
+		List<CarSeries> carSeriesList = CarSeries.find("Select c from CarSeries c where carType=? and bottomPrice > ? and bottomPrice <?",carType,tempLowPrice,tempHighPrice).fetch();	
+		render("Application/showSeries.html",carSeriesList);
 	}
 
 	public static void addPraise(Long id,int num) {
@@ -148,8 +152,9 @@ public static void savePost2( Post post) {
 	}
 
 	public static void showSeries(Long id ) {
-	List<CarSeries> carSeriesList = CarSeries.findAll();
-	render(carSeriesList);
+		CarBrand carBrand = CarBrand.find("byId",id).first();
+		List<CarSeries> carSeriesList = CarSeries.find("byBrandName",carBrand).fetch();
+		render(carSeriesList);
 	}
 
 }
