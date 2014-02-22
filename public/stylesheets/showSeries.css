@@ -28,7 +28,31 @@
 }
 #level {
 	text-indent: -999px;
-	background: url('../images/star.png') no-repeat 0px 0px;
+	display: none;
+}
+#levelShow {
+	position: relative;
+}
+#noStar {
+	position: absolute;
+	background: url();
+}
+#levelShow ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	left: 30px;
+}
+#levelShow ul li {
+	width: 20px;
+	height: 20px;
+	text-indent: -999px;
+	float: left;
+	background: url('../images/lanrentuku.png') no-repeat 0 0;
+}
+#levelShow .hasStar li {
+	background: url('../images/lanrentuku.png') no-repeat 0 -25px;
 }
 #commentForm {
 	width: 400px;
