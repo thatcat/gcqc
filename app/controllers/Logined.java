@@ -406,5 +406,9 @@ public static void savePostOrigin(Post post) {
     	renderJSON(map); 	
 	}
 
+	public static void search(String carType,String lowPrice,String highPrice) {
+		Application.search( carType, lowPrice, highPrice);
+	}
+
 
 }
