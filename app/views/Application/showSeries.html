@@ -42,7 +42,7 @@
 		<div id="carSeries">
 			<div class="showCar">
 				<img src="${carserieslist.path}" />
-				<table class="carSeriesList table">
+				<table class="carSeriesList">
                     <tr>
 					   <th>最低价</th>
                        <td>${carserieslist.bottomPrice}</td>
@@ -57,11 +57,13 @@
                     </tr>
 				</table>
 				<div class="carComment">
-                <form action="@addCarComment">
-					<input class="input-box" type="textarea" name="carCommentType" id="carCommentType" required="required" placeholder="我来点评" >
-                    <input type="hidden" name="id" value="${carserieslist.id}" />
+                #{form @addCarComment() }
+                    #{field 'comment.content'}
+    					<input class="input-box" type="textarea" name="carCommentType" id="carCommentType" required="required" placeholder="我来点评" >
+                        <input type="hidden" name="id" value="${carserieslist.id}" />
+                    #{/field }
 					<input class="btn btn-info" type="submit" name="submit" value="点评">
-                </form>
+                #{/form}
 				</div>
 			</div>
 			<ul class="carComments">
