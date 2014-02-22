@@ -50,7 +50,6 @@ public class Application extends Controller {
     public static void saveUser(@Valid User user, String verifyPassword) {
 		verifyPassword=Md5Util.getMD5Str(verifyPassword);		// MD5加密
 		user.password=Md5Util.getMD5Str(user.password);
-		System.out.println(verifyPassword);
         User userExisted = User.find("byUsername", user.username).first(); 	
         if(userExisted != null){
             validation.required(user.username);
@@ -66,6 +65,7 @@ public class Application extends Controller {
             render("@register", user, verifyPassword);
          }
         user.isAdmin = false;
+		user.isCarOwner=false;
         user.create();
         session.put("user", user.username);
         flash.success("Welcome, " + user.username);
@@ -111,8 +111,6 @@ public static void savePost( Post post) {
         // Save
         post.save();     
 		flash.success("Thanks for posting %s", author);
-		//words_board();
-		//test();
     }
 
 public static void savePost2( Post post) {
@@ -122,9 +120,6 @@ public static void savePost2( Post post) {
             //跳转到登录画面
             Application.login();
         }
-       
-
-
     }
     
     public static void logout() {
