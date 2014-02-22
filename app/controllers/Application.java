@@ -153,7 +153,7 @@ public static void savePost2( Post post) {
 		render(carSeriesList);
 	}
 
-	public static void carComment(Long id, String carCommentType ) {
+	public static void addCarComment(Long id, String carCommentType ) {
 		if(connected()==null)
 		{
 			 flash.error("请先登录！");
@@ -169,6 +169,7 @@ public static void savePost2( Post post) {
 		CarComment carComment = new CarComment(carCommentType,new Date() );
 		carComment.seriesName=carSeries;
 		carComment.user=author;
+		carComment.save();
 		System.out.println("--------------------------------------carCommentType:"+carCommentType);
 		System.out.println("--------------------------------------id:"+id);
 		showSeries(id);
