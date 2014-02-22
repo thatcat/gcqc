@@ -1,0 +1,40 @@
+﻿#carSeries {
+	width: 960px;
+	margin: 0 auto;
+}
+.clear {
+	clear: both;
+}
+#carSeries img {
+	float: left;
+	width: 400px;
+	height: 260px;
+}
+#carSeries .carComments {
+	padding-left: 0;
+	list-style-type: none;
+	width: 400px;
+	margin-left: 500px;
+}
+#carSeries .carSeriesList li {
+	border: 1px solid #ddd;
+	border-collapse: separate;
+	border-left: 0;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+#carSeries .carComment {
+	margin-left: 500px;
+}
+#carSeries .carComments .icon32 {
+	vertical-align: middle;
+}
+#carSeries .carComments .comment {
+	text-indent: 30px;
+	background: #f6f6f6;
+	border-left: 5px solid #929292;
+	margin-left: 13px;
+	line-height: 40px;
+	font-size: 14px;
+}
