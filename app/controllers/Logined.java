@@ -309,7 +309,7 @@ public static void savePostOrigin(Post post) {
 		/**上传图片
 		  */
 		 public static void uploadPhoto(String title, File photo) {
-			 String outputPah = Play.applicationPath.toString()+"/public/attachment/";
+			String outputPah = Play.applicationPath.toString()+"/public/attachment/";
 			try
 			{		
 			File outputFile = new File(outputPah+photo.getName());
@@ -343,19 +343,8 @@ public static void savePostOrigin(Post post) {
 			user.authPictiurePath=outputPah;
 			user.isDeal=false;
 			user.applyDate=new Date();
-			user.save();
-			
+			user.save();	
 			order_customer();
-
-			
-/*	
-		if(request.method.equalsIgnoreCase("GET")){  
-				render();  
-		}else{  
-				Files.copy(photo, Play.getFile("public/attachment/"+photo.getName()));  
-				render();  
-		}
-*/
 	 }
 
 	/**处理认证通不通过，isCarOwner为true表示通过，为false表示不通过
