@@ -42,27 +42,28 @@
 		<div id="carSeries">
 			<div class="showCar">
 				<img src="${carserieslist.path}" />
-				<table class="carSeriesList">
-                    <tr>
-					   <th>最低价</th>
-                       <td>${carserieslist.bottomPrice}</td>
-                    </tr>
-					<tr>
-                       <th>油耗</th>
-                       <td>${carserieslist.fuelConsumption}</td>
-                    </tr>
-					<tr>
-                       <th>星级</th>
-                       <td>${carserieslist.startLevel}</td>
-                    </tr>
-				</table>
+    				<table class="carSeriesTable">
+                        <tr>
+    					   <td>最低价</td>
+                           <td>${carserieslist.bottomPrice}</td>
+                        </tr>
+    					<tr>
+                           <td>油耗</td>
+                           <td>${carserieslist.fuelConsumption}</td>
+                        </tr>
+    					<tr>
+                           <td>星级</td>
+                           <td id="level">${carserieslist.startLevel}</td>
+                           <td id="levelShow"></td>
+                        </tr>
+    				</table>
 				<div class="carComment">
-                #{form @addCarComment() }
+                #{form @addCarComment(), id:'commentForm' }
                     #{field 'comment.content'}
     					<input class="input-box" type="textarea" name="carCommentType" id="carCommentType" required="required" placeholder="我来点评" >
                         <input type="hidden" name="id" value="${carserieslist.id}" />
                     #{/field }
-					<input class="btn btn-info" type="submit" name="submit" value="点评">
+					<input id="commentBtn" class="btn btn-info" type="button" name="submit" value="点评">
                 #{/form}
 				</div>
 			</div>
