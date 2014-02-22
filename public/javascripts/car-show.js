@@ -25,12 +25,11 @@ jQuery(document).ready(function() {
 		}
 	}
 
-	var now;
 	jQuery("#selectCar").hover(function() {
 		jQuery("#selectCar .carList").slideDown();
 	}, function() {
 		jQuery("#selectCar .carList").hide();
-		jQuery(now).show();
+		jQuery("#selectCar .carList:first").show();
 	});
 
 	jQuery(".carList").click(function() {
@@ -38,7 +37,6 @@ jQuery(document).ready(function() {
 		jQuery("#selectInput").val(car.text());
 		jQuery("#selectCar").prepend(car);
 		jQuery("#selectCar .carList").hide();
-		now = jQuery(this);
 	});
 
 	jQuery(".praise_btn").click(function() {
