@@ -175,4 +175,8 @@ public static void savePost2( Post post) {
 		showSeries(id);
 	}
 
+	public static void notFound() {
+	render();
+	}
+
 }
