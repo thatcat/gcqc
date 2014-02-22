@@ -41,16 +41,29 @@
 
 		<!----------------------------------------------------------------------------- 搜索框开始 -------------------------------------------------->  
 	<div id="carSearch">
-		#{form @Application.search(), id:'formSearch', class:'form-inline'}
+		#{form @search(), id:'formSearch', class:'form-inline'}
 				#{field 'carType'}				
-					<label for="loginusername">选择车型</label>
-					<input type="text" class="input-box" name="username" id="loginusername">	
+					<label id="selectLabel" for="selectInput">选择车型</label>
+                    <span id="down">▼</span>
+                    <ul id="selectCar">
+                        <li id="carList1" class="carList">微型车</li>
+                        <li id="carList2" class="carList">小型车</li>
+                        <li id="carList3" class="carList">紧凑型车</li>
+                        <li id="carList4" class="carList">中型车</li>
+                        <li id="carList5" class="carList">中大型车</li>
+                        <li id="carList6" class="carList">豪华型车</li>
+                        <li id="carList7" class="carList">SUV</li>
+                        <li id="carList8" class="carList">MPV</li>
+                        <li id="carList9" class="carList">跑车</li>
+                        <li id="carList10" class="carList">商用车</li>
+                    </ul>
+					<input type="hidden" class="input-box" name="carType" id="selectInput" value="微型车">	
 					<span class="error">${field.error}</span>				
 				#{/field}
 				&nbsp;&nbsp;
-				选择价格区间
+				
 				#{field 'lowPrice'}			
-					<label for="lowPrice"></label>
+					<label id="priceLabel" for="lowPrice">选择价格区间</label>
 					<input type="text" id="lowPrice" class="input-box" name="lowPrice"  placeholder="例如：50000">
 					<span class="error">${field.error}</span>				
 				#{/field}
