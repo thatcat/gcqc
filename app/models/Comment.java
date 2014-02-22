@@ -9,8 +9,9 @@ import play.data.validation.*;
 @Entity
 public class Comment extends Model {
  
-    @Required
-    public String author;
+	@Required
+    @ManyToOne
+    public User author;
     
     @Required
     public Date postedAt;
@@ -24,7 +25,7 @@ public class Comment extends Model {
     @Required
     public Post post;
     
-    public Comment(Post post, String author, String content) {
+    public Comment(Post post, User author, String content) {
         this.post = post;
         this.author = author;
         this.content = content;
@@ -32,7 +33,7 @@ public class Comment extends Model {
     }
     
     public String toString() {
-        return content.length() > 50 ? content.substring(0, 50) + "..." : content;
+        return content;
     }
  
 }

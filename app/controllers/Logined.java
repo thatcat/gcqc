@@ -169,20 +169,43 @@ public static void savePostOrigin(Post post) {
        render(postList);
     }
 
-/**
-  *在首页的留言评论
-  */
-	 public static void postComment(Long postId, String content )
-    {
+	/**各个页面添加评论的通用代码
+	*/
+	public static void originComment (Long postId, String content ) {
 		if(connected()==null)
 		{
             //跳转到登录画面
             Application.login();
         }	
-		//String content = content;
         Post post = Post.findById(postId);
-		String author = session.get("user");
-        post.addComment(author, content);
+		User author = null;
+		String userName = session.get("user");
+		 if(userName != null) {
+			 author=User.find("byUsername", userName).first();
+        } 
+		Comment comment = new Comment(post,author,content);
+		comment.save();
+        flash.success("Thanks for posting %s", author);
+
+	}
+
+/**
+  *在首页的留言评论
+  */
+	 public static void postComment(Long postId, String content ) {
+		if(connected()==null)
+		{
+            //跳转到登录画面
+            Application.login();
+        }	
+        Post post = Post.findById(postId);
+		User author = null;
+		String userName = session.get("user");
+		 if(userName != null) {
+			 author=User.find("byUsername", userName).first();
+        } 
+		Comment comment = new Comment(post,author,content);
+		comment.save();
         flash.success("Thanks for posting %s", author);
         words_board();
     }
@@ -190,35 +213,41 @@ public static void savePostOrigin(Post post) {
 /**
   *在留言板的留言评论
   */
-	 public static void postComment2(Long postId, String content)
-    {
+	 public static void postComment2(Long postId, String content) {
 		if(connected()==null)
 		{
             //跳转到登录画面
             Application.login();
         }	
-		//String content = content;
         Post post = Post.findById(postId);
-		String author = session.get("user");
-        post.addComment(author, content);
+		User author = null;
+		String userName = session.get("user");
+		 if(userName != null) {
+			 author=User.find("byUsername", userName).first();
+        } 
+		Comment comment = new Comment(post,author,content);
+		comment.save();
         flash.success("Thanks for posting %s", author);
-        index();
+		index();
     }
 
 /**
   *管理员的留言评论
   */
-	 public static void postCommentForCMS(Long postId, String content)
-     {
+	 public static void postCommentForCMS(Long postId, String content) {
 		if(connected()==null)
 		{
             //跳转到登录画面
             Application.login();
         }	
-		//String content = content;
         Post post = Post.findById(postId);
-		String author = session.get("user");
-        post.addComment(author, content);
+		User author = null;
+		String userName = session.get("user");
+		 if(userName != null) {
+			 author=User.find("byUsername", userName).first();
+        } 
+		Comment comment = new Comment(post,author,content);
+		comment.save();
         flash.success("Thanks for posting %s", author);
         post_cms();
     }
@@ -248,8 +277,6 @@ public static void savePostOrigin(Post post) {
             //跳转到登录画面
             Application.login();
         }	
-		//String content = content;
-       // Post post = Post.findById(postId);
 		Comment comment=Comment.findById(commentId);
 		comment.delete();
         post_cms();
