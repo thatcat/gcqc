@@ -31,11 +31,24 @@ public class Logined extends Controller {
         return null;
     }
 
-    public static void index() {
-        if(connected() == null) {
+	@Before
+	static void checkLogined() { 
+		    if(connected() == null) {
             //跳转到登录画面
-            Application.index();
+            Application.login();
         }
+	}
+	
+	/**添加管理员权限拦截，不是管理员，不能执行以下字符串数组内的方法*/
+	@Before(only={"order_cms","post_cms","deletePost","deleteComment","deal_refresh","auth_delete","addSeries","saveCarSeries"}) 
+	static void checkAdmin() { 
+		User user = connected();
+		if(user.isAdmin != true) {
+			notFound();
+        }
+	}
+
+    public static void index() {
 		List<Post> postList = Post.find("order by id desc").from(0).fetch(3);	
 		List<CarBrand> carBrandList = CarBrand.findAll();
        render(postList,carBrandList);
@@ -47,12 +60,6 @@ public class Logined extends Controller {
     }
     
     public static void email(String message) {
-    	User user = connected();
-    	if(user == null) {
-			 flash.error("请先登录！");
-            //跳转到登录画面
-            Application.login();
-        }
     	render(message);
     }
 
@@ -63,11 +70,6 @@ public class Logined extends Controller {
     }
     
     public static void order_cms(){
-    	if(connected() == null) {
-            //跳转到登录画面
-            Application.index();
-        }
-
 		 //还没有处理的车主认证
     	List<User> userUndealList = User.find("byIsDealAndAuthPictiurePathIsNotNull",false).fetch();
     	//已经处理的车主认证
@@ -81,15 +83,9 @@ public static void savePostOrigin(Post post) {
 
 
 /**
-  *在首页保存留言的方法
+  *在“更多留言”保存留言的方法
   */
     public static void savePost( Post post) {
-		if(connected()==null)
-		{
-            //跳转到登录画面
-            Application.login();
-        }		
-        
 		User author=null;
         String userName = session.get("user");  
 		
@@ -106,15 +102,9 @@ public static void savePostOrigin(Post post) {
     }
 
 /**
-  *在“更多留言”保存留言的方法
+  *在首页保存留言的方法
   */
 	public static void savePost2( Post post) {
-		if(connected()==null)
-		{
-            //跳转到登录画面
-            Application.login();
-        }		
-        
 		User author=null;
         String userName = session.get("user");  
 		
@@ -134,12 +124,6 @@ public static void savePostOrigin(Post post) {
   *管理员页面保存留言的方法
   */
 	 public static void savePostForCMS( Post post) {
-		if(connected()==null)
-		{
-            //跳转到登录画面
-            Application.login();
-        }		
-        
 		User author=null;
         String userName = session.get("user");  
 		
@@ -157,25 +141,14 @@ public static void savePostOrigin(Post post) {
     }
 
 	public static void words_board(){
-		if(connected()==null)
-		{
-            //跳转到登录画面
-            Application.login();
-        }		
     	//从form+1开始返回后面的fetch条记录
-    	List<Post> postList = Post.find("order by id desc").fetch();
-    	
-       render(postList);
+    	List<Post> postList = Post.find("order by id desc").fetch();  	
+        render(postList);
     }
 
 	/**各个页面添加评论的通用代码
 	*/
 	public static void originComment (Long postId, String content ) {
-		if(connected()==null)
-		{
-            //跳转到登录画面
-            Application.login();
-        }	
         Post post = Post.findById(postId);
 		User author = null;
 		String userName = session.get("user");
@@ -192,11 +165,6 @@ public static void savePostOrigin(Post post) {
   *在首页的留言评论
   */
 	 public static void postComment(Long postId, String content ) {
-		if(connected()==null)
-		{
-            //跳转到登录画面
-            Application.login();
-        }	
         Post post = Post.findById(postId);
 		User author = null;
 		String userName = session.get("user");
@@ -213,11 +181,6 @@ public static void savePostOrigin(Post post) {
   *在留言板的留言评论
   */
 	 public static void postComment2(Long postId, String content) {
-		if(connected()==null)
-		{
-            //跳转到登录画面
-            Application.login();
-        }	
         Post post = Post.findById(postId);
 		User author = null;
 		String userName = session.get("user");
@@ -234,11 +197,6 @@ public static void savePostOrigin(Post post) {
   *管理员的留言评论
   */
 	 public static void postCommentForCMS(Long postId, String content) {
-		if(connected()==null)
-		{
-            //跳转到登录画面
-            Application.login();
-        }	
         Post post = Post.findById(postId);
 		User author = null;
 		String userName = session.get("user");
@@ -252,45 +210,27 @@ public static void savePostOrigin(Post post) {
     }
 
 	public static void post_cms( ) {
-		List<Post> postList = Post.find("order by id desc").from(0).fetch(10);
+		List<Post> postList = Post.find("order by id desc").fetch();
        render(postList);
 	}
 
-	 public static void deletePost( Long postId)       
-    {
-		if(connected()==null)
-		{
-            //跳转到登录画面
-            Application.login();
-        }	
-		//String content = content;
+	 public static void deletePost( Long postId) {
         Post post = Post.findById(postId);
 		post.delete();
         post_cms();
     }
 
-	 public static void deleteComment(Long commentId)       
-    {
-		if(connected()==null)
-		{
-            //跳转到登录画面
-            Application.login();
-        }	
+	 public static void deleteComment(Long commentId) {
 		Comment comment=Comment.findById(commentId);
 		comment.delete();
         post_cms();
     }
 
-	
 	 public static void order_customer(){
-		User user = connected();
-    	if(user == null) {
-            //跳转到登录画面
-            Application.index();
-        }		
        render();
     }
-		public static void changePassword(String newPassword, String verifyNewPassword) {
+
+	public static void changePassword(String newPassword, String verifyNewPassword) {
 		validation.required(verifyNewPassword);
         validation.equals(verifyNewPassword, newPassword).message("Your password doesn't match");
         if(validation.hasErrors()) {
@@ -337,7 +277,6 @@ public static void savePostOrigin(Post post) {
 			 }
 
 			User user = connected();
-			//user.authPictiurePath=(photo==null?null:photo.toString());
 			user.authPictiurePath=outputPah;
 			user.isDeal=false;
 			user.applyDate=new Date();
@@ -348,10 +287,6 @@ public static void savePostOrigin(Post post) {
 	/**处理认证通不通过，isCarOwner为true表示通过，为false表示不通过
 	  */
 	public static void deal_refresh(long itemId, String authType,boolean isCarOwner){
-    	if(connected() == null) {
-            //跳转到登录画面
-            Application.index();
-        }
     	//找到对应数据项
     	User user = User.findById(itemId);
 		// 是否已经被处理设为true
@@ -364,20 +299,15 @@ public static void savePostOrigin(Post post) {
 		user.authDate=new Date();
 		}
     	user.save();
-    	//order_cms();
     	Map map = new HashMap();
     	int status = 200;
     	map.put("status", status);
     	renderJSON(map);
     }
 
-	/**处理认证通不通过，isCarOwner为true表示通过，为false表示不通过
+	/**取消认证
 	  */
-	public static void auth_delete(long itemId){
-		if(connected() == null) {
-            //跳转到登录画面
-            Application.index();
-        }
+	public static void auth_delete(long itemId) {
     	//找到对应数据项
 		int status=0;
     	User user = User.findById(itemId);
