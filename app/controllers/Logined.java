@@ -247,10 +247,11 @@ public static void savePostOrigin(Post post) {
 		/**上传图片
 		  */
 		 public static void uploadPhoto(String title, File photo) {
-			String outputPah = Play.applicationPath.toString()+"/public/attachment/";
+			String outputPah = Play.applicationPath.toString()+"\\public\\attachment\\";
 			try
 			{		
 			File outputFile = new File(outputPah+photo.getName());
+			System.out.println("-----------------------------------outputFile:"+outputFile);
 			FileOutputStream fos = new FileOutputStream(outputFile);
 			FileInputStream fis = new FileInputStream(photo);
 
@@ -277,7 +278,7 @@ public static void savePostOrigin(Post post) {
 			 }
 
 			User user = connected();
-			user.authPictiurePath=outputPah;
+			user.authPictiurePath="public\\attachment\\"+photo.getName();
 			user.isDeal=false;
 			user.applyDate=new Date();
 			user.save();	
@@ -334,12 +335,14 @@ public static void savePostOrigin(Post post) {
 	public static void saveCarSeries(CarSeries carSeries, Long carBrandId) {
 		CarSeries carSeriesExisted = CarSeries.find("bySeriesName", carSeries.seriesName).first(); 
 		String message = "";
+		System.out.println("------------------------------------carSeries.carType:"+carSeries.carType);
 		if(carSeriesExisted != null)  {
 			message = "系列已经存在！添加失败";
 			addSeries(message);
 		}
 		CarBrand carBrand = CarBrand.find("byId", carBrandId).first();
 		carSeries.brandName=carBrand;
+		
 		carSeries.save();
 		message = "添加成功！";
 		addSeries(message);	
