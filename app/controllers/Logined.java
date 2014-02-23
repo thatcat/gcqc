@@ -244,9 +244,9 @@ public static void savePostOrigin(Post post) {
 		  order_customer();
 		}
 
-		/**上传图片
+		/**上传图片,photo为车辆证明材料照片文件，idcard为身份证照片文件
 		  */
-		 public static void uploadPhoto(String title, File photo) {
+		 public static void uploadPhoto(String title, File photo, File idcard) {
 			String outputPah = Play.applicationPath.toString()+"\\public\\attachment\\";
 			try
 			{		
@@ -255,6 +255,10 @@ public static void savePostOrigin(Post post) {
 			FileOutputStream fos = new FileOutputStream(outputFile);
 			FileInputStream fis = new FileInputStream(photo);
 
+			File outputIdCard = new File(outputPah+idcard.getName());
+			FileOutputStream fos2 = new FileOutputStream(outputIdCard);
+			FileInputStream fis2 = new FileInputStream(idcard);
+
 			byte[] buffer = new byte[10240];
 			int len = 0;
 			while ((len = fis.read(buffer)) > 0) {
@@ -262,6 +266,14 @@ public static void savePostOrigin(Post post) {
 			}
 			fos.close();
 			fis.close();
+
+			len=0;
+			while((len=fis2.read(buffer))>0) {
+				fos2.write(buffer,0,len);
+			}
+			fis2.close();
+			fos2.close();
+
 			 flash.success("上传成功" );
 			}
 			catch (FileNotFoundException  e )
@@ -279,6 +291,7 @@ public static void savePostOrigin(Post post) {
 
 			User user = connected();
 			user.authPictiurePath="public\\attachment\\"+photo.getName();
+			user.idcardPictiurePath="public\\attachment\\"+idcard.getName();
 			user.isDeal=false;
 			user.applyDate=new Date();
 			user.save();	

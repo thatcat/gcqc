@@ -33,6 +33,8 @@ public class User extends Model {
 
 	public String authPictiurePath;//认证的图片路径
 
+	public String idcardPictiurePath;//认证的图片路径
+
 	public boolean isDeal;//是否已经被处理了认证
 
 	public int integration; //积分
