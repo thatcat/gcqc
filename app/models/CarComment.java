@@ -26,9 +26,10 @@ public class CarComment extends Model {
     public User user;
 
 
-    public CarComment(String commentType,Date carCommentATime ) {
+    public CarComment(String commentType ) {
 	this.commentType=commentType;
 	this.carCommentTime=carCommentTime;
+
     }
 
     public String toString()  {

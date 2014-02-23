@@ -166,12 +166,17 @@ public static void savePost2( Post post) {
             author=User.find("byUsername", userName).first();
         } 
 		CarSeries carSeries = CarSeries.find("byId",id).first();
-		CarComment carComment = new CarComment(carCommentType,new Date() );
+		Date carCommentDate = new Date();
+		CarComment carComment = new CarComment(carCommentType);
+		carComment.carCommentTime=carCommentDate;
 		carComment.seriesName=carSeries;
 		carComment.user=author;
+		if(author.isCarOwner == true)
+			author.integration=author.integration+2;
+		else
+			author.integration=author.integration+1;
+		author.save();
 		carComment.save();
-		System.out.println("--------------------------------------carCommentType:"+carCommentType);
-		System.out.println("--------------------------------------id:"+id);
 		showSeries(id);
 	}
 

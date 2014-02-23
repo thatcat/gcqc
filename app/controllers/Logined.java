@@ -399,5 +399,23 @@ public static void savePostOrigin(Post post) {
 		Application.search( carType, lowPrice, highPrice);
 	}
 
+	public static void addSeries(String message) {
+		render(message);	
+	}
+
+	public static void saveCarSeries(CarSeries carSeries, Long carBrandId) {
+		CarSeries carSeriesExisted = CarSeries.find("bySeriesName", carSeries.seriesName).first(); 
+		String message = "";
+		if(carSeriesExisted != null)  {
+			message = "系列已经存在！添加失败";
+			addSeries(message);
+		}
+		CarBrand carBrand = CarBrand.find("byId", carBrandId).first();
+		carSeries.brandName=carSeries;
+		carSeries.save();
+		message = "添加成功！";
+		addSeries(message);	
+	}
+
 
 }
