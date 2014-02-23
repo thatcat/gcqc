@@ -19,17 +19,36 @@
 </head>
 <body>
 	<!-- 最顶部快捷条包括登录和注册 -->
-	<div class="header">
-		<div class="banner">
-			<a href="index.html" class="banner-title">国产汽车</a>
-			<span class="milk-theme">我们的汽车，我们的情怀</span>
-			<div class="login-regist">
-				<a href="login.html" id="login" class="login">登录</a>
-				|
-				<a href="register.html" class="regist">注册</a>
-			</div>
-		</div>
-	</div>
+    #{if user}
+    <div class="header">
+       <div class="banner">
+            <a href="index.html" class="banner-title">华农酸奶</a>
+            <span class="milk-theme">梦想的味道</span>
+            <div class="login-regist">
+            当前登录：
+            <a href="#" class="login">${user}</a>
+            | 
+            <a href="@{Logined.logout()}" class="regist">注销</a>
+            |
+            <a href="@{Logined.order_customer()}" class="regist">个人中心</a>
+            </div>
+        </div> 
+    </div>
+    #{/if}  
+    #{else}  
+        <div class="header">
+        <div class="banner">
+            <a href="index.html" class="banner-title">国产汽车</a>
+            <span class="milk-theme">我们的汽车，我们的情怀</span>
+            <div class="login-regist">
+                <a href="login.html" id="login" class="login">登录</a>
+                |
+                <a href="register.html" class="regist">注册</a>
+            </div>
+        </div>
+    </div>
+    #{/else}
+    
 	<div class="container">
 	<!-- 右边固定在屏幕边上的联系方式 --> 
 	<div class="contact-us">
@@ -69,29 +88,39 @@
                                 </tr>
                             </table>
                             <input class="level" type="hidden" value="${carserieslist.startLevel}" />
-                        <div class="commentForm">
-        					<input class="input-box" type="textarea" name="carCommentType" class="carCommentType" required="required" placeholder="我来点评" >
-                            <input type="hidden" name="id" value="${carserieslist.id}" />
-        					<input class="commentBtn btn btn-info" type="button" name="submit" value="点评">
-                            <input class="showComment btn btn-info" type="button" value="查看">
-                        </div>
+                            <a href="#" class="showComment" >查看</a>
                     </div>
     			</div>
-    			<ul class="carComments">
-    			#{list items:carserieslist.carComments,as:'carcomments'}
-    				<li>
-                        <i class="icon32 icon-color icon-bullet-off"></i>
-    					<span class="author">${carcomments.user}</span>
-                        <input type="hidden" class="isAdmin" value="true">
-                        <span class="time">${carcomments.carCommentTime}</span>
-    					<div class="comment">${carcomments.commentType}</div>
-    				</li>
-    			#{/list}
-    			</ul>
+                <div class="carCommentsForm">
+                    <div class="commentForm">
+                        <textarea class="textarea input-box" name="carCommentType" class="carCommentType" required="required" placeholder="我来点评..." ></textarea>
+                        <input type="hidden" name="id" value="${carserieslist.id}" />
+                        <input class="commentBtn btn btn-info" type="button" name="submit" value="点评">
+                    </div>
+        			<ul class="carComments">
+        			#{list items:carserieslist.carComments,as:'carcomments'}
+        				<li>
+                            <i class="icon32 icon-color icon-bullet-off"></i>
+        					<span class="author">${carcomments.user}</span>
+                            <input type="hidden" class="isAdmin" value="true">
+                            <span class="time">${carcomments.carCommentTime}</span>
+        					<div class="comment">${carcomments.commentType}</div>
+        				</li>
+        			#{/list}
+        			</ul>
+                </div>
     			<div class="clear"></div>
     		</div>
         </div>
 		#{/list}
+    </div>
+    <!-- 页脚 -->
+    <div class="footer">
+        <p>COPYRIGHT © 2012 - 2013 DESIGNED BY HCier<p>
+    </div>
+    <!-- 右下角回顶部固定按钮 -->
+    <div id="topcontrol" class="scrollTop" title="回顶部看看">
+        <img src="/public/images/scrollTop.gif"/>
     </div>
 </body>
 </html>
