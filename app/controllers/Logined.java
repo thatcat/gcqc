@@ -361,5 +361,13 @@ public static void savePostOrigin(Post post) {
 		addSeries(message);	
 	}
 
+	public static void addModel(String message) {
+		render(message);	
+	}
+
+		public static void addCarModel(String carModelDataString) {
+			String [] allModels = carModelDataString.split("@");
+		//render(message);	
+	}
 
 }
