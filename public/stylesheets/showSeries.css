@@ -1,12 +1,29 @@
-﻿#carContent .carSeries {
+﻿.container {
+	margin-top: 200px;
 	width: 960px;
+}
+#carContent .carSeries {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-bottom: 100px;
+	border-top: 1px dashed #333;
+	/*border-bottom: 1px dashed #333;*/
+	width: 860px;
 	margin: 0 auto;
 }
 .clear {
 	clear: both;
 }
+#carContent {
+	/*width: 858px;*/
+	width: 958px;
+	margin: 0 auto;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border: 1px solid #337A5B;
+}
 #carContent .carSerieseContent {
-	width: 800px;
+	width: 660px;
 	margin: 0 auto;
 	/*background: #fff;*/
 }
@@ -17,18 +34,18 @@
 }
 #carContent .carSerieseContent .carSeries-wrap {
 	display: inline-block;
-	width: 380px;
+	width: 252px;
 	height: 260px;
 	vertical-align: top;
 }
 #carContent .carSeries .carSeriesTable {
-	width: 380px;
-	margin-top: 50px;
-	border: 1px solid #ddd;
-	border-collapse: collapse;
+	width: 252px;
+	margin-top: 43px;
+	border-collapse: separate;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
+
 }
 #carContent .carSeries .carSeriesTable td {
 	padding: 8px;
@@ -49,7 +66,6 @@
 	margin: 0;
 	padding: 0;
 	position: absolute;
-	left: 30px;
 }
 .levelShow ul li {
 	width: 20px;
@@ -61,18 +77,60 @@
 .levelShow .hasStar li {
 	background: url('../images/lanrentuku.png') no-repeat 0 -25px;
 }
+.showComment {
+	width: 100px;
+	height: 100px;
+	border-radius: 50px;
+	margin-left: 100px;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	-webkit-transition-property: background;
+	-moz-transition-property: background;
+	-o-transition-property: background;
+	transition-property: background;
+	-webkit-transition-duration: 0.3s;
+	-moz-transition-duration: 0.3s;
+	-o-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	background: #00a1cb;
+	color: white;
+	text-shadow: none;
+	border: none;
+	line-height: 100px;
+	padding: 0px;
+	display: inline-block;
+	vertical-align: middle;
+	zoom: 1;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	position: relative;
+	left: 100px;
+}
+.carCommentsForm {
+	border: 1px solid #ccc;
+	background: #fff;
+	border-radius: 10px;
+	display: none;
+}
 .commentForm {
 	margin-top: 60px;
 	text-align: center;
 }
+.commentForm .textarea{
+	width: 500px;
+	height: 80px;
+	text-indent: 10px;
+}
+.commentForm .commentBtn{
+	vertical-align: bottom;
+}
 .carSeries .carComments {
-	background: #fff;
-	padding: 10px 50px;
+	padding: 10px 30px;
 	list-style-type: none;
-	width: 400px;
+	width: 600px;
 	margin: 20px auto;
-	border: 1px solid #ccc;
-	display: none;
 }
 .carSeries .carComments .icon32 {
 	vertical-align: middle;
