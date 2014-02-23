@@ -9,11 +9,9 @@ import java.io.*;
 import java.nio.file.Files;
 import java.text.SimpleDateFormat;
 import play.*;
-
 import models.*;
 
 public class Logined extends Controller {
-    
     @Before
     static void addUser() {
         User user = connected();
@@ -411,7 +409,7 @@ public static void savePostOrigin(Post post) {
 			addSeries(message);
 		}
 		CarBrand carBrand = CarBrand.find("byId", carBrandId).first();
-		carSeries.brandName=carSeries;
+		carSeries.brandName=carBrand;
 		carSeries.save();
 		message = "添加成功！";
 		addSeries(message);	

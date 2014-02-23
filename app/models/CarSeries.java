@@ -4,7 +4,7 @@ import play.db.jpa.*;
 import play.data.validation.*;
 import javax.persistence.*;
 
-/**Æû³µÏµÁĞÀà£¬Ò»¸öÆ·ÅÆÓĞ¶àÌõµãÆÀºÍ¶à¸öĞÍºÅ
+/**æ±½è½¦ç³»åˆ—ç±»ï¼Œä¸€ä¸ªå“ç‰Œæœ‰å¤šæ¡ç‚¹è¯„å’Œå¤šä¸ªå‹å·
   */
 @Entity
 @Table(name="CarSeries")
@@ -15,16 +15,16 @@ public class CarSeries extends Model {
     public String seriesName;
     
     @Required
-    public String path;//Í¼Æ¬Â·¾¶
+    public String path;//å›¾ç‰‡è·¯å¾„
 
-    public float bottomPrice;//×îµÍ¼Û
+    public float bottomPrice;//æœ€ä½ä»·
 
-	public String fuelConsumption;//ÓÍºÄ
+	public String fuelConsumption;//æ²¹è€—
 
-	public float startLevel;//ĞÇ¼¶
+	public float startLevel;//æ˜Ÿçº§
 
 	@Required
-	public String carType;//³µĞÍ
+	public String carType;//è½¦å‹
 
 	@Required
     @ManyToOne

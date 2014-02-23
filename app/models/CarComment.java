@@ -5,7 +5,7 @@ import play.data.validation.*;
 import javax.persistence.*;
 import play.data.binding.*;
 
-/**Æû³µµãÆÀÀà
+/**æ±½è½¦ç‚¹è¯„ç±»
   */
 @Entity
 @Table(name="CarComment")
