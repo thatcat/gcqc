@@ -6,30 +6,9 @@ import java.util.*;
 import models.*;
 
 public class Application extends Controller {
-    
-    @Before
-    static void addUser() {
-        User user = connected();
-        if(user != null) {
-            renderArgs.put("user", user);
-        }
-    }
-    
-    static User connected() {
-
-        if(renderArgs.get("user") != null) {
-            return renderArgs.get("user", User.class);
-        }
-        String username = session.get("user");
-        if(username != null) {
-            return User.find("byUsername", username).first();
-        } 
-
-        return null;
-    }
 
     public static void index() {
-    	User user = connected();
+    	User user = Logined.connected();
         if(user != null) {
             //跳转到登录画面
         	if(user.isAdmin == false)
@@ -42,7 +21,6 @@ public class Application extends Controller {
        render(postList,carBrandList);
     }
 
-	
     public static void register(String message) {
         render(message);
     }
@@ -90,42 +68,6 @@ public class Application extends Controller {
         login();
     }
 
-public static void savePost( Post post) {
-
-		if(connected()==null)
-		{
-			 flash.error("请先登录！");
-            //跳转到登录画面
-            Application.login();
-        }		
-        
-		User author=null;
-        String userName = session.get("user");  
-		 if(userName != null) {
-            author=User.find("byUsername", userName).first();
-        } 
-	
-        post.author = author;  
-		post.postedAt= new Date();
-        // Save
-        post.save();     
-		flash.success("Thanks for posting %s", author);
-    }
-
-public static void savePost2( Post post) {
-        if(connected()==null)
-		{
-			flash.error("请先登录！");
-            //跳转到登录画面
-            Application.login();
-        }
-    }
-    
-    public static void logout() {
-        session.clear();
-        index();
-    }
-
 	public static void search(String carType,String lowPrice,String highPrice) {
 		float tempLowPrice=0;
 		float tempHighPrice=100000000;
@@ -141,10 +83,11 @@ public static void savePost2( Post post) {
 		render("Application/showSeries.html",carSeriesList);
 	}
 
+	/**点赞*/
 	public static void addPraise(Long id,int num) {
-	CarBrand carBrand = CarBrand.findById(id);
-	carBrand.parise=num;
-	carBrand.save();
+		CarBrand carBrand = CarBrand.findById(id);
+		carBrand.parise=num;
+		carBrand.save();
 	}
 
 	public static void showSeries(Long id ) {
@@ -153,8 +96,10 @@ public static void savePost2( Post post) {
 		render(carSeriesList);
 	}
 
+	/**添加汽车系列点评
+	 */
 	public static void addCarComment(Long id, String carCommentType ) {
-		if(connected()==null)
+		if(Logined.connected()==null)
 		{
 			 flash.error("请先登录！");
             //跳转到登录画面
@@ -166,17 +111,22 @@ public static void savePost2( Post post) {
             author=User.find("byUsername", userName).first();
         } 
 		CarSeries carSeries = CarSeries.find("byId",id).first();
-		CarComment carComment = new CarComment(carCommentType,new Date() );
+		Date carCommentDate = new Date();
+		CarComment carComment = new CarComment(carCommentType);
+		carComment.carCommentTime=carCommentDate;
 		carComment.seriesName=carSeries;
 		carComment.user=author;
+		if(author.isCarOwner == true)
+			author.integration=author.integration+2;
+		else
+			author.integration=author.integration+1;
+		author.save();
 		carComment.save();
-		System.out.println("--------------------------------------carCommentType:"+carCommentType);
-		System.out.println("--------------------------------------id:"+id);
 		showSeries(id);
 	}
 
 	public static void notFound() {
-	render();
+		render();
 	}
 
 }

@@ -5,7 +5,7 @@ import play.data.validation.*;
 import javax.persistence.*;
 import play.data.binding.*;
 
-/**Æû³µµãÆÀÀà
+/**æ±½è½¦ç‚¹è¯„ç±»
   */
 @Entity
 @Table(name="CarComment")
@@ -26,9 +26,10 @@ public class CarComment extends Model {
     public User user;
 
 
-    public CarComment(String commentType,Date carCommentATime ) {
+    public CarComment(String commentType ) {
 	this.commentType=commentType;
 	this.carCommentTime=carCommentTime;
+
     }
 
     public String toString()  {

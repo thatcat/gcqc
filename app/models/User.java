@@ -27,21 +27,23 @@ public class User extends Model {
     
     public boolean isAdmin;
 
-	public boolean isCarOwner;//ÊÇ·ñÎª³µÖ÷
+	public boolean isCarOwner;//æ˜¯å¦ä¸ºè½¦ä¸»
 
 	public String authType;
 
-	public String authPictiurePath;//ÈÏÖ¤µÄÍ¼Æ¬Â·¾¶
+	public String authPictiurePath;//è®¤è¯çš„å›¾ç‰‡è·¯å¾„
 
-	public boolean isDeal;//ÊÇ·ñÒÑ¾­±»´¦ÀíÁËÈÏÖ¤
+	public String idcardPictiurePath;//è®¤è¯çš„å›¾ç‰‡è·¯å¾„
 
-	public int integration; //»ı·Ö
+	public boolean isDeal;//æ˜¯å¦å·²ç»è¢«å¤„ç†äº†è®¤è¯
+
+	public int integration; //ç§¯åˆ†
 
 	@As("yyyy-MM-dd HH:mm:ss")
-	public Date authDate; //ÈÏÖ¤ÈÕÆÚ
+	public Date authDate; //è®¤è¯æ—¥æœŸ
 
 	@As("yyyy-MM-dd HH:mm:ss")
-	public Date applyDate; //ÉêÇëÈÏÖ¤ÈÕÆÚ
+	public Date applyDate; //ç”³è¯·è®¤è¯æ—¥æœŸ
 
 	@OneToMany(mappedBy="user", cascade=CascadeType.ALL)
     public List<CarComment> carComments;

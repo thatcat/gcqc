@@ -82,7 +82,9 @@
 <!---------------------------------------------------车主申请开始------------------------------------------------------->
 	#{form @uploadPhoto(), enctype:'multipart/form-data'}
 		<input type="text" name="title" />
-		<input type="file" id="photo" name="photo" />
+		<input type="file" id="photo" name="photo" /></br>
+		<input type="text" name="title" />
+		<input type="file" id="idcard" name="idcard" />
 		<input type="submit" value="Send it..." />
 	#{/}
 	${flash.success}
