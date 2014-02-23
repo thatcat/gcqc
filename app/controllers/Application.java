@@ -91,9 +91,11 @@ public class Application extends Controller {
 	}
 
 	public static void showSeries(Long id ) {
+		User user = Logined.connected();
+		System.out.println("-----------------------user="+user);
 		CarBrand carBrand = CarBrand.find("byId",id).first();
 		List<CarSeries> carSeriesList = CarSeries.find("byBrandName",carBrand).fetch();
-		render(carSeriesList);
+		render(carSeriesList,user);
 	}
 
 	/**添加汽车系列点评

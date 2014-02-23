@@ -361,5 +361,20 @@ public static void savePostOrigin(Post post) {
 		addSeries(message);	
 	}
 
+	public static void addModel(String message) {
+		render(message);	
+	}
+
+		public static void addCarModel(String carModelDataString) {
+			String [] allModels = carModelDataString.split("@");//allModels的一个元素是一种型号的数据字符串
+			List<List> modelList = new ArrayList<List>();
+			for(int i=0; i<allModels.length;i++) {
+				modelList.add(Arrays.asList(allModels[i].split(",")));
+				String [] temp=allModels[i].split(",");
+			}
+			System.out.println("----------------------------------modelList.size()="+modelList.size());
+
+		//render(message);	
+	}
 
 }
