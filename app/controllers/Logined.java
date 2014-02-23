@@ -371,8 +371,12 @@ public static void savePostOrigin(Post post) {
 			for(int i=0; i<allModels.length;i++) {
 				modelList.add(Arrays.asList(allModels[i].split(",")));
 				String [] temp=allModels[i].split(",");
+				for (int j=0; j<temp.length ;j++ )
+				{
+					System.out.println("----------------------------------temp(i)="+temp[i]);
+				}
 			}
-			System.out.println("----------------------------------modelList.size()="+modelList.size());
+			
 
 		//render(message);	
 	}
