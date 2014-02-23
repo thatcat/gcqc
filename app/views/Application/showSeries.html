@@ -37,60 +37,61 @@
 			<a href="email.html">联系我们</a>
 		</div>
 	</div>
-
+    
+    <div id="carContent">
 		#{list items:carSeriesList,as:'carserieslist'}
 
-		<div id="carSeries">
-			<div class="showCar">
-				<img src="${carserieslist.path}" />
-    				<table class="carSeriesTable">
-                        <tr>
-    					   <td>最低价</td>
-                           <td>${carserieslist.bottomPrice}</td>
-                        </tr>
-    					<tr>
-                           <td>油耗</td>
-                           <td>${carserieslist.fuelConsumption}</td>
-                        </tr>
-    					<tr>
-                           <td>星级</td>
-                           <td id="levelShow">
-                               <ul class="noStar">
-                                   <li>1</li>
-                                   <li>2</li>
-                                   <li>3</li>
-                                   <li>4</li>
-                                   <li>5</li>
-                               </ul>
-                           </td>
-                        </tr>
-                    </table>
-                    <input id="level" type="hidden" value="${carserieslist.startLevel}" />
-				<div class="carComment">
-                #{form @addCarComment(), id:'commentForm' }
-                    #{field 'comment.content'}
-    					<input class="input-box" type="textarea" name="carCommentType" id="carCommentType" required="required" placeholder="我来点评" >
-                        <input type="hidden" name="id" value="${carserieslist.id}" />
-                    #{/field }
-					<input id="commentBtn" class="btn btn-info" type="button" name="submit" value="点评">
-                #{/form}
-				</div>
-			</div>
-			<ul class="carComments">
-			#{list items:carserieslist.carComments,as:'carcomments'}
-				<li>
-                    <i class="icon32 icon-color icon-bullet-off"></i>
-					<span class="author">${carcomments.user}</span>
-                    <input type="hidden" class="isAdmin" value="true">
-                    <span class="time">${carcomments.carCommentTime}</span>
-					<div class="comment">${carcomments.commentType}</div>
-				</li>
-			#{/list}
-			</ul>
-			<div class="clear"></div>
-		</div>
-
+		<div class="carSeries">
+            <div class="carSerieseContent">
+    			<div class="showCar">
+    				<img src="${carserieslist.path}" />
+                        <div class="carSeries-wrap">
+            				<table class="carSeriesTable">
+                                <tr>
+            					   <td>最低价</td>
+                                   <td>${carserieslist.bottomPrice}</td>
+                                </tr>
+            					<tr>
+                                   <td>油耗</td>
+                                   <td>${carserieslist.fuelConsumption}</td>
+                                </tr>
+            					<tr>
+                                   <td>星级</td>
+                                   <td class="levelShow">
+                                       <ul class="noStar">
+                                           <li>1</li>
+                                           <li>2</li>
+                                           <li>3</li>
+                                           <li>4</li>
+                                           <li>5</li>
+                                       </ul>
+                                   </td>
+                                </tr>
+                            </table>
+                            <input class="level" type="hidden" value="${carserieslist.startLevel}" />
+                        <div class="commentForm">
+        					<input class="input-box" type="textarea" name="carCommentType" class="carCommentType" required="required" placeholder="我来点评" >
+                            <input type="hidden" name="id" value="${carserieslist.id}" />
+        					<input class="commentBtn btn btn-info" type="button" name="submit" value="点评">
+                            <input class="showComment btn btn-info" type="button" value="查看">
+                        </div>
+                    </div>
+    			</div>
+    			<ul class="carComments">
+    			#{list items:carserieslist.carComments,as:'carcomments'}
+    				<li>
+                        <i class="icon32 icon-color icon-bullet-off"></i>
+    					<span class="author">${carcomments.user}</span>
+                        <input type="hidden" class="isAdmin" value="true">
+                        <span class="time">${carcomments.carCommentTime}</span>
+    					<div class="comment">${carcomments.commentType}</div>
+    				</li>
+    			#{/list}
+    			</ul>
+    			<div class="clear"></div>
+    		</div>
+        </div>
 		#{/list}
-
-	</body>
+    </div>
+</body>
 </html>
