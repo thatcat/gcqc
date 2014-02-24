@@ -206,35 +206,65 @@ body{
 	padding:5px;
 	text-align: center;
 }
-#unsolve table tr th:first-child, #solved table tr th:first-child{
+#unsolve table tr th:first-child {
+	width: 40px;
+}
+#unsolve table tr th:nth-child(2) {
+	
+}
+#unsolve table tr th:nth-child(3) {
+	width: 30px;
+}
+#unsolve table tr th:nth-child(4) {
+
+}
+#unsolve table tr th:nth-child(5) {
+
+}
+#unsolve table tr th:nth-child(6) {
+	width: 70px;
+}
+#unsolve table tr th:nth-child(7) {
+	width: 100px;
+}
+#unsolve table tr th:nth-child(8) {
+	width: 125px;
+}
+#unsolve table tr th:nth-child(9) {
+}
+
+#solved table tr th:first-child{
 	width:80px;
 }
-#unsolve table tr th:nth-child(2), #solved table tr th:nth-child(2){
+#solved table tr th:nth-child(2){
 	width:90px;
 }
-#unsolve table tr th:nth-child(3), #solved table tr th:nth-child(3){
+#solved table tr th:nth-child(3){
 	width:150px;
 }
-#unsolve table tr th:nth-child(4), #solved table tr th:nth-child(4){
+#solved table tr th:nth-child(4){
 	width:45px;
 }
-#unsolve table tr th:nth-child(5), #solved table tr th:nth-child(5){
+#solved table tr th:nth-child(5){
 	width:120px;
 }
-#unsolve table tr th:nth-child(6), #solved table tr th:nth-child(6){
+#solved table tr th:nth-child(6){
 	width:160px;
 }
-#unsolve table tr th:nth-child(7), #solved table tr th:nth-child(7){
+#solved table tr th:nth-child(7){
 	width:125px;
 }
-#unsolve table tr th:nth-child(8), #solved table tr th:nth-child(8){
+#solved table tr th:nth-child(8){
 	width:130px;
 }
-#unsolve table tr th:nth-child(9), #solved table tr th:nth-child(9){
+#solved table tr th:nth-child(9){
 	width:230px;
 }
 .badge {
 	padding: 10px;
+}
+.badges {
+	padding: 5px 10px;
 }
 #change_password,#uploadPhoto {
 	width: 959px;
@@ -267,4 +297,12 @@ body{
 #change_password .signup {
 	padding: 5px 10px;
 	margin-left: 90px;
+}
+#showPic {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: rgba(77,77,77,0.5);
+	z-index: 1000;
+	display: none;
 }
