@@ -11,13 +11,13 @@ public class User extends Model {
     
     @Required
     @MaxSize(15)
-    @MinSize(4)
-    @Match(value="^\\w*$", message="Not a valid username")
+    @MinSize(2)
+   
     public String username;
     
     @Required
     @MaxSize(15)
-    @MinSize(5)
+    @MinSize(2)
     public String password;
     
     @Required

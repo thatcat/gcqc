@@ -128,12 +128,17 @@ public class Application extends Controller {
 	}
 
 	public static void showModels(Long seriesId) {
-		//seriesId=1;
+		User user = Logined.connected();
 		CarSeries carSeries = CarSeries.find("byId",seriesId).first();
 		CarModel carModel = CarModel.find("bySeriesName",carSeries).first();
+		String str;
+		if(carModel == null)
+			str = "<div align=\"center\"><h2>亲，还没有该系列型号的数据哦..可以先看一下其他系列</h2></div>";
+		else {
 		System.out.println("-------------------------showModels.carModel="+carModel.allModelDataString);
-		String str = carModel.allModelDataString;
-		render(str);
+		 str = carModel.allModelDataString;
+		}
+		render(str,user);
 	}
 
 	public static void notFound() {
