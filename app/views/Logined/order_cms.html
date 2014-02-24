@@ -8,38 +8,23 @@
 	<link href="/public/stylesheets/cms-index.css" rel="stylesheet" type="text/css" />
 	<script src="/public/javascripts/jquery1.83.js" type="text/javascript"></script>
 	<script src="/public/javascripts/bootstrap-tab.js" type="text/javascript"></script>
-	<script>
-	$(function () {
-                    var log = function(s){
-                    window.console && console.log(s)
-                    }
-                    $('.nav-tabs a:first').tab('show')               // first 默认显示第一个tab
-                    $('a[data-toggle="tab"]').on('show', function (e) {
-                        log(e)
-                    })
-                    $('a[data-toggle="tab"]').on('shown', function (e) {
-                        log(e.target) // activated tab
-                        log(e.relatedTarget) // previous tab
-                    })
-             })
-	</script>
 </head>
-
-
-
 <body>
 	<div class="header">
-        <a href='#' class="logo-cms">国产汽车后台管系统</a>
-		<div class="admin-login">
-			当前登录：
+    <div class="banner">
+        <a href="index.html" class="banner-title">国产汽车网</a>
+      <span class="milk-theme">后台管理</span>
+    <div class="admin-login">
+      当前登录：
             <a href="@{Logined.email()}" class="login"> ${user.username}</a>
             |
             <a href="@{Logined.logout()}" class="regist">注销</a>
-		</div>
-	</div>
+    </div>
+    </div>
+  </div>
 	<div class="container">
 <div class="nav-bar">
-			<ul class="cms-lists">
+			<ul class="cms-list">
 				<li>
 					<!-- 车主认证管理 -->
 					<div class="order-cms">
@@ -88,7 +73,7 @@
 												<th>积分</th>
                                                 <th>汽车证明图片</th>
 												<th>身份证图片路径</th>
-                                                <th>是否已是车主</th>												
+                                                <th>是否车主</th>												
 												<th>申请认证日期</th>
 												<th>认证内容</th>
                         					</tr>
@@ -121,10 +106,11 @@
                                                 <th>姓名</th>
                                                 <th>汽车证明图片</th>
 												<th>身份证图片</th>
-                                                <th>是否已是车主</th>
+                                                <th>是否车主</th>
 												<th>认证内容</th>
 												<th>认证日期</th>
-												<th>积分</th>
+                        <th>积分</th>
+												<th>撤消</th>
                         					</tr>
                         					#{list items:userDealedList,as:'dealedList'}
                                                 <tr id="${dealedList.id}">
