@@ -5,11 +5,11 @@ body{
 }
 @font-face {
  	font-family: "汉仪丫丫";
- 	src: url('../images/font/汉仪丫丫.eot') format('eot');
+ 	src: url('../images/font/hanyi.eot') format('eot');
   	src: local('汉仪丫丫'),
-  	url('public/images/font/汉仪丫丫.woff') format('woff'), 
-  	url('public/images/font/汉仪丫丫.ttf') format('truetype'),
- 	url('public/images/font/汉仪丫丫.svg') format('svg');
+  	url('../images/font/hanyi.woff') format('woff'), 
+  	url('../images/font/hanyi.ttf') format('truetype'),
+ 	url('../images/font/hanyi.svg') format('svg');
 } 
 .header{
 	width:100%;
@@ -56,7 +56,7 @@ body{
 }
 .admin-login{
 	float: right;
-	margin-right: 150px;
+	margin-right: 40px;
 	margin-top: 10px;
 	color:#fff;
 }
@@ -71,7 +71,7 @@ body{
 	color:#000;
 }
 .container{
-	width:1260px;
+	width:960px;
 	height:auto;
 	position: relative;
 	margin:0 auto;
@@ -87,16 +87,24 @@ body{
 }
 
 .nav-tabs .actived a {
-	border: 1px solid #333;
-	border-bottom-color: transparent;
+	border: 1px solid #ccc;
+	border-bottom: 2px solid #fff;
 }
 
 .cms-lists{
 	list-style-type: none;
-	border-bottom: 1px solid #333;
+	/*border-bottom: 1px solid #ccc;*/
 	padding-bottom: 1px;
+	padding-left: 0;
+	margin-bottom: 0;
 }
-.cms-lists li{
+.cms-list {
+	list-style-type: none;
+	padding-left: 0;
+	float: left;
+	margin-left: 60px;
+}
+.cms-lists li, .cms-list li{
 	float: left;
 	display: inline;
 	width:200px;
@@ -105,6 +113,11 @@ body{
 	background-color: #fff;
 	padding: 0;
 	margin-bottom: -1px;
+}
+.cms-list li{
+	border: 1px solid #ccc;
+	margin-right: 0;
+	border-collapse: collapse; 
 }
 .order-cms a, .words-cms a, .news-cms a{
 	width:200px;
@@ -120,7 +133,7 @@ body{
 }
 .order-cms a {
 	/*background: #5FEB3B;*/
-	color: #fff;
+	color: #000;
 	cursor: default;
 }
 .order-cms a:hover, .words-cms a:hover, .news-cms a:hover{
@@ -151,13 +164,8 @@ body{
 	line-height: 88px;
 	text-align: center;
 }
-.nav-tabs > li > a:hover {
-  	border-color: #eee;
-  	color: #000;
-  	background-color: #fff;
-}
-.nav-tabs > .active > a,
-.nav-tabs > .active > a:hover {
+
+.nav-tabs > .active > a {
   	color: #5FEB3B;
   	font-weight: bold;
   	font-size: 16px;
@@ -165,6 +173,10 @@ body{
   	border: 1px solid #eee;
   	border-bottom-color: transparent;
   	cursor: default;
+
+}
+.nav-tabs a:hover {
+	background: #eee;
 }
 /* tabs 下的订单表格内容 */
 .order-info{
@@ -195,7 +207,7 @@ body{
 	text-align: center;
 }
 #unsolve table tr th:first-child, #solved table tr th:first-child{
-	width:38px;
+	width:80px;
 }
 #unsolve table tr th:nth-child(2), #solved table tr th:nth-child(2){
 	width:90px;
@@ -207,13 +219,13 @@ body{
 	width:45px;
 }
 #unsolve table tr th:nth-child(5), #solved table tr th:nth-child(5){
-	width:45px;
+	width:120px;
 }
 #unsolve table tr th:nth-child(6), #solved table tr th:nth-child(6){
 	width:160px;
 }
 #unsolve table tr th:nth-child(7), #solved table tr th:nth-child(7){
-	width:250px;
+	width:125px;
 }
 #unsolve table tr th:nth-child(8), #solved table tr th:nth-child(8){
 	width:130px;
@@ -221,23 +233,33 @@ body{
 #unsolve table tr th:nth-child(9), #solved table tr th:nth-child(9){
 	width:230px;
 }
-
-
+.badge {
+	padding: 10px;
+}
+#change_password,#uploadPhoto {
+	width: 959px;
+	margin: 0 auto;
+	border-left: 1px solid #ccc;
+}
 #change_password form, #uploadPhoto form{
-	width: 410px;
+	width: 300px;
+	height: 250px;
 	margin: 0 auto;
 	padding-top: 90px;
 	font-size: 20px;
-	/*display: none;*/
 }
-#change_password form {
+#uploadPhoto form {
+	width: 410px;
+}
+#uploadPhoto {
 	display: none;
 }
-#uploadPhoto form{
-	/*display: none;*/
+#uploadPhoto .input-control {
+	margin-bottom: 30px;
 }
-#uploadPhoto #photo {
-	/*margin-left: 30px;*/
+#uploadPhoto .input-control input[type="submit"] {
+	padding: 5px 10px;
+	margin-left: 100px;
 }
 #change_password input {
 	line-height: 30px;

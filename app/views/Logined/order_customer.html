@@ -7,7 +7,8 @@
 	<link href="/public/stylesheets/bootstrap.css" rel="stylesheet" type="text/css" />
 	<link href="/public/stylesheets/cms-index.css" rel="stylesheet" type="text/css" />
 	<script src="/public/javascripts/jquery1.83.js" type="text/javascript"></script>
-	<script src="/public/javascripts/bootstrap-tab.js" type="text/javascript"></script>
+    <script src="/public/javascripts/bootstrap-tab.js" type="text/javascript"></script>
+	<script src="/public/javascripts/order_customer.js" type="text/javascript"></script>
 </head>
 <body>
 	<div class="header">
@@ -26,13 +27,13 @@
 
 		<div class="nav-bar">
 			<ul class="cms-lists nav-tabs">
-				<li class="actived">
+				<li id="xgl" class="actived">
 					<!-- 酸奶订单管理 -->
-					<a href="#change_password">修改密码</a>
+					<a id="xg" href="#change_password">修改密码</a>
 				</li>
-				<li>
+				<li id="sql">
 					<!-- 酸奶留言管理 -->
-					<a href="#ower_verify">申请车主认证</a>
+					<a id="sq" href="#ower_verify">申请车主认证</a>
 				</li>
 			</ul>
 		</div>
@@ -65,11 +66,17 @@
 <!---------------------------------------------------车主申请开始------------------------------------------------------>
 <div id="uploadPhoto">
 	#{form @uploadPhoto(), enctype:'multipart/form-data'}
+    <div class="input-control">
 		<label for="photo">请上传能证明照片</label>
-		<input type="file" id="photo" name="photo" /></br>
+		<input type="file" id="photo" name="photo" />
+    </div>
+    <div class="input-control">
 		<label for="idcard">请上传身份证照片</label>
 		<input type="file" id="idcard" name="idcard" />
-		<input type="submit" value="Send it..." />
+    </div>
+    <div class="input-control">
+		<input type="submit" value="确定" />
+    </div>
 	#{/}
 	${flash.success}
 </div>
