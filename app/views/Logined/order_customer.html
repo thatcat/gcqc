@@ -17,7 +17,9 @@
 			<span class="milk-theme">个人中心</span>
 		<div class="admin-login">
 			当前登录：
-            <a href="@{Logined.email()}" class="login"> ${user.username}</a>
+            <a href="#" style="cursor:default;" class="login"> ${user.username}</a>
+            | 
+            积分：${user.integration}
             |
             <a href="@{Logined.logout()}" class="regist">注销</a>
 		</div>

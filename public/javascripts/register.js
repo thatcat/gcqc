@@ -5,9 +5,9 @@ $(function() {
     var isConfirm = false;
     $("#username").blur(function() {
         var username = $(this).val();
-        if (username.length < 4) {
+        if (username.length < 2) {
             $(this).next(".flag").html("");
-            $("#name-msg").text("昵称不小于4个字符");
+            $("#name-msg").text("昵称不小于2个字符");
             isUsername = false;
         } else {
             $("#name-msg").text("");

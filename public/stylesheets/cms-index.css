@@ -75,7 +75,10 @@ body{
 	height:auto;
 	position: relative;
 	margin:0 auto;
-	margin-top: 205px;
+	margin-top: 200px;
+	border: 1px solid #ccc;
+	background: #fff;
+	box-shadow: 1px 3px 5px #ddd;
 }
 /* 后台管理各大内容模块 */
 .nav-bar{
@@ -166,17 +169,17 @@ body{
 }
 
 .nav-tabs > .active > a {
-  	color: #5FEB3B;
+  	color: #555;
   	font-weight: bold;
   	font-size: 16px;
-  	background-color: #ffffff;
-  	border: 1px solid #eee;
+  	background-color: #fff;
+  	border: 1px solid #ddd;
   	border-bottom-color: transparent;
   	cursor: default;
 
 }
-.nav-tabs a:hover {
-	background: #eee;
+.tabbable .nav-tabs .active a:hover {
+	background-color: #fff;
 }
 /* tabs 下的订单表格内容 */
 .order-info{
