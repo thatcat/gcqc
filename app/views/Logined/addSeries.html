@@ -38,11 +38,43 @@
 				<div id="name-msg" class="error-msg"></div>
 			</div>
 			#{/field}
-			#{field 'carSeries.path'}
+			#{field 'carSeries.path1'}
 			<div class="input-control">
-				<label for="path" class="email">图片路径</label>
+				<label for="path" class="email">汽车前右图片路径</label>
 				<input id="path" class="input-box" type="text" name="${field.name}" required="required" /></br>
-				(统一命名：public/images/carSeries/品牌名拼音/系列名/1.jpg  ，系列名同上，不过如有品牌名，用品牌名拼音)
+				(统一命名：public/images/carSeries/品牌名拼音/系列名/1.jpg  ，系列名同上，如有中文，用拼音代替中文)
+				<div class="flag"></div>
+				<div id="email-msg" class="error-msg"></div>
+				<!-- <div class="registerError">${field.error}</div> -->
+			</div>
+			#{/field}
+			#{field 'carSeries.path2'}
+			<div class="input-control">
+				<label for="path" class="email">汽车左视图片路径</label>
+				<input id="path" class="input-box" type="text" name="${field.name}" required="required" /></br>
+				(统一命名：public/images/carSeries/品牌名拼音/系列名/2.jpg  ，系列名同上，如有中文，用拼音代替中文)
+				<div class="flag"></div>
+				<div id="email-msg" class="error-msg"></div>
+				<!-- <div class="registerError">${field.error}</div> -->
+			</div>
+			#{/field}
+
+			#{field 'carSeries.path3'}
+			<div class="input-control">
+				<label for="path" class="email">汽车后视图片路径</label>
+				<input id="path" class="input-box" type="text" name="${field.name}" required="required" /></br>
+				(统一命名：public/images/carSeries/品牌名拼音/系列名/3.jpg  ，系列名同上，如有中文，用拼音代替中文)
+				<div class="flag"></div>
+				<div id="email-msg" class="error-msg"></div>
+				<!-- <div class="registerError">${field.error}</div> -->
+			</div>
+			#{/field}
+
+			#{field 'carSeries.path4'}
+			<div class="input-control">
+				<label for="path" class="email">汽车内部图片路径</label>
+				<input id="path" class="input-box" type="text" name="${field.name}" required="required" /></br>
+				(统一命名：public/images/carSeries/品牌名拼音/系列名/4.jpg  ，系列名同上，如有中文，用拼音代替中文)
 				<div class="flag"></div>
 				<div id="email-msg" class="error-msg"></div>
 				<!-- <div class="registerError">${field.error}</div> -->

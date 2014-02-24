@@ -64,9 +64,17 @@ public class Logined extends Controller {
     }
 
     public static void sendEmail(@Valid @Email String fromEmail,String title, String contentTexts){
-        SendEmail sendEmailInfo = new SendEmail(fromEmail, title, contentTexts);
+		try
+		{
+		SendEmail sendEmailInfo = new SendEmail(fromEmail, title, contentTexts);
         sendEmailInfo.send();
         email("发送成功！");
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		email("发送失败，请登录你的邮箱发送到xiusonchan@gmail.com 谢谢！");
     }
     
     public static void order_cms(){
@@ -348,7 +356,10 @@ public static void savePostOrigin(Post post) {
 	public static void saveCarSeries(CarSeries carSeries, Long carBrandId) {
 		CarSeries carSeriesExisted = CarSeries.find("bySeriesName", carSeries.seriesName).first(); 
 		String message = "";
-		System.out.println("------------------------------------carSeries.carType:"+carSeries.carType);
+		System.out.println("------------------------------------carSeries.path1:"+carSeries.path1);
+		System.out.println("------------------------------------carSeries.path1:"+carSeries.path2);
+		System.out.println("------------------------------------carSeries.path1:"+carSeries.path3);
+		System.out.println("------------------------------------carSeries.path1:"+carSeries.path4);
 		if(carSeriesExisted != null)  {
 			message = "系列已经存在！添加失败";
 			addSeries(message,carSeries.id);
@@ -402,9 +413,6 @@ public static void savePostOrigin(Post post) {
             list2[i][j] = list1[j][i];
         }
     }
-	System.out.println("----------------------------------------para_len="+para_len);
-		System.out.println("----------------------------------------car_len="+car_len);
-		System.out.println("----------------------------------------parameterName.length="+parameterName.length);
     for (int i=0;i<para_len; i++) {
         insert += "<tr>";
 		insert += "<th>"+parameterName[i]+"</th>";

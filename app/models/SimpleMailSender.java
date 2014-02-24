@@ -16,7 +16,6 @@ import javax.mail.internet.MimeMultipart;
   
 /**   
 * 简单邮件（不带附件的邮件）发送器   
-http://www.bt285.cn BT下载
 */    
 public class SimpleMailSender  {    
 /**   
