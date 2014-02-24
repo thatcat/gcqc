@@ -108,6 +108,9 @@
 	position: relative;
 	left: 100px;
 }
+.showComment:hover {
+	background: #888;
+}
 .carCommentsForm {
 	border: 1px solid #ccc;
 	background: #fff;
