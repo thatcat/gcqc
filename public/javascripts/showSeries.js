@@ -53,5 +53,13 @@ $(document).ready(function() {
         var comment = $(this).parent().parent().parent().find(".carCommentsForm");
         comment.slideUp();
         $(this).text("查看");
-    })
+    });
+
+    var offset = -400;
+    setInterval(function() {
+        if (offset < -1200) 
+            offset = 0;
+        $("#car-show-list").css("left", offset);
+        offset -= 400;
+    }, 2000);
 });

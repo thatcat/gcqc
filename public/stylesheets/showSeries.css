@@ -25,6 +25,25 @@
     box-shadow: 1px 3px 5px #ddd;
     background: #fff;
 }
+.showCar .car-show-box {
+    width: 400px;
+    float: left;
+}
+.car-show {
+    width: 400px;
+    height: 260px;
+    position: relative;
+    overflow: hidden;
+}
+.car-show ul {
+    list-style-type: none;
+    width: 1600px;
+    padding: 0;
+    position: absolute;
+}
+.car-show ul li {
+    float: left;
+}
 #carContent .carSerieseContent {
 	width: 660px;
 	margin: 0 auto;
