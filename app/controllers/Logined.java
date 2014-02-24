@@ -432,7 +432,7 @@ public static void savePostOrigin(Post post) {
 	}
 
 	public static void carNews() {
-	
+		render();
 	}
 
 }
