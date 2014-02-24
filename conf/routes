@@ -30,6 +30,8 @@ POST		/addSeriesData.html			Logined.addCarSeries
 GET			/addModel.html			Logined.addModel
 POST		/addModel.html			Logined.addCarModel
 
+GET			/showModels.html		Application.showModels
+
 GET			/*						Application.notFound	
 POST		/*						Application.notFound
 

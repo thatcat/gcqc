@@ -127,6 +127,15 @@ public class Application extends Controller {
 		showSeries(id);
 	}
 
+	public static void showModels(Long seriesId) {
+		//seriesId=1;
+		CarSeries carSeries = CarSeries.find("byId",seriesId).first();
+		CarModel carModel = CarModel.find("bySeriesName",carSeries).first();
+		System.out.println("-------------------------showModels.carModel="+carModel.allModelDataString);
+		String str = carModel.allModelDataString;
+		render(str);
+	}
+
 	public static void notFound() {
 		render();
 	}

@@ -12,11 +12,15 @@
 
 <body>
 	<h1><a href="index.html">首页</a></h1>
-	<a href="addSeriesData.html">录入系列数据</a>
+	<a href="addSeriesData.html?seriesId="${seriesId}>录入系列数据</a>
 	<div id="register" style="text-align: center">
 		<!系列已经存在！>
 		<p>${message}</p>
 		#{form @addCarModel()}
+			#{field 'seriesName'}
+					请输入型号<input type="text" name="${field.name}">
+			#{/field}
+			
 			#{field 'carModelDataString'}
 			<div class="input-control">
 				<label for="carModelDataString" class="username">某一系列所有型号的数据字符串（传递给后台处理分割，型号之间@分隔，一个型号参数间,分隔）</label></br>

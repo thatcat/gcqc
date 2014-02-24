@@ -246,7 +246,7 @@ public static void savePostOrigin(Post post) {
 
 		/**上传图片,photo为车辆证明材料照片文件，idcard为身份证照片文件
 		  */
-		 public static void uploadPhoto(String title, File photo, File idcard) {
+		 public static void uploadPhoto( File photo, File idcard) {
 			String outputPah = Play.applicationPath.toString()+"\\public\\attachment\\";
 			try
 			{		
@@ -341,8 +341,8 @@ public static void savePostOrigin(Post post) {
 		Application.search( carType, lowPrice, highPrice);
 	}
 
-	public static void addSeries(String message) {
-		render(message);	
+	public static void addSeries(String message,Long seriesId) {
+		render(message,seriesId);	
 	}
 
 	public static void saveCarSeries(CarSeries carSeries, Long carBrandId) {
@@ -351,22 +351,23 @@ public static void savePostOrigin(Post post) {
 		System.out.println("------------------------------------carSeries.carType:"+carSeries.carType);
 		if(carSeriesExisted != null)  {
 			message = "系列已经存在！添加失败";
-			addSeries(message);
+			addSeries(message,carSeries.id);
 		}
 		CarBrand carBrand = CarBrand.find("byId", carBrandId).first();
 		carSeries.brandName=carBrand;
 		
 		carSeries.save();
 		message = "添加成功！";
-		addSeries(message);	
+		addSeries(message,carSeries.id);	
+		
 	}
 
-	public static void addModel(String message) {
-		render(message);	
+	public static void addModel(String message,Long seriesId) {
+		render(message,seriesId);	
 	}
 
-		public static void addCarModel(String carModelDataString) {
-			String [] allModels = carModelDataString.split("@");//allModels的一个元素是一种型号的数据字符串
+	public static void addCarModel(String seriesName , String carModelDataString) {
+		/*	String [] allModels = carModelDataString.split("@");//allModels的一个元素是一种型号的数据字符串
 			List<List> modelList = new ArrayList<List>();
 			for(int i=0; i<allModels.length;i++) {
 				modelList.add(Arrays.asList(allModels[i].split(",")));
@@ -376,9 +377,50 @@ public static void savePostOrigin(Post post) {
 					System.out.println("----------------------------------temp(i)="+temp[i]);
 				}
 			}
-			
+			*/
+	String insert = "";
+    int car_len;
+    int para_len;
+	String [] parameterName={"型号","官方价","销售商最低报价","厂商","级别","上市时间","发动机","进气形式","最大马力(PS)","最大扭矩(N·m)","变速箱","车身结构","长x宽x高(mm)" ,"轴距(mm)","最高车速(km/h)","工信部综合油耗(L/100km)","整车质保","车身结构","长度(mm)","宽度(mm)","高度(mm)","轴距(mm)","前轮距(mm)" 
+													,"后轮距(mm)","最小离地间隙(mm)","车重(kg)","车门数","座位数","油箱容量","行李箱容积","发动机型号","排量(ml)","进气形式" ,"最大马力","最大功率(kw)","最大功率转速(rpm)","最大扭矩(N·m)","最大扭矩转速(rpm)","气缸排列形式","气缸数","每缸气门数","压缩比","配气机构","燃料形式"
+													,"燃料标号","供油方式","缸盖材料","缸体材料","排放标准","变速箱简称","档位个数","变速箱类型","驱动方式","前悬挂类型" ,"后悬挂类型","转向助力类型","车体结构","前制动器类型","后制动器类型","驻车制动类型","前轮胎规格","后轮胎规格","备胎规格"};
 
-		//render(message);	
+    String [] car = carModelDataString.split("@");
+    String [] tmp = car[0].split(",");//某个型号的参数数组
+    para_len = tmp.length;
+    car_len = car.length;
+	String [][] list1 =new String  [car_len][para_len];
+    String [][] list2 = new String  [para_len][car_len];
+    for (int i=0;i<car.length;i++) {
+        String [] para = car[i].split(",");
+        for (int j=0; j<para.length; j++) {
+            list1[i][j] = para[j];
+        }
+    }
+    for (int i=0;i<para_len;i++) {
+        for (int j=0; j<car_len; j++) {
+            list2[i][j] = list1[j][i];
+        }
+    }
+	System.out.println("----------------------------------------para_len="+para_len);
+		System.out.println("----------------------------------------car_len="+car_len);
+		System.out.println("----------------------------------------parameterName.length="+parameterName.length);
+    for (int i=0;i<para_len; i++) {
+        insert += "<tr>";
+		insert += "<th>"+parameterName[i]+"</th>";
+        for (int j=0; j<car_len;j++) {
+            insert += "<td>" + list2[i][j] + "</td>";
+        }
+        insert += "</tr>";
+    }
+
+	CarSeries carSeries = CarSeries.find("bySeriesName",seriesName).first();
+	System.out.println("----------------------------------------carSeries="+carSeries);
+	CarModel carModel = new CarModel();
+	carModel.seriesName = carSeries;
+	carModel.allModelDataString = insert;
+	carModel.save();
+		render();	
 	}
 
 }
