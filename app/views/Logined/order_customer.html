@@ -8,58 +8,41 @@
 	<link href="/public/stylesheets/cms-index.css" rel="stylesheet" type="text/css" />
 	<script src="/public/javascripts/jquery1.83.js" type="text/javascript"></script>
 	<script src="/public/javascripts/bootstrap-tab.js" type="text/javascript"></script>
-	<script>
-	$(function () {
-                    var log = function(s){
-                    window.console && console.log(s)
-                    }
-                    $('.nav-tabs a:first').tab('show')               // first 默认显示第一个tab
-                    $('a[data-toggle="tab"]').on('show', function (e) {
-                        log(e)
-                    })
-                    $('a[data-toggle="tab"]').on('shown', function (e) {
-                        log(e.target) // activated tab
-                        log(e.relatedTarget) // previous tab
-                    })
-             })
-	</script>
 </head>
 <body>
 	<div class="header">
-        <a href="index.html" class="banner-title">国产汽车网	</a>
-			<span class="milk-theme">我们的情怀</span>
+    <div class="banner">
+        <a href="index.html" class="banner-title">国产汽车网</a>
+			<span class="milk-theme">个人中心</span>
 		<div class="admin-login">
 			当前登录：
             <a href="@{Logined.email()}" class="login"> ${user.username}</a>
             |
             <a href="@{Logined.logout()}" class="regist">注销</a>
 		</div>
+    </div>
 	</div>
 	<div class="container">
 
 		<div class="nav-bar">
-					<ul class="cms-lists">
-						<li>
-							<!-- 酸奶订单管理 -->
-							<div class="order-cms">
-								<a href="#change_password">修改密码</a>
-							</div>
-						</li>
-						<li>
-							<!-- 酸奶留言管理 -->
-							<div class="words-cms">
-								<a href="#ower_verify">申请车主认证</a>
-							</div>
-						</li>
-					</ul>
+			<ul class="cms-lists nav-tabs">
+				<li class="actived">
+					<!-- 酸奶订单管理 -->
+					<a href="#change_password">修改密码</a>
+				</li>
+				<li>
+					<!-- 酸奶留言管理 -->
+					<a href="#ower_verify">申请车主认证</a>
+				</li>
+			</ul>
 		</div>
 
-<!---------------------------------------------------修改密码开始------------------------------------------------------->
+<!---------------------------------------------------修改密码开始------------------------------------------------------>
 		<div class="tab-pane active" id="change_password">
 				#{form @changePassword()}
 							#{field 'newPassword'}
 							<p>
-								<label for="passwd" class="passwd">新密码</label>
+								<label for="passwd" class="passwd">新&nbsp;&nbsp;密&nbsp;&nbsp;码</label>
 								<input id="passwd"  type="password" name="${field.name}" required="required" ><br />
 								<span class="error">${field.error}</span>
 							</p>	
@@ -79,15 +62,17 @@
 		</div>
 <!---------------------------------------------------修改密码结束------------------------------------------------------->
 	
-<!---------------------------------------------------车主申请开始------------------------------------------------------->
+<!---------------------------------------------------车主申请开始------------------------------------------------------>
+<div id="uploadPhoto">
 	#{form @uploadPhoto(), enctype:'multipart/form-data'}
-		<input type="text" name="title" />
+		<label for="photo">请上传能证明照片</label>
 		<input type="file" id="photo" name="photo" /></br>
-		<input type="text" name="title" />
+		<label for="idcard">请上传身份证照片</label>
 		<input type="file" id="idcard" name="idcard" />
 		<input type="submit" value="Send it..." />
 	#{/}
 	${flash.success}
+</div>
 <!---------------------------------------------------车主申请结束------------------------------------------------------->
 
 </div>
