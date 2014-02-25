@@ -55,11 +55,58 @@ $(document).ready(function() {
         $(this).text("查看");
     });
 
-    var offset = -400;
-    setInterval(function() {
+    function showCar() {
         if (offset < -1200) 
             offset = 0;
-        $("#car-show-list").css("left", offset);
+        if (offset==0) {
+            $(".index span").eq(0).addClass("current");
+            $(".index span").eq(1).removeClass("current");
+            $(".index span").eq(2).removeClass("current");
+            $(".index span").eq(3).removeClass("current");
+        }
+        if (offset==-400) {
+            $(".index span").eq(1).addClass("current");
+            $(".index span").eq(0).removeClass("current");
+            $(".index span").eq(2).removeClass("current");
+            $(".index span").eq(3).removeClass("current");
+        }
+        if (offset==-800) {
+            $(".index span").eq(2).addClass("current");
+            $(".index span").eq(0).removeClass("current");
+            $(".index span").eq(1).removeClass("current");
+            $(".index span").eq(3).removeClass("current");
+        }
+        if (offset==-1200) {
+            $(".index span").eq(3).addClass("current");
+            $(".index span").eq(0).removeClass("current");
+            $(".index span").eq(1).removeClass("current");
+            $(".index span").eq(2).removeClass("current");
+        }
+        $(".car-show-list").eq(0).css("left", offset);    
         offset -= 400;
-    }, 2000);
+    }
+
+    var offset = -400;
+    var timer = setInterval(showCar, 2000);
+    
+    $(".index span").hover(function() {
+        $(this).addClass("current");
+        var i = $(this).text();
+        if (i==1) {
+            offset = 0;
+        }
+        if (i==2) {
+            offset = -400;
+        }
+        if (i==3) {
+            offset = -800;
+        }
+        if (i==4) {
+            offset = -1200;
+        }
+        clearInterval(timer);
+        $(".car-show-list").eq(0).css("left", offset); 
+    }, function() {
+        timer = setInterval(showCar, 2000);
+    });
 });
