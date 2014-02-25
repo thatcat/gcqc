@@ -34,12 +34,14 @@ $(document).ready(function() {
         var c = a.val();
         var d = b.val();
         comment = $(this).parent().parent().find(".carComments").eq(0);
+        text = $(this).parent().find("textarea").eq(0);
         $.ajax({
             type: "POST",
             url: "/application/addcarcomment",
             data: "carCommentType="+c+"&id="+d,
             success: function() {
                 // location.reload();
+                text.val("");
                 comment.prepend("<li> <i class='icon32 icon-color icon-bullet-off'></i> <span class='author'>" + user + "</span> <input type='hidden' class='isAdmin' value='true'> <i title=认证车主 class=addV></i> <span class='time'>"+now+"</span> <div class='comment'>"+c+"</div></li>");
             }
         });
@@ -55,42 +57,46 @@ $(document).ready(function() {
         $(this).text("查看");
     });
 
+    var list_len = $(".car-show-list").length;
+    var timer = [];
     function showCar() {
         if (offset < -1200) 
             offset = 0;
         if (offset==0) {
-            $(".index span").eq(0).addClass("current");
-            $(".index span").eq(1).removeClass("current");
-            $(".index span").eq(2).removeClass("current");
-            $(".index span").eq(3).removeClass("current");
+            $(".index span").eq(0).addClass("currented");
+            $(".index span").eq(1).removeClass("currented");
+            $(".index span").eq(2).removeClass("currented");
+            $(".index span").eq(3).removeClass("currented");
         }
         if (offset==-400) {
-            $(".index span").eq(1).addClass("current");
-            $(".index span").eq(0).removeClass("current");
-            $(".index span").eq(2).removeClass("current");
-            $(".index span").eq(3).removeClass("current");
+            $(".index span").eq(1).addClass("currented");
+            $(".index span").eq(0).removeClass("currented");
+            $(".index span").eq(2).removeClass("currented");
+            $(".index span").eq(3).removeClass("currented");
         }
         if (offset==-800) {
-            $(".index span").eq(2).addClass("current");
-            $(".index span").eq(0).removeClass("current");
-            $(".index span").eq(1).removeClass("current");
-            $(".index span").eq(3).removeClass("current");
+            $(".index span").eq(2).addClass("currented");
+            $(".index span").eq(0).removeClass("currented");
+            $(".index span").eq(1).removeClass("currented");
+            $(".index span").eq(3).removeClass("currented");
         }
         if (offset==-1200) {
-            $(".index span").eq(3).addClass("current");
-            $(".index span").eq(0).removeClass("current");
-            $(".index span").eq(1).removeClass("current");
-            $(".index span").eq(2).removeClass("current");
+            $(".index span").eq(3).addClass("currented");
+            $(".index span").eq(0).removeClass("currented");
+            $(".index span").eq(1).removeClass("currented");
+            $(".index span").eq(2).removeClass("currented");
         }
-        $(".car-show-list").eq(0).css("left", offset);    
+        $(".car-show-list").css("left", offset);    
         offset -= 400;
     }
 
     var offset = -400;
-    var timer = setInterval(showCar, 2000);
+    for (var i=0; i<list_len; i++) {
+        timer[i] = setInterval(showCar, 2000);
+    }
     
     $(".index span").hover(function() {
-        $(this).addClass("current");
+        $(this).addClass("currented");
         var i = $(this).text();
         if (i==1) {
             offset = 0;
@@ -104,9 +110,14 @@ $(document).ready(function() {
         if (i==4) {
             offset = -1200;
         }
-        clearInterval(timer);
-        $(".car-show-list").eq(0).css("left", offset); 
+        for (var j=0; j<list_len; j++) {
+            if ($(this) == $(".index span").eq(j)) {
+                clearInterval(timer[j]);
+            }
+        }
+        $(this).parent().parent().find(".car-show-list").css("left", offset); 
     }, function() {
+        $(this).removeClass("currented");
         timer = setInterval(showCar, 2000);
     });
 });

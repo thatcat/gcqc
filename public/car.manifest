@@ -3,7 +3,11 @@ CACHE MANIFEST
 stylesheets/bootstrap.css
 stylesheets/opa-icons.css
 stylesheets/index.css
+stylesheets/showSeries.css
 javascripts/jquery1.83.js
+javascripts/showSeries.js
+javascripts/page-bar.js
+javascripts/page-bar2.js
 javascripts/words-count.js
 javascripts/scroll-top-control.js
 javascripts/picture-show.js

@@ -10,8 +10,8 @@
 	<script src="/public/javascripts/jquery1.83.js" type="text/javascript"></script>
   <script src="/public/javascripts/bootstrap-tab.js" type="text/javascript"></script>
   <script src="/public/javascripts/order_cms.js" type="text/javascript"></script>
-  <script src="/public/javascripts/editor/editor_config.js" type="text/javascript"></script>
-	<script src="/public/javascripts/editor/editor_all.js" type="text/javascript"></script>
+  <script src="/public/javascripts/ueditor/ueditor.config.js" type="text/javascript"></script>
+	<script src="/public/javascripts/ueditor/ueditor.all.js" type="text/javascript"></script>
   <style>
     .cms-list a:hover {
       background: #eee;
@@ -87,7 +87,8 @@
         <label for="content"></label>
         <script type="text/plain" id="content"  name="content" style="width: 960px;">请输入要发送的内容</script>
           <script>
-              var ue = UE.getEditor("content");
+              var editor = new UE.ui.Editor({ initialFrameWidth:958 });
+              editor.render("content");
           </script>
       </div>
       <div class="input-control">
