@@ -21,7 +21,7 @@
 	<div class="header">
 		<div class="banner">
 			<a href="index.html" class="banner-title">国产汽车</a>
-			<span class="milk-theme">我们的汽车，我们的情怀</span>
+			<span class="milk-theme">我们的品牌，我们的情怀</span>
 			<div class="login-regist">
 				<a href="login.html" id="login" class="login">登录</a>
 				|
@@ -176,6 +176,7 @@
 															<i class="icon32 icon-color icon-bullet-off"></i>
 																	<span class="name">${postlist.author}</span>
 																	<input type="hidden" class="isAdmin" value="${postlist.author.isCarOwner}" />
+																	<input type="hidden" class="authType" value="${postlist.author.authType}" />
 																	<span class="time">${postlist.postedAt}</span>
 																	<span class="floor">${postlist.id}</span>
 																			<span class="comment">
@@ -190,6 +191,7 @@
 															<div>
 																<i class="icon icon-color icon-messages"></i>
 																<span class="name back-name">${commentlist.author}</span>
+																<input type="hidden" class="authType" value="${postlist.author.authType}" />
 																<input type="hidden" class="isAdmin" value="${commentlist.author.isCarOwner}" />
 																<span class="back-time">${commentlist.postedAt}</span>
 																<p class="back-text">${commentlist.content}</p>
@@ -219,7 +221,7 @@
 	</ul>	
 	<!-- 页脚 -->
 	<div class="footer">
-		<p>COPYRIGHT © 2012 - 2013 DESIGNED BY HCier<p>
+		<p>COPYRIGHT © 2013 <p>
 	</div>
 	<!-- 右下角回顶部固定按钮 -->
 	<div id="topcontrol" class="scrollTop" title="回顶部看看">

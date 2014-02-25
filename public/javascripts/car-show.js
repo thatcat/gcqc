@@ -20,8 +20,9 @@ jQuery(document).ready(function() {
 	var len = jQuery(".isAdmin").length;
 	for (var i=0; i<len; i++) {
 		var isAdmin = jQuery(".isAdmin").eq(i);
+		var authType = jQuery(".authType").eq(i).val();
 		if (isAdmin.val() == "true") {
-			jQuery(isAdmin).after("<i title='认证车主' class='addV'></i>");
+			jQuery(isAdmin).after("<i title='"+authType+"' class='addV'></i>");
 		}
 	}
 

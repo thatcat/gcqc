@@ -128,6 +128,7 @@
         				<li>
                             <i class="icon32 icon-color icon-bullet-off"></i>
         					<span class="author">${carcomments.user}</span>
+							<input type="hidden" class="authType" value="${carcomments.user.authType}" />
                             <input type="hidden" class="isAdmin" value="true">
                             <span class="time">${carcomments.carCommentTime}</span>
         					<div class="comment">${carcomments.commentType}</div>
@@ -142,7 +143,7 @@
     </div>
     <!-- 页脚 -->
     <div class="footer">
-        <p>COPYRIGHT © 2012 - 2013 DESIGNED BY HCier<p>
+        <p>COPYRIGHT © 2013<p>
     </div>
     <!-- 右下角回顶部固定按钮 -->
     <div id="topcontrol" class="scrollTop" title="回顶部看看">
