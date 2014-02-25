@@ -12,7 +12,7 @@ GET     /logined.html                           Logined.index
 GET     /Logined                                Logined.index
 GET	/words_board.html						Logined.words_board	
 GET	/email.html								Logined.email	
-GET 	/order.html								Logined.order
+#GET 	/order.html								Logined.orders
 GET		/order_cms.html							Logined.order_cms
 GET		/order_customer.html							Logined.order_customer
 GET		/showBorad.html							Logined.showBorad
