@@ -413,12 +413,12 @@ public static void savePostOrigin(Post post) {
 		}
 
 		CarSeries carSeries = CarSeries.find("bySeriesName",seriesName).first();
-		System.out.println("----------------------------------------carSeries="+carSeries);
 		CarModel carModel = new CarModel();
 		carModel.seriesName = carSeries;
 		carModel.allModelDataString = insert;
 		carModel.save();
-		render();	
+		String message="添加成功";
+		addModel(message,carSeries.id);	
 	}
 
 	public static void carNews() {
