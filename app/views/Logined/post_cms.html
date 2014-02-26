@@ -6,11 +6,13 @@
 	<link href="/public/stylesheets/bootstrap.css" rel="stylesheet" type="text/css" />
 	<link href="/public/stylesheets/opa-icons.css"  rel="stylesheet" type="text/css" /> 
 	<link href="/public/stylesheets/words-board.css" rel="stylesheet" type="text/css" />	
-	<link href="/public/stylesheets/cms-index.css" rel="stylesheet" type="text/css" />	
+	<link href="/public/stylesheets/cms-index.css" rel="stylesheet" type="text/css" />
+	
 	<script type="text/javascript" src="/public/javascripts/jquery1.83.js"></script>
 	<script type="text/javascript" src="/public/javascripts/page-bar.js"></script>
 	<script type="text/javascript" src="/public/javascripts/words-board.js"></script>
 	<script type="text/javascript" src="/public/javascripts/words-count.js"></script>
+
 	<style>
 		.cms-list a:hover {
 	      background: #eee;
@@ -99,6 +101,8 @@
 														<div class="list-details">
 															<i class="icon32 icon-color icon-bullet-off"></i>
 																	<span class="name">${postlist.author}</span>
+																	<input type="hidden" class="isAdmin" value="${postlist.author.isCarOwner}" />
+																	<input type="hidden" class="authType" value="${postlist.author.authType}" />
 																	<span class="time">${postlist.postedAt}</span>
 																	<span class="floor">${postlist.id}</span>
 																			<span class="comment">
@@ -114,6 +118,7 @@
 															<div>
 																<i class="icon icon-color icon-messages"></i>
 																<span class="name back-name">${commentlist.author}</span>
+													
 																<span class="back-time">${commentlist.postedAt}</span>
 																<p>${commentlist.content}  
 																<a href="@{deleteComment(commentlist.id)}"  value="删除留言">删除评论<a/>								  

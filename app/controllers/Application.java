@@ -74,11 +74,12 @@ public class Application extends Controller {
 		if( lowPrice.equals("") || lowPrice == "" )
 			tempLowPrice=0;
 		else
-			tempLowPrice=Float.parseFloat(lowPrice)/100000;
+			tempLowPrice=Float.parseFloat(lowPrice)/10000;
 		if( highPrice.equals("")||highPrice == "" )
 			tempHighPrice=10000000;
 		else
-			tempHighPrice=Float.parseFloat(highPrice)/100000;
+			tempHighPrice=Float.parseFloat(highPrice)/10000;
+		System.out.println("-----------------------tempHighPrice="+tempHighPrice);
 		List<CarSeries> carSeriesList = CarSeries.find("Select c from CarSeries c where carType=? and bottomPrice > ? and bottomPrice <?",carType,tempLowPrice,tempHighPrice).fetch();	
 		render("Application/showSeries.html",carSeriesList);
 	}
@@ -92,7 +93,7 @@ public class Application extends Controller {
 
 	public static void showSeries(Long id ) {
 		User user = Logined.connected();
-		System.out.println("-----------------------user="+user);
+		
 		CarBrand carBrand = CarBrand.find("byId",id).first();
 		List<CarSeries> carSeriesList = CarSeries.find("byBrandName",carBrand).fetch();
 		render(carSeriesList,user);
@@ -143,6 +144,11 @@ public class Application extends Controller {
 
 	public static void notFound() {
 		render();
+	}
+
+	public static void carNews(Long id) {
+		User user = Logined.connected();
+	render("Application/carNews"+id+".html",user);
 	}
 
 }
