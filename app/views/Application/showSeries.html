@@ -129,7 +129,7 @@
                             <i class="icon32 icon-color icon-bullet-off"></i>
         					<span class="author">${carcomments.user}</span>
 							<input type="hidden" class="authType" value="${carcomments.user.authType}" />
-                            <input type="hidden" class="isAdmin" value="true">
+                            <input type="hidden" class="isAdmin" value="${carcomments.user.isCarOwner}">
                             <span class="time">${carcomments.carCommentTime}</span>
         					<div class="comment">${carcomments.commentType}</div>
         				</li>

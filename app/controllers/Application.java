@@ -12,7 +12,7 @@ public class Application extends Controller {
         if(user != null) {
             //跳转到登录画面
         	if(user.isAdmin == false)
-        		Logined.index();
+        		Logined.logined();
         	else
         		Logined.order_cms();
         }

@@ -48,7 +48,7 @@ public class Logined extends Controller {
         }
 	}
 
-    public static void index() {
+    public static void logined() {
 		List<Post> postList = Post.find("order by id desc").from(0).fetch(3);	
 		List<CarBrand> carBrandList = CarBrand.findAll();
        render(postList,carBrandList);
@@ -125,7 +125,7 @@ public static void savePostOrigin(Post post) {
         // Save
         post.save();     
 		flash.success("Thanks for posting %s", author);
-		index();
+		logined();
     }
 
 /**
@@ -198,7 +198,7 @@ public static void savePostOrigin(Post post) {
 		Comment comment = new Comment(post,author,content);
 		comment.save();
         flash.success("Thanks for posting %s", author);
-		index();
+		logined();
     }
 
 /**
