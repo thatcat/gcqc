@@ -32,7 +32,8 @@ POST		/addModel.html			Logined.addCarModel
 GET			/showModels.html		Application.showModels
 GET			/carNews.html			Logined.carNews
 
-GET			/carNews				Application.carNews				
+GET			/carNews				Application.carNews
+GET			/showAllNews.html			Application.showAllNews
 
 GET			/*						Application.notFound	
 POST		/*						Application.notFound

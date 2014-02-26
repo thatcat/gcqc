@@ -7,9 +7,10 @@
 	<link href="/public/stylesheets/opa-icons.css"  rel="stylesheet" type="text/css" /> 
 	<link href="/public/stylesheets/words-board.css" rel="stylesheet" type="text/css" />	
 	<script type="text/javascript" src="/public/javascripts/jquery1.83.js"></script>
-	<script type="text/javascript" src="/public/javascripts/page-bar.js"></script>
+	<script type="text/javascript" src="/public/javascripts/car-show.js"></script>
 	<script type="text/javascript" src="/public/javascripts/words-board.js"></script>
 	<script type="text/javascript" src="/public/javascripts/words-count.js"></script>
+	<script type="text/javascript" src="/public/javascripts/page-bar.js"></script>
 </head>
 <body>
 	<!-- 最顶部快捷条包括登录和注册 -->
@@ -61,10 +62,7 @@
       <div id="p1"></div>
       <div class="words-list">
 <ul id="list">
-#{list items:postList,as:'postlist'}
-                              
-		
-		           
+#{list items:postList,as:'postlist'}         
 		             	<!-- 每个 li 是 1 页留言，包括 10 条留言（即 10 个 div）-->
 		             	<li>
                       <div class="words-list" id="words-list">
@@ -73,6 +71,8 @@
 														<div class="list-details">
 															<i class="icon32 icon-color icon-bullet-off"></i>
 																	<span class="name">${postlist.author}</span>
+																	<input type="hidden" class="isAdmin" value="${postlist.author.isCarOwner}" />
+																	<input type="hidden" class="authType" value="${postlist.author.authType}" />
 																	<span class="time">${postlist.postedAt}</span>
 																	<span class="floor">${postlist.id}</span>
 																			<span class="comment">
@@ -87,6 +87,8 @@
 															<div>
 																<i class="icon icon-color icon-messages"></i>
 																<span class="back-name">${commentlist.author}</span>
+																<input type="hidden" class="isAdmin" value="${commentlist.author.isCarOwner}" />
+																<input type="hidden" class="authType" value="${commentlist.author.authType}" />
 																<span class="back-time">${commentlist.postedAt}</span>
 																<p class="back-text">${commentlist.content}</p>
 																
@@ -112,19 +114,13 @@
 </li>
 
 	<!-- container -->
-
-
-
-
-
-
-           
+    
 #{/list}
 	</ul>				
 	</div>
 	<!-- 页脚 -->
 	<div class="footer">
-		<p>COPYRIGHT © 2012 - 2013 DESIGNED BY HCier<p>
+		<p>COPYRIGHT © 2013<p>
 	</div>
 </body>
 </html>

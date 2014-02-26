@@ -85,9 +85,9 @@ public class Logined extends Controller {
        render(userUndealList,userDealedList);
     }
 
-public static void savePostOrigin(Post post) {
+	public static void savePostOrigin(Post post) {
 
-}
+	}
 
 
 /**
@@ -259,7 +259,6 @@ public static void savePostOrigin(Post post) {
 			try
 			{		
 			File outputFile = new File(outputPah+photo.getName());
-			System.out.println("-----------------------------------outputFile:"+outputFile);
 			FileOutputStream fos = new FileOutputStream(outputFile);
 			FileInputStream fis = new FileInputStream(photo);
 

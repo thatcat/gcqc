@@ -29,9 +29,6 @@
             padding: 5px;
             border: 1px solid #ccc;
         }
-		.footer {
-			position: relative;
-			}
     </style>    
 </head>
 <body>
@@ -39,8 +36,8 @@
     #{if user}
     <div class="header">
        <div class="banner">
-            <a href="index.html" class="banner-title">国产汽车</a>
-            <span class="milk-theme">我们的品牌，我们的情怀</span>
+            <a href="index.html" class="banner-title">华农酸奶</a>
+            <span class="milk-theme">梦想的味道</span>
             <div class="login-regist">
             当前登录：
             <a href="#" class="login">${user}</a>
@@ -56,7 +53,7 @@
         <div class="header">
         <div class="banner">
             <a href="index.html" class="banner-title">国产汽车</a>
-            <span class="milk-theme">我们的品牌，我们的情怀</span>
+            <span class="milk-theme">我们的汽车，我们的情怀</span>
             <div class="login-regist">
                 <a href="login.html" id="login" class="login">登录</a>
                 |
@@ -67,18 +64,27 @@
     #{/else}
     
 	<div class="show-container">
-		<!-- 右边固定在屏幕边上的联系方式 --> 
+	<!-- 右边固定在屏幕边上的联系方式 --> 
 		<div class="contact-us">
 			<div class="contact-area">
 				<a href="email.html">联系我们</a>
 			</div>
 		</div>
-		<div>
-		<table align="">
-			${str.raw()}
-		</table>
+		<div align="center">			
+					<h1>自主品牌主流车企完成战略调整开始发力</h1> 2014-01-02
 		</div>
-		<div style="clear:both"></div>
+			<hr>
+			<div>
+				<pre>
+				<h2>
+				经过几年艰苦磨砺，吉利、比亚迪、长城等主流自主品牌汽车厂家完成了
+				战略转型，开始步入快速发展阶段。奇瑞汽车也在今年底完成战略调整，
+				重新步入较快发展。总体来看，在新的一年里，吉利、比亚迪、奇瑞、长
+				安、长城等主流自主品牌车企将推出一系列极具竞争力的新产品，有可能
+				改变自主品牌汽车市场份额连年下降的局面。
+				</h2>
+			</pre>
+		  </div>
 	</div>
     <!-- 页脚 -->
     <div class="footer">

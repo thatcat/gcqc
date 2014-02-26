@@ -23,7 +23,7 @@
     <div class="header">
        <div class="banner">
             <a href="index.html" class="banner-title">国产汽车</a>
-            <span class="milk-theme">我们的汽车，我们的情怀</span>
+            <span class="milk-theme">我们的品牌，我们的情怀</span>
             <div class="login-regist">
             当前登录：
             <a href="#" style="cursor:default;" class="login"> ${user.username}</a>
@@ -41,7 +41,7 @@
         <div class="header">
         <div class="banner">
             <a href="index.html" class="banner-title">国产汽车</a>
-            <span class="milk-theme">我们的汽车，我们的情怀</span>
+            <span class="milk-theme">我们的品牌，我们的情怀</span>
             <div class="login-regist">
                 <a href="login.html" id="login" class="login">登录</a>
                 |
@@ -88,9 +88,13 @@
         					   <td>型号</td>
                                <td>${carserieslist.seriesName}</td>
                             </tr>
+							  <tr>
+        					   <td>车型</td>
+                               <td>${carserieslist.carType}</td>
+                            </tr>
                             <tr>
                                <td>最低价</td>
-                               <td>${carserieslist.bottomPrice}</td>
+                               <td>${carserieslist.bottomPrice}万</td>
                             </tr>
         					<tr>
                                <td>油耗</td>
@@ -140,6 +144,9 @@
     		</div>
         </div>
 		#{/list}
+		#{else}
+			<h2>暂时还没有这个品牌的系列数据喔..亲，可以先看看其他品牌..
+		#{/else}
     </div>
     <!-- 页脚 -->
     <div class="footer">

@@ -16,7 +16,6 @@ jQuery(document).ready(function() {
 	for (var i=1; i<=40; i++) {
 		box.append("<div class='car-pic'><a href='/showSeries?id=" + i + "' class='car car" + i + "'></a><a href='#' id='praise_btn" + i + "' class='praise_btn'><cite class='praise_btn_inner'><u class='WB_ico_logo'></u><cite class='praise_text'>赞</cite></cite></a><span class='praise_num num" + i + "'>" + praise[i-1] + "</span></div>");
 	}
-
 	var len = jQuery(".isAdmin").length;
 	for (var i=0; i<len; i++) {
 		var isAdmin = jQuery(".isAdmin").eq(i);

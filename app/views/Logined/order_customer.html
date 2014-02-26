@@ -42,9 +42,13 @@
 
 <!---------------------------------------------------修改密码开始------------------------------------------------------>
 		<div class="tab-pane active" id="change_password">
+		
 				#{form @changePassword()}
 							#{field 'newPassword'}
 							<p>
+							${flash.success}
+							</p>
+							<p>						
 								<label for="passwd" class="passwd">新&nbsp;&nbsp;密&nbsp;&nbsp;码</label>
 								<input id="passwd"  type="password" name="${field.name}" required="required" ><br />
 								<span class="error">${field.error}</span>
@@ -61,26 +65,32 @@
 							<input class="signup  button" name="register" type="submit" value="确定">
 							</p>
 				#{/form}
-				${flash.success}
+				
 		</div>
 <!---------------------------------------------------修改密码结束------------------------------------------------------->
 	
 <!---------------------------------------------------车主申请开始------------------------------------------------------>
 <div id="uploadPhoto">
+	<p>
+						上一次认证是否通过： #{if user.isCarOwner}通过， 认证内容:${user.authType}#{/if} #{else}不通过 #{/else} 
+	</p>
 	#{form @uploadPhoto(), enctype:'multipart/form-data'}
+	<p>
+		${flash.success}
+	</p>
     <div class="input-control">
-		<label for="photo">请上传能证明照片</label>
+		<label for="photo">上传购车证明照片</label>
 		<input type="file" id="photo" name="photo" />
     </div>
     <div class="input-control">
-		<label for="idcard">请上传身份证照片</label>
+		<label for="idcard">上传身份证明照片</label>
 		<input type="file" id="idcard" name="idcard" />
     </div>
     <div class="input-control">
 		<input type="submit" value="确定" />
     </div>
 	#{/}
-	${flash.success}
+	
 </div>
 <!---------------------------------------------------车主申请结束------------------------------------------------------->
 

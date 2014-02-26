@@ -62,7 +62,7 @@
 				<li>
 					<!-- 小道消息管理 -->
 					<div class="news-cms">
-						<a href="/carNews.html">小道消息管理</a>
+						<a href="/carNews.html">添加小道消息</a>
 					</div>
 				</li>
 				<!-- 小道消息管理 -->
@@ -97,7 +97,8 @@
 												<th>身份证图片路径</th>
                                                 <th>是否车主</th>												
 												<th>申请认证日期</th>
-                        <th>认证内容</th>
+												<th>上一次认证内容</th>
+												 <th>这次认证内容</th>
 												<th colspan="2">确定认证</th>
                         					</tr>
                         					#{list items:userUndealList,as:'undealList'}
@@ -109,10 +110,11 @@
 													<td><img src="${undealList.idcardPictiurePath}" width="150" height="100"/></td>
                                                     <td>${undealList.isCarOwner} </td>
 													<td>${undealList.applyDate} </td>
+													<td>${undealList.authType} </td>
 													<th><textarea style="height:100px" id="authType" name="authType"></textarea></th>
 													
                                                     <td><span class="badges btn-info btn highlight ml10" onclick="cancel_item(${undealList.id}, true);">通过</span></td>
-													<td><span class="badges btn-info btn highlight ml10" onclick="cancel_item(${undealList.id},false);">取消</span></td>
+													<td><span class="badges btn-info btn highlight ml10" onclick="cancel_item(${undealList.id},false);">不通过</span></td>
                                                 </tr>
                                             #{/list}
                         				</table>

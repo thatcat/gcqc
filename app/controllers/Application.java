@@ -69,6 +69,7 @@ public class Application extends Controller {
     }
 
 	public static void search(String carType,String lowPrice,String highPrice) {
+		User user = Logined.connected();
 		float tempLowPrice=0;
 		float tempHighPrice=100000000;
 		if( lowPrice.equals("") || lowPrice == "" )
@@ -81,7 +82,7 @@ public class Application extends Controller {
 			tempHighPrice=Float.parseFloat(highPrice)/10000;
 		System.out.println("-----------------------tempHighPrice="+tempHighPrice);
 		List<CarSeries> carSeriesList = CarSeries.find("Select c from CarSeries c where carType=? and bottomPrice > ? and bottomPrice <?",carType,tempLowPrice,tempHighPrice).fetch();	
-		render("Application/showSeries.html",carSeriesList);
+		render("Application/showSeries.html",carSeriesList,user);
 	}
 
 	/**点赞*/
@@ -93,7 +94,6 @@ public class Application extends Controller {
 
 	public static void showSeries(Long id ) {
 		User user = Logined.connected();
-		
 		CarBrand carBrand = CarBrand.find("byId",id).first();
 		List<CarSeries> carSeriesList = CarSeries.find("byBrandName",carBrand).fetch();
 		render(carSeriesList,user);
@@ -136,7 +136,6 @@ public class Application extends Controller {
 		if(carModel == null)
 			str = "<div align=\"center\"><h2>亲，还没有该系列型号的数据哦..可以先看一下其他系列</h2></div>";
 		else {
-		System.out.println("-------------------------showModels.carModel="+carModel.allModelDataString);
 		 str = carModel.allModelDataString;
 		}
 		render(str,user);
@@ -148,7 +147,13 @@ public class Application extends Controller {
 
 	public static void carNews(Long id) {
 		User user = Logined.connected();
-	render("Application/carNews"+id+".html",user);
+		render("Application/carNews"+id+".html",user);
 	}
+
+	public static void showAllNews() {
+		User user = Logined.connected();
+		render(user);
+	}
+	
 
 }

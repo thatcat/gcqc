@@ -7,12 +7,11 @@
 	<link href="/public/stylesheets/opa-icons.css"  rel="stylesheet" type="text/css" /> 
 	<link href="/public/stylesheets/words-board.css" rel="stylesheet" type="text/css" />	
 	<link href="/public/stylesheets/cms-index.css" rel="stylesheet" type="text/css" />
-	
 	<script type="text/javascript" src="/public/javascripts/jquery1.83.js"></script>
-	<script type="text/javascript" src="/public/javascripts/page-bar.js"></script>
+	<script type="text/javascript" src="/public/javascripts/car-show.js"></script>
 	<script type="text/javascript" src="/public/javascripts/words-board.js"></script>
 	<script type="text/javascript" src="/public/javascripts/words-count.js"></script>
-
+	<script type="text/javascript" src="/public/javascripts/page-bar.js"></script>
 	<style>
 		.cms-list a:hover {
 	      background: #eee;
@@ -75,7 +74,7 @@
 			#{field 'post.content'}
 				<div class="words-area">
 					<!-- 注意这里的 textarea 中间的空格会算进字数统计中 -->
-					<textarea name="${field.name}" onKeyDown="maxWords2(this.form)" onKeyUp="maxWords2(this.form)" onblur="if(this.value==''){ this.value='来，说说你对酸奶的寄语 ..'; }" onfocus="if(this.value=='来，说说你对酸奶的寄语 ..'){ this.value=''; }">来，说说你对酸奶的寄语 ..</textarea>
+					<textarea name="${field.name}" onKeyDown="maxWords2(this.form)" onKeyUp="maxWords2(this.form)" onblur="if(this.value==''){ this.value='网站小公告..'; }" onfocus="if(this.value=='网站小公告..'){ this.value=''; }">网站小公告..</textarea>
 				</div>
 			#{/field}
 				<div class="count-submit-bar">
@@ -118,7 +117,8 @@
 															<div>
 																<i class="icon icon-color icon-messages"></i>
 																<span class="name back-name">${commentlist.author}</span>
-													
+																<input type="hidden" class="isAdmin" value="${commentlist.author.isCarOwner}" />
+																<input type="hidden" class="authType" value="${commentlist.author.authType}" />
 																<span class="back-time">${commentlist.postedAt}</span>
 																<p>${commentlist.content}  
 																<a href="@{deleteComment(commentlist.id)}"  value="删除留言">删除评论<a/>								  
